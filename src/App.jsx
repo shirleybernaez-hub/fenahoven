@@ -14,7 +14,7 @@ export default function App() {
         <div className="mt-8 h-[1px] w-24 bg-white/30"></div>
       </section>
 
-      {/* SECCIÓN ESTRATEGIA (Texto actualizado según tu petición) */}
+      {/* SECCIÓN ESTRATEGIA */}
       <section className="py-24 md:py-36 px-8 md:px-16 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
           <div className="md:col-span-5 space-y-4">
@@ -42,7 +42,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECCIÓN ANATOMÍA DE MARCA (Con signos + e = corregidos para móvil) */}
+      {/* SECCIÓN ANATOMÍA DE MARCA */}
       <section className="min-h-screen w-full bg-[#0062B2] text-white p-8 md:p-16 flex flex-col justify-center relative overflow-hidden">
         <div className="w-full text-center mt-[-4rem] mb-16">
           <h2 className="text-xs uppercase tracking-[0.3em] text-white/60 font-bold">Nueva propuesta</h2>
@@ -53,23 +53,17 @@ export default function App() {
               <h4 className="text-sm uppercase tracking-wider text-white font-bold">Eliminación de Ornamentos</h4>
               <p className="text-xs text-white/70 leading-relaxed font-light">Se elimina el mapa de Venezuela y el fondo policromado con gradientes que saturaban la marca, logrando una limpieza visual total.</p>
             </div>
-            
             <div className="text-white/20 text-4xl font-bold">+</div>
-            
             <div className="space-y-3">
               <h4 className="text-sm uppercase tracking-wider text-white font-bold">Depuración Geométrica</h4>
               <p className="text-xs text-white/70 leading-relaxed font-light">Desarmamos la estructura rígida anterior para liberar la carga visual, enfocándonos exclusivamente en el valor de la palabra.</p>
             </div>
-            
             <div className="text-white/20 text-4xl font-bold">+</div>
-            
             <div className="space-y-3">
               <h4 className="text-sm uppercase tracking-wider text-white font-bold">Respeto a la Identidad Histórica</h4>
               <p className="text-xs text-white/70 leading-relaxed font-light">No borramos el pasado. Mantuvimos exactamente la tipografía existente que los ha identificado por años, conservando su esencia original.</p>
             </div>
           </div>
-          
-          {/* El igual y el resultado final */}
           <div className="flex flex-col items-center justify-center pt-8">
             <div className="text-white/20 text-4xl font-bold mb-4">=</div>
             <img src="/logofenahovenblanco.png" alt="Resultado Final" className="h-24 md:h-44 w-auto object-contain" />
@@ -83,12 +77,12 @@ export default function App() {
       {/* SECCIÓN LOGO COLOR ÚNICO */}
       <section className="py-24 px-8 md:px-16 flex flex-col items-center bg-white">
         <div className="w-full text-center mb-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold">Logo en color único</h2>
+          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold font-nexa">LOGO EN COLOR ÚNICO</h2>
         </div>
         <div className="w-full flex flex-col items-center justify-center p-12 bg-white">
-          <img src="/logofenahoven_azul.svg" alt="Logo Azul FENAHOVEN" className="h-20 md:h-28 w-auto object-contain" />
-          <span className="text-[8px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] text-slate-400 uppercase mt-6 block text-center font-bold whitespace-nowrap">
-            Federación Nacional de Hoteles de Venezuela
+          <img src="/logofenahoven_azul.png" alt="Logo Azul FENAHOVEN" className="h-20 md:h-28 w-auto object-contain" />
+          <span className="text-[10px] tracking-[0.3em] text-slate-400 uppercase mt-6 block text-center font-bold font-nexa whitespace-nowrap">
+            FEDERACIÓN NACIONAL DE HOTELES DE VENEZUELA
           </span>
         </div>
       </section>
@@ -96,17 +90,17 @@ export default function App() {
       {/* SECCIÓN VARIACIÓN DE LOGO */}
       <section className="w-full flex flex-col border-t border-slate-100">
         <div className="px-8 md:px-16 py-12 max-w-6xl mx-auto w-full text-center">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold">Variación de logo</h2>
+          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold font-nexa">VARIACIÓN DE LOGO</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 w-full">
           <div className="aspect-square flex items-center justify-center bg-white border-b md:border-b-0 md:border-r border-black/5">
-            <img src="/logofenahoven_azul.svg" alt="Logo Azul" className="w-32 md:w-48 h-auto object-contain" />
+            <img src="/logofenahoven_azul.png" alt="Logo Azul" className="w-48 h-auto object-contain" />
           </div>
           <div className="aspect-square flex items-center justify-center bg-[#0468BF] border-b md:border-b-0 md:border-r border-white/10">
-            <img src="/logofenahovenblanco.png" alt="Logo Blanco" className="w-32 md:w-48 h-auto object-contain" />
+            <img src="/logofenahovenblanco.png" alt="Logo Blanco" className="w-48 h-auto object-contain" />
           </div>
           <div className="aspect-square flex items-center justify-center bg-[#0367A6]">
-            <img src="/logofenahovenblanco.png" alt="Logo Blanco" className="w-32 md:w-48 h-auto object-contain" />
+            <img src="/logofenahovenblanco.png" alt="Logo Blanco" className="w-48 h-auto object-contain" />
           </div>
         </div>
       </section>
@@ -165,7 +159,7 @@ export default function App() {
             </div>
             <div className="w-full flex justify-center">
               <div className="relative w-full max-w-[200px] md:max-w-[280px] aspect-[9/19] bg-[#FFFFFF] rounded-[3rem] border-[8px] border-slate-200 overflow-hidden flex items-center justify-center shadow-2xl">
-                <img src="/logofenahoven_azul.svg" alt="Logo FENAHOVEN" className="w-3/5 h-auto object-contain" />
+                <img src="/logofenahoven_azul.png" alt="Logo FENAHOVEN" className="w-3/5 h-auto object-contain" />
               </div>
             </div>
             <div className="w-full flex justify-center">
