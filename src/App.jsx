@@ -42,10 +42,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECCIÓN ANATOMÍA DE MARCA (Títulos y signos corregidos) */}
+      {/* SECCIÓN ANATOMÍA DE MARCA */}
       <section className="min-h-screen w-full bg-[#0062B2] text-white p-8 md:p-16 flex flex-col justify-center relative overflow-hidden">
         <div className="w-full text-center mb-16">
-          {/* Título corregido con mayor contraste y visibilidad */}
           <h2 className="text-xs uppercase tracking-[0.3em] text-white font-bold opacity-90">NUEVA PROPUESTA</h2>
         </div>
         <div className="w-full max-w-6xl mx-auto space-y-8 md:space-y-24">
@@ -66,14 +65,10 @@ export default function App() {
             </div>
           </div>
           
-          {/* Signo igual a la izquierda del logo final */}
           <div className="flex flex-row items-center justify-center pt-8 space-x-6">
             <div className="text-white/20 text-4xl font-bold">=</div>
             <div className="flex flex-col items-center">
               <img src="/logofenahovenblanco.png" alt="Resultado Final" className="h-24 md:h-44 w-auto object-contain" />
-              <span className="text-[10px] tracking-[0.3em] text-white/90 uppercase mt-4 block">
-                Federación Nacional de Hoteles de Venezuela
-              </span>
             </div>
           </div>
         </div>
@@ -86,9 +81,6 @@ export default function App() {
         </div>
         <div className="w-full flex flex-col items-center justify-center p-12 bg-white">
           <img src="/logofenahoven_azul.png" alt="Logo Azul FENAHOVEN" className="h-20 md:h-28 w-auto object-contain" />
-          <span className="text-[10px] tracking-[0.3em] text-slate-400 uppercase mt-6 block text-center font-bold font-nexa whitespace-nowrap">
-            FEDERACIÓN NACIONAL DE HOTELES DE VENEZUELA
-          </span>
         </div>
       </section>
 
