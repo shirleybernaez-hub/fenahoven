@@ -33,7 +33,7 @@ export default function App() {
       {/* SECCIÓN LOGO ACTUAL */}
       <section className="py-24 md:py-36 px-8 md:px-16 max-w-5xl mx-auto border-t border-slate-100">
         <div className="flex flex-col items-center">
-          <h3 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-8">LOGO ACTUAL</h3>
+          <h3 className="text-sm uppercase tracking-[0.3em] text-slate-400 font-bold mb-8">LOGO ACTUAL</h3>
           <div className="w-full flex justify-center">
             <div className="bg-slate-50/50 rounded-3xl p-12">
               <img src="/logofenahoven.jpg" alt="Logo Actual FENAHOVEN" className="h-96 md:h-[32rem] w-auto object-contain" />
@@ -45,7 +45,7 @@ export default function App() {
       {/* SECCIÓN ANATOMÍA DE MARCA */}
       <section className="min-h-screen w-full bg-[#0062B2] text-white p-8 md:p-16 flex flex-col justify-center relative overflow-hidden">
         <div className="w-full text-center mb-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-white font-bold opacity-90">NUEVA PROPUESTA</h2>
+          <h2 className="text-lg uppercase tracking-[0.3em] text-white font-bold opacity-90">NUEVA PROPUESTA</h2>
         </div>
         <div className="w-full max-w-6xl mx-auto space-y-8 md:space-y-24">
           <div className="flex flex-col md:grid md:grid-cols-5 gap-6 md:gap-8 items-center text-center">
@@ -77,7 +77,7 @@ export default function App() {
       {/* SECCIÓN LOGO COLOR ÚNICO */}
       <section className="py-24 px-8 md:px-16 flex flex-col items-center bg-white">
         <div className="w-full text-center mb-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold font-nexa">LOGO EN COLOR ÚNICO</h2>
+          <h2 className="text-lg uppercase tracking-[0.3em] text-slate-400 font-bold font-nexa">LOGO EN COLOR ÚNICO</h2>
         </div>
         <div className="w-full flex flex-col items-center justify-center p-12 bg-white">
           <img src="/logofenahoven_azul.png" alt="Logo Azul FENAHOVEN" className="h-20 md:h-28 w-auto object-contain" />
@@ -87,7 +87,7 @@ export default function App() {
       {/* SECCIÓN VARIACIÓN DE LOGO */}
       <section className="w-full flex flex-col border-t border-slate-100">
         <div className="px-8 md:px-16 py-12 max-w-6xl mx-auto w-full text-center">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold font-nexa">VARIACIÓN DE LOGO</h2>
+          <h2 className="text-lg uppercase tracking-[0.3em] text-slate-400 font-bold font-nexa">VARIACIÓN DE LOGO</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 w-full">
           <div className="aspect-square flex items-center justify-center bg-white border-b md:border-b-0 md:border-r border-black/5">
@@ -105,7 +105,7 @@ export default function App() {
       {/* SECCIÓN PALETA DE COLORES */}
       <section className="py-24 w-full bg-[#FDFDFD] border-t border-slate-100">
         <div className="w-full px-8 md:px-16 max-w-6xl mx-auto mb-12 text-center">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold">Paleta de colores</h2>
+          <h2 className="text-lg uppercase tracking-[0.3em] text-slate-400 font-bold">Paleta de colores</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-8 md:px-16 max-w-6xl mx-auto">
           {[
@@ -123,10 +123,10 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECCIÓN TIPOGRAFÍA - TAMAÑOS AMPLIADOS */}
+      {/* SECCIÓN TIPOGRAFÍA */}
       <section className="min-h-screen w-full bg-[#0367A6] text-white p-8 md:p-24 flex flex-col justify-center">
         <div className="w-full text-center mb-16">
-          <h2 className="text-sm uppercase tracking-[0.3em] text-white/60 font-bold">Tipografía</h2>
+          <h2 className="text-lg uppercase tracking-[0.3em] text-white/60 font-bold">Tipografía</h2>
         </div>
         <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto gap-12">
           <div className="text-center">
@@ -145,7 +145,7 @@ export default function App() {
       {/* SECCIÓN APLICACIÓN MÓVIL */}
       <section className="py-24 w-full bg-[#F1F5F9]">
         <div className="max-w-6xl mx-auto px-8 md:px-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-16 text-center">
+          <h2 className="text-lg uppercase tracking-[0.3em] text-slate-400 font-bold mb-16 text-center">
             Aplicación móvil
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
