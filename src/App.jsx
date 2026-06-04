@@ -14,7 +14,7 @@ export default function App() {
         <div className="mt-8 h-[1px] w-24 bg-white/30"></div>
       </section>
 
-      {/* SECCIÓN ESTRATEGIA */}
+      {/* SECCIÓN ESTRATEGIA (Texto actualizado según tu petición) */}
       <section className="py-24 md:py-36 px-8 md:px-16 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
           <div className="md:col-span-5 space-y-4">
@@ -42,36 +42,40 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECCIÓN ANATOMÍA DE MARCA (Con signos + e = para móvil y desktop) */}
+      {/* SECCIÓN ANATOMÍA DE MARCA (Con signos + e = corregidos para móvil) */}
       <section className="min-h-screen w-full bg-[#0062B2] text-white p-8 md:p-16 flex flex-col justify-center relative overflow-hidden">
-        <div className="w-full text-center mb-16">
+        <div className="w-full text-center mt-[-4rem] mb-16">
           <h2 className="text-xs uppercase tracking-[0.3em] text-white/60 font-bold">Nueva propuesta</h2>
         </div>
-        
-        <div className="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 text-center">
-          <div className="space-y-2 md:w-1/4">
-            <h4 className="text-xs uppercase tracking-wider font-bold">Eliminación de Ornamentos</h4>
-            <p className="text-[10px] text-white/70 font-light">Se elimina el mapa de Venezuela y el fondo con gradientes.</p>
+        <div className="w-full max-w-6xl mx-auto space-y-8 md:space-y-24">
+          <div className="flex flex-col md:grid md:grid-cols-5 gap-6 md:gap-8 items-center text-center">
+            <div className="space-y-3">
+              <h4 className="text-sm uppercase tracking-wider text-white font-bold">Eliminación de Ornamentos</h4>
+              <p className="text-xs text-white/70 leading-relaxed font-light">Se elimina el mapa de Venezuela y el fondo policromado con gradientes que saturaban la marca, logrando una limpieza visual total.</p>
+            </div>
+            
+            <div className="text-white/20 text-4xl font-bold">+</div>
+            
+            <div className="space-y-3">
+              <h4 className="text-sm uppercase tracking-wider text-white font-bold">Depuración Geométrica</h4>
+              <p className="text-xs text-white/70 leading-relaxed font-light">Desarmamos la estructura rígida anterior para liberar la carga visual, enfocándonos exclusivamente en el valor de la palabra.</p>
+            </div>
+            
+            <div className="text-white/20 text-4xl font-bold">+</div>
+            
+            <div className="space-y-3">
+              <h4 className="text-sm uppercase tracking-wider text-white font-bold">Respeto a la Identidad Histórica</h4>
+              <p className="text-xs text-white/70 leading-relaxed font-light">No borramos el pasado. Mantuvimos exactamente la tipografía existente que los ha identificado por años, conservando su esencia original.</p>
+            </div>
           </div>
-
-          <div className="text-white/20 text-3xl font-bold">+</div>
-
-          <div className="space-y-2 md:w-1/4">
-            <h4 className="text-xs uppercase tracking-wider font-bold">Depuración Geométrica</h4>
-            <p className="text-[10px] text-white/70 font-light">Enfoque exclusivo en el valor de la palabra.</p>
-          </div>
-
-          <div className="text-white/20 text-3xl font-bold">+</div>
-
-          <div className="space-y-2 md:w-1/4">
-            <h4 className="text-xs uppercase tracking-wider font-bold">Respeto Histórico</h4>
-            <p className="text-[10px] text-white/70 font-light">Conservamos la tipografía original.</p>
-          </div>
-
-          <div className="text-white/20 text-3xl font-bold">=</div>
-
-          <div className="md:w-1/4 flex flex-col items-center">
-            <img src="/logofenahovenblanco.png" alt="Resultado" className="h-16 w-auto object-contain" />
+          
+          {/* El igual y el resultado final */}
+          <div className="flex flex-col items-center justify-center pt-8">
+            <div className="text-white/20 text-4xl font-bold mb-4">=</div>
+            <img src="/logofenahovenblanco.png" alt="Resultado Final" className="h-24 md:h-44 w-auto object-contain" />
+            <span className="text-[10px] tracking-[0.3em] text-white/90 uppercase mt-4 block">
+              Federación Nacional de Hoteles de Venezuela
+            </span>
           </div>
         </div>
       </section>
@@ -81,31 +85,48 @@ export default function App() {
         <div className="w-full text-center mb-16">
           <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold">Logo en color único</h2>
         </div>
-        <div className="w-full flex flex-col items-center justify-center p-12">
-          <img src="/logofenahoven_azul.svg" alt="Logo Azul" className="h-20 md:h-28 w-auto object-contain" />
-          <span className="text-[10px] tracking-[0.3em] text-slate-400 uppercase mt-6 font-bold">Federación Nacional de Hoteles de Venezuela</span>
+        <div className="w-full flex flex-col items-center justify-center p-12 bg-white">
+          <img src="/logofenahoven_azul.svg" alt="Logo Azul FENAHOVEN" className="h-20 md:h-28 w-auto object-contain" />
+          <span className="text-[8px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] text-slate-400 uppercase mt-6 block text-center font-bold whitespace-nowrap">
+            Federación Nacional de Hoteles de Venezuela
+          </span>
         </div>
       </section>
 
       {/* SECCIÓN VARIACIÓN DE LOGO */}
       <section className="w-full flex flex-col border-t border-slate-100">
-        <div className="px-8 py-12 text-center">
+        <div className="px-8 md:px-16 py-12 max-w-6xl mx-auto w-full text-center">
           <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold">Variación de logo</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 w-full">
-          <div className="aspect-square flex items-center justify-center bg-white"><img src="/logofenahoven_azul.svg" alt="Azul" className="w-32" /></div>
-          <div className="aspect-square flex items-center justify-center bg-[#0468BF]"><img src="/logofenahovenblanco.png" alt="Blanco" className="w-32" /></div>
-          <div className="aspect-square flex items-center justify-center bg-[#0367A6]"><img src="/logofenahovenblanco.png" alt="Blanco" className="w-32" /></div>
+          <div className="aspect-square flex items-center justify-center bg-white border-b md:border-b-0 md:border-r border-black/5">
+            <img src="/logofenahoven_azul.svg" alt="Logo Azul" className="w-32 md:w-48 h-auto object-contain" />
+          </div>
+          <div className="aspect-square flex items-center justify-center bg-[#0468BF] border-b md:border-b-0 md:border-r border-white/10">
+            <img src="/logofenahovenblanco.png" alt="Logo Blanco" className="w-32 md:w-48 h-auto object-contain" />
+          </div>
+          <div className="aspect-square flex items-center justify-center bg-[#0367A6]">
+            <img src="/logofenahovenblanco.png" alt="Logo Blanco" className="w-32 md:w-48 h-auto object-contain" />
+          </div>
         </div>
       </section>
 
       {/* SECCIÓN PALETA DE COLORES */}
       <section className="py-24 w-full bg-[#FDFDFD] border-t border-slate-100">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-8 max-w-6xl mx-auto">
-          {["#0468BF", "#0367A6", "#36A6BF", "#F2D785", "#F2E1C2"].map((hex, i) => (
+        <div className="w-full px-8 md:px-16 max-w-6xl mx-auto mb-12 text-center">
+          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold">Paleta de colores</h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-8 md:px-16 max-w-6xl mx-auto">
+          {[
+            { hex: "#0468BF" },
+            { hex: "#0367A6" },
+            { hex: "#36A6BF" },
+            { hex: "#F2D785" },
+            { hex: "#F2E1C2" }
+          ].map((color, i) => (
             <div key={i} className="flex flex-col items-center">
-              <div className="h-32 md:h-64 w-full rounded-2xl shadow-sm mb-4" style={{ backgroundColor: hex }}></div>
-              <span className="text-[10px] font-mono font-bold uppercase">{hex}</span>
+              <div className="h-40 md:h-64 w-full rounded-2xl shadow-sm mb-4" style={{ backgroundColor: color.hex }}></div>
+              <span className="text-[10px] font-mono font-bold text-[#1E293B] uppercase">{color.hex}</span>
             </div>
           ))}
         </div>
@@ -113,32 +134,54 @@ export default function App() {
 
       {/* SECCIÓN TIPOGRAFÍA */}
       <section className="min-h-screen w-full bg-[#0367A6] text-white p-8 md:p-24 flex flex-col justify-center">
-        <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl mx-auto gap-8">
-          <div><h3 className="text-xl font-bold">Times Sans Serif</h3><p className="text-sm opacity-80">Light / Regular / Bold</p></div>
-          <div className="text-center font-light text-sm">AaBbCcDdEeFfGg<br />HhJjKkLlMmNnOoPp<br />QqRrSsTtUuVvWw</div>
+        <div className="w-full text-center mb-12">
+          <h2 className="text-xs uppercase tracking-[0.3em] text-white/60 font-bold">Tipografía</h2>
         </div>
-        <div className="flex items-center justify-center mt-12 opacity-20 text-[150px] md:text-[600px] font-bold">Aa</div>
+        <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl mx-auto gap-8">
+          <div className="text-center md:text-left">
+            <h3 className="text-xl font-bold tracking-tight">Times Sans Serif</h3>
+            <p className="text-sm opacity-80 mt-1">Light / Regular / Bold</p>
+          </div>
+          <div className="text-center md:text-right font-light leading-tight tracking-wide text-sm md:text-lg">
+            AaBbCcDdEeFfGg<br />HhJjKkLlMmNnOoPp<br />QqRrSsTtUuVvWw<br />XxYyZz - 123456789<br />!@#$%^&*?
+          </div>
+        </div>
+        <div className="flex-1 flex items-center justify-center mt-12">
+          <span className="text-[150px] md:text-[600px] font-bold leading-none opacity-20 select-none">Aa</span>
+        </div>
       </section>
 
       {/* SECCIÓN APLICACIÓN MÓVIL */}
       <section className="py-24 w-full bg-[#F1F5F9]">
-        <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-16 text-center">Aplicación móvil</h2>
-        <div className="flex flex-col md:flex-row justify-center gap-8 px-8 items-center">
-          {[
-            { bg: "bg-[#0468BF]", src: "/logofenahovenblanco.png" },
-            { bg: "bg-white", src: "/logofenahoven_azul.svg" },
-            { bg: "bg-[#0367A6]", src: "/logofenahovenblanco.png" }
-          ].map((item, i) => (
-            <div key={i} className={`w-full max-w-[200px] md:max-w-[280px] aspect-[9/19] ${item.bg} rounded-[3rem] border-[8px] border-white flex items-center justify-center shadow-2xl`}>
-              <img src={item.src} alt="Logo" className="w-3/5" />
+        <div className="max-w-6xl mx-auto px-8 md:px-16">
+          <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-16 text-center">
+            Aplicación móvil
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div className="w-full flex justify-center">
+              <div className="relative w-full max-w-[200px] md:max-w-[280px] aspect-[9/19] bg-[#0468BF] rounded-[3rem] border-[8px] border-white overflow-hidden flex items-center justify-center shadow-2xl">
+                <img src="/logofenahovenblanco.png" alt="Logo FENAHOVEN" className="w-3/5 h-auto object-contain" />
+              </div>
             </div>
-          ))}
+            <div className="w-full flex justify-center">
+              <div className="relative w-full max-w-[200px] md:max-w-[280px] aspect-[9/19] bg-[#FFFFFF] rounded-[3rem] border-[8px] border-slate-200 overflow-hidden flex items-center justify-center shadow-2xl">
+                <img src="/logofenahoven_azul.svg" alt="Logo FENAHOVEN" className="w-3/5 h-auto object-contain" />
+              </div>
+            </div>
+            <div className="w-full flex justify-center">
+              <div className="relative w-full max-w-[200px] md:max-w-[280px] aspect-[9/19] bg-[#0367A6] rounded-[3rem] border-[8px] border-white overflow-hidden flex items-center justify-center shadow-2xl">
+                <img src="/logofenahovenblanco.png" alt="Logo FENAHOVEN" className="w-3/5 h-auto object-contain" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="py-8 bg-black text-center text-[10px] uppercase text-white/50 tracking-[0.2em]">
-        onshift 2026
+      <footer className="py-8 w-full bg-[#000000] text-center">
+        <p className="text-[10px] uppercase tracking-[0.2em] text-white/50 font-light">
+          onshift 2026
+        </p>
       </footer>
     </div>
   );
