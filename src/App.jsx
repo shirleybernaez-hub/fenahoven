@@ -14,7 +14,7 @@ export default function App() {
         <div className="mt-8 h-[1px] w-24 bg-white/30"></div>
       </section>
 
-      {/* SECCIÓN ESTRATEGIA (Párrafo solicitado eliminado) */}
+      {/* SECCIÓN ESTRATEGIA (Texto actualizado) */}
       <section className="py-24 md:py-36 px-8 md:px-16 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
           <div className="md:col-span-5 space-y-4">
@@ -24,7 +24,7 @@ export default function App() {
           </div>
           <div className="md:col-span-7 pt-2 md:pt-6">
             <p className="text-base md:text-lg text-slate-600 leading-relaxed font-light text-justify">
-              Actualmente, una identidad visual saturada de ornamentos no solo resta elegancia, sino que anula la legibilidad en los soportes digitales donde su audiencia toma decisiones. Hemos optado por una solución basada exclusivamente en la tipografía porque el nombre de la institución es su activo más valioso. Al eliminar elementos gráficos accesorios, la marca gana una personalidad atemporal, institucional y contundente, permitiendo que la legibilidad sea absoluta en cualquier formato y escala.
+              Actualmente, una identidad visual saturada de ornamentos no solo resta elegancia, sino que anula la legibilidad en los soportes digitales e impresos. Hemos optado por una solución basada exclusivamente en la tipografía porque el nombre de la institución es su activo más valioso. Al eliminar elementos gráficos y accesorios, la marca gana una personalidad atemporal e institucional, permitiendo que la legibilidad sea absoluta en cualquier formato y escala.
             </p>
           </div>
         </div>
