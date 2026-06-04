@@ -42,10 +42,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECCIÓN ANATOMÍA DE MARCA */}
+      {/* SECCIÓN ANATOMÍA DE MARCA (Títulos y signos corregidos) */}
       <section className="min-h-screen w-full bg-[#0062B2] text-white p-8 md:p-16 flex flex-col justify-center relative overflow-hidden">
-        <div className="w-full text-center mt-[-4rem] mb-16">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-white/60 font-bold">Nueva propuesta</h2>
+        <div className="w-full text-center mb-16">
+          {/* Título corregido con mayor contraste y visibilidad */}
+          <h2 className="text-xs uppercase tracking-[0.3em] text-white font-bold opacity-90">NUEVA PROPUESTA</h2>
         </div>
         <div className="w-full max-w-6xl mx-auto space-y-8 md:space-y-24">
           <div className="flex flex-col md:grid md:grid-cols-5 gap-6 md:gap-8 items-center text-center">
@@ -64,12 +65,16 @@ export default function App() {
               <p className="text-xs text-white/70 leading-relaxed font-light">No borramos el pasado. Mantuvimos exactamente la tipografía existente que los ha identificado por años, conservando su esencia original.</p>
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center pt-8">
-            <div className="text-white/20 text-4xl font-bold mb-4">=</div>
-            <img src="/logofenahovenblanco.png" alt="Resultado Final" className="h-24 md:h-44 w-auto object-contain" />
-            <span className="text-[10px] tracking-[0.3em] text-white/90 uppercase mt-4 block">
-              Federación Nacional de Hoteles de Venezuela
-            </span>
+          
+          {/* Signo igual a la izquierda del logo final */}
+          <div className="flex flex-row items-center justify-center pt-8 space-x-6">
+            <div className="text-white/20 text-4xl font-bold">=</div>
+            <div className="flex flex-col items-center">
+              <img src="/logofenahovenblanco.png" alt="Resultado Final" className="h-24 md:h-44 w-auto object-contain" />
+              <span className="text-[10px] tracking-[0.3em] text-white/90 uppercase mt-4 block">
+                Federación Nacional de Hoteles de Venezuela
+              </span>
+            </div>
           </div>
         </div>
       </section>
