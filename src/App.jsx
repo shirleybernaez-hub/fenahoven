@@ -6,7 +6,7 @@ export default function App() {
       
       {/* SECCIÓN INTRODUCCIÓN */}
       <section className="min-h-[60vh] w-full bg-[#0062B2] text-white flex flex-col justify-center items-center p-8 md:p-16 border-b border-white/10">
-        <span className="text-[10px] uppercase tracking-[0.4em] text-white/60 mb-6 font-nexa">Estudio de Identidad</span>
+        <span className="text-sm uppercase tracking-[0.4em] text-white/80 mb-6 font-nexa font-bold">Estudio de Identidad</span>
         <h1 className="text-4xl md:text-6xl font-light tracking-tight text-center leading-tight font-nexa">
           <span className="font-light">Propuesta de</span> <span className="font-bold">rebranding</span><br />
           <span className="font-light">para la marca </span><span className="font-bold">FENAHOVEN</span>
@@ -33,7 +33,7 @@ export default function App() {
       {/* SECCIÓN LOGO ACTUAL */}
       <section className="py-24 md:py-36 px-8 md:px-16 max-w-5xl mx-auto border-t border-slate-100">
         <div className="flex flex-col items-center">
-          <h3 className="text-sm uppercase tracking-[0.3em] text-slate-400 font-bold mb-8">LOGO ACTUAL</h3>
+          <h3 className="text-lg uppercase tracking-[0.3em] text-slate-400 font-bold mb-8">LOGO ACTUAL</h3>
           <div className="w-full flex justify-center">
             <div className="bg-slate-50/50 rounded-3xl p-12">
               <img src="/logofenahoven.jpg" alt="Logo Actual FENAHOVEN" className="h-96 md:h-[32rem] w-auto object-contain" />
