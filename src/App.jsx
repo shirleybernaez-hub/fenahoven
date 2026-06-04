@@ -151,7 +151,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECCIÓN 8: APLICACIÓN MÓVIL (GRIS AMIGABLE) */}
+      {/* SECCIÓN 8: APLICACIÓN MÓVIL */}
       <section className="py-24 w-full bg-[#F1F5F9]">
         <div className="max-w-6xl mx-auto px-8 md:px-16">
           <h2 className="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-16 text-center">
