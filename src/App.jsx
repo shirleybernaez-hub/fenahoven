@@ -123,17 +123,17 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECCIÓN TIPOGRAFÍA */}
+      {/* SECCIÓN TIPOGRAFÍA - TAMAÑOS AMPLIADOS */}
       <section className="min-h-screen w-full bg-[#0367A6] text-white p-8 md:p-24 flex flex-col justify-center">
-        <div className="w-full text-center mb-12">
-          <h2 className="text-xs uppercase tracking-[0.3em] text-white/60 font-bold">Tipografía</h2>
+        <div className="w-full text-center mb-16">
+          <h2 className="text-sm uppercase tracking-[0.3em] text-white/60 font-bold">Tipografía</h2>
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl mx-auto gap-8">
-          <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold tracking-tight">Times Sans Serif</h3>
-            <p className="text-sm opacity-80 mt-1">Light / Regular / Bold</p>
+        <div className="flex flex-col items-center justify-center w-full max-w-4xl mx-auto gap-12">
+          <div className="text-center">
+            <h3 className="text-4xl font-bold tracking-tight">Times Sans Serif</h3>
+            <p className="text-xl opacity-90 mt-2">Light / Regular / Bold</p>
           </div>
-          <div className="text-center md:text-right font-light leading-tight tracking-wide text-sm md:text-lg">
+          <div className="text-center font-light leading-relaxed tracking-wide text-2xl md:text-3xl">
             AaBbCcDdEeFfGg<br />HhJjKkLlMmNnOoPp<br />QqRrSsTtUuVvWw<br />XxYyZz - 123456789<br />!@#$%^&*?
           </div>
         </div>
