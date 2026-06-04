@@ -4,14 +4,15 @@ export default function App() {
   return (
     <div className="bg-[#FDFDFD] text-[#1E293B] font-nexa antialiased selection:bg-[#0062B2]/10">
       
-      {/* SECCIÓN INTRODUCCIÓN */}
+      {/* SECCIÓN INTRODUCCIÓN - AJUSTADA */}
       <section className="min-h-[60vh] w-full bg-[#0062B2] text-white flex flex-col justify-center items-center p-8 md:p-16 border-b border-white/10">
         <span className="text-sm uppercase tracking-[0.4em] text-white/80 mb-6 font-nexa font-bold">Estudio de Identidad</span>
-        <h1 className="text-4xl md:text-6xl font-light tracking-tight text-center leading-tight font-nexa">
-          <span className="font-light">Propuesta de</span> <span className="font-bold">rebranding</span><br />
-          <span className="font-light">para la marca </span><span className="font-bold">FENAHOVEN</span>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center leading-tight font-nexa uppercase">
+          PROPUESTA DE<br />REBRANDING
         </h1>
-        <div className="mt-8 h-[1px] w-24 bg-white/30"></div>
+        <p className="text-xl md:text-2xl font-light tracking-wide text-white/90 mt-6 text-center font-nexa uppercase">
+          PARA LA MARCA FENAHOVEN
+        </p>
       </section>
 
       {/* SECCIÓN ESTRATEGIA */}
