@@ -14,7 +14,7 @@ export default function App() {
         <div className="mt-8 h-[1px] w-24 bg-white/30"></div>
       </section>
 
-      {/* SECCIÓN ESTRATEGIA */}
+      {/* SECCIÓN ESTRATEGIA (Párrafo solicitado eliminado) */}
       <section className="py-24 md:py-36 px-8 md:px-16 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
           <div className="md:col-span-5 space-y-4">
@@ -24,7 +24,7 @@ export default function App() {
           </div>
           <div className="md:col-span-7 pt-2 md:pt-6">
             <p className="text-base md:text-lg text-slate-600 leading-relaxed font-light text-justify">
-              Actualmente, una identidad visual saturada de ornamentos no solo resta elegancia, sino que anula la legibilidad en los soportes digitales donde su audiencia toma decisiones. Esta propuesta de rebranding es una inversión estratégica: eliminamos el ruido visual para potenciar su autoridad. Al simplificar el logo, garantizamos que su marca no solo sea vista, sino recordada. Hemos optado por una solución basada exclusivamente en la tipografía porque el nombre de la institución es su activo más valioso. Al eliminar elementos gráficos accesorios, la marca gana una personalidad atemporal, institucional y contundente, permitiendo que la legibilidad sea absoluta en cualquier formato y escala.
+              Actualmente, una identidad visual saturada de ornamentos no solo resta elegancia, sino que anula la legibilidad en los soportes digitales donde su audiencia toma decisiones. Hemos optado por una solución basada exclusivamente en la tipografía porque el nombre de la institución es su activo más valioso. Al eliminar elementos gráficos accesorios, la marca gana una personalidad atemporal, institucional y contundente, permitiendo que la legibilidad sea absoluta en cualquier formato y escala.
             </p>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECCIÓN TIPOGRAFÍA CORREGIDA PARA RESPONSIVE */}
+      {/* SECCIÓN TIPOGRAFÍA */}
       <section className="min-h-screen w-full bg-[#0367A6] text-white p-8 md:p-24 flex flex-col justify-center">
         <div className="w-full text-center mb-12">
           <h2 className="text-xs uppercase tracking-[0.3em] text-white/60 font-bold">Tipografía</h2>
