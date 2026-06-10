@@ -170,8 +170,8 @@ export default function Web() {
         </div>
       </section>
 
-      {/* [NUEVA SECCIÓN] 3.5. INTRODUCCIÓN INSTITUCIONAL: ¿QUÉ ES FENAHOVEN? */}
-      <section className="py-28 bg-[#FAFBFD] border-b border-slate-100">
+      {/* 3.5. INTRODUCCIÓN INSTITUCIONAL: FONDO GRIS CONTROLADO E ÍCONOS GLASSMORPHISM */}
+      <section className="py-28 bg-[#F1F5F9] border-b border-slate-200">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             
@@ -186,26 +186,57 @@ export default function Web() {
               <div className="w-12 h-1 bg-[#2F92B9] rounded-full mt-2" />
             </div>
 
-            {/* Párrafo maestro y pilares descriptivos a la derecha */}
-            <div className="md:col-span-7 space-y-8">
-              <p className="text-slate-600 text-base md:text-lg font-light leading-relaxed">
+            {/* Párrafo maestro y pilares descriptivos con Glassmorphism */}
+            <div className="md:col-span-7 space-y-10">
+              <p className="text-slate-700 text-base md:text-lg font-light leading-relaxed">
                 La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
               </p>
 
-              {/* Mini rejilla interna con los 3 ejes de acción en alta legibilidad */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-slate-200/60">
-                <div className="space-y-1.5">
-                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900">Representación</h4>
-                  <p className="text-xs text-slate-500 font-light leading-relaxed">Defensa activa de los intereses de la red hotelera nacional ante entes reguladores.</p>
+              {/* Bloques de Acción Estilo Glassmorphism */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+                
+                {/* Pilar 1: Representación */}
+                <div className="space-y-3">
+                  {/* Ícono Glassmorphism */}
+                  <div className="w-12 h-12 rounded-xl bg-white/40 backdrop-blur-md border border-white/60 shadow-inner flex items-center justify-center text-[#2F92B9]">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900">Representación</h4>
+                    <p className="text-[11px] text-slate-500 font-light leading-relaxed">Defensa activa de los intereses de la red hotelera nacional ante entes reguladores.</p>
+                  </div>
                 </div>
-                <div className="space-y-1.5">
-                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900">Desarrollo</h4>
-                  <p className="text-xs text-slate-500 font-light leading-relaxed">Capacitación técnica continua y optimización de datos reales de la industria.</p>
+
+                {/* Pilar 2: Desarrollo */}
+                <div className="space-y-3">
+                  {/* Ícono Glassmorphism */}
+                  <div className="w-12 h-12 rounded-xl bg-white/40 backdrop-blur-md border border-white/60 shadow-inner flex items-center justify-center text-[#2F92B9]">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2zm12 0v-11a2 2 0 00-2-2h-2a2 2 0 00-2 2v11a2 2 0 002 2h2a2 2 0 002-2z" />
+                    </svg>
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900">Desarrollo</h4>
+                    <p className="text-[11px] text-slate-500 font-light leading-relaxed">Capacitación técnica continua y optimización de datos reales de la industria.</p>
+                  </div>
                 </div>
-                <div className="space-y-1.5">
-                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900">Proyección</h4>
-                  <p className="text-xs text-slate-500 font-light leading-relaxed">Impulso estratégico del destino Venezuela bajo estándares globales.</p>
+
+                {/* Pilar 3: Proyección */}
+                <div className="space-y-3">
+                  {/* Ícono Glassmorphism */}
+                  <div className="w-12 h-12 rounded-xl bg-white/40 backdrop-blur-md border border-white/60 shadow-inner flex items-center justify-center text-[#2F92B9]">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900">Proyección</h4>
+                    <p className="text-[11px] text-slate-500 font-light leading-relaxed">Impulso estratégico del destino Venezuela bajo estándares globales.</p>
+                  </div>
                 </div>
+
               </div>
             </div>
 
@@ -239,19 +270,20 @@ export default function Web() {
             {/* Círculo base inferior */}
             <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
 
-            <div className="space-y-16 md:space-y-20 py-8 relative z-10">
+            <div className="space-y-16 md:space-y-24 py-8 relative z-10">
               {timelineEvents.map((event, index) => {
                 const isLeftYear = index % 2 === 0;
                 const isItemActive = activeHito === index;
 
-                // Lógica de parpadeo secuencial:
-                // El nodo debe parpadear SI es el siguiente hito inmediato a presionar (activeHito + 1).
+                // Lógica de parpadeo secuencial
                 const isNextHitoToClick = activeHito === null ? index === 0 : index === activeHito + 1;
 
                 return (
                   <div 
                     key={index} 
-                    className="flex flex-col md:grid md:grid-cols-11 items-center w-full relative cursor-pointer"
+                    className={`flex flex-col md:grid md:grid-cols-11 items-center w-full relative cursor-pointer transition-all duration-300 ${
+                      isItemActive ? 'opacity-100 scale-100' : 'opacity-50 hover:opacity-80 scale-[0.99]'
+                    }`}
                     onClick={() => setActiveHito(index)}
                   >
                     
@@ -262,8 +294,8 @@ export default function Web() {
                           {event.year}
                         </div>
                       ) : (
-                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm transition-all duration-500 transform ${
-                          isItemActive ? 'scale-105 border-[#2F92B9]/30 shadow-xl bg-slate-50/10' : 'scale-100 hover:scale-[1.01]'
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
+                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
                         }`}>
                           <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
                           <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
@@ -297,8 +329,8 @@ export default function Web() {
                     {/* COLUMNA DERECHA (Card Informativo o Año en Azul Sólido) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-start md:px-8 z-10 mt-4 md:mt-0">
                       {isLeftYear ? (
-                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm transition-all duration-500 transform ${
-                          isItemActive ? 'scale-105 border-[#2F92B9]/30 shadow-xl bg-slate-50/10' : 'scale-100 hover:scale-[1.01]'
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
+                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
                         }`}>
                           <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
                           <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
