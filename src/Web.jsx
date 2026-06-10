@@ -27,12 +27,12 @@ export default function Web() {
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* NAVBAR INSTITUCIONAL MODIFICADO (LOGO -50% Y LINKS CENTRADOS BOLD) */}
+      {/* NAVBAR INSTITUCIONAL */}
       <nav className="border-b border-slate-100 bg-white sticky top-0 z-50 px-6 py-4 md:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="max-w-7xl mx-auto flex flex-col gap-4 md:flex-row md:items-center relative">
           
-          {/* Logo Institucional reducido al 50% */}
-          <div className="flex items-center justify-center sm:justify-start">
+          {/* Logo Principal (Reducido al 50% y alineado a la izquierda) */}
+          <div className="flex items-center justify-center md:justify-start md:absolute">
             <img 
               src="/logofenahoven_azul.png" 
               alt="Logo FENAHOVEN" 
@@ -40,8 +40,8 @@ export default function Web() {
             />
           </div>
 
-          {/* Menú de Enlaces Centrados y en Bold */}
-          <div className="flex flex-wrap gap-x-6 gap-y-2 items-center justify-center text-xs md:text-sm font-bold text-slate-800">
+          {/* Menú de Enlaces Totalmente Centrado y con color #10172A */}
+          <div className="flex-1 flex flex-wrap gap-x-6 gap-y-2 items-center justify-center text-xs md:text-sm font-bold text-[#10172A]">
             <a 
               href="/quienes-somos" 
               target="_blank" 
