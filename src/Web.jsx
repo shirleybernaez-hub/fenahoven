@@ -24,6 +24,17 @@ function Counter({ value, duration = 1500 }) {
 }
 
 export default function Web() {
+  // Arreglo con las rutas e información de la Red de Gremios y Alianzas
+  const partners = [
+    { src: '/conseturismo.png', alt: 'Conseturismo - Consejo Superior de Turismo' },
+    { src: '/avavit.jpg', alt: 'AVAVIT - Asociación Venezolana de Agencias de Viajes y Turismo' },
+    { src: '/avencintel.jpg', alt: 'AVENCINTEL - Asociación Venezolana de Hoteles Cinco Estrellas' },
+    { src: '/asociaciondelienas.png', alt: 'ALAV - Asociación de Líneas Aéreas en Venezuela' },
+    { src: '/camyticom.png', alt: 'Camyticom' },
+    { src: '/cvtt.jpg', alt: 'CVTT - Cámara Venezolana de Transporte Turístico Terrestre' },
+    { src: '/cavespa.png', alt: 'CAVESPA - Cámara Venezolano Española de Industria y Comercio' }
+  ];
+
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
@@ -133,7 +144,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN REUBICADA: BANNER OCUPACIÓN HOTELERA (JUSTO DEBAJO DEL HERO) */}
+      {/* 4. BANNER OCUPACIÓN HOTELERA */}
       <section className="pt-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div 
           className="relative rounded-3xl overflow-hidden bg-cover bg-center py-20 px-8 md:px-16 text-center shadow-xl border border-slate-100"
@@ -142,17 +153,12 @@ export default function Web() {
           }}
         >
           <div className="max-w-3xl mx-auto space-y-6 relative z-10">
-            {/* Título Modificado */}
             <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
               Ocupación Hotelera Nacional
             </h3>
-            
-            {/* Subtexto Modificado */}
             <p className="text-sm md:text-base text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
               Resultados del Sistema Nacional de Estadísticas correspondientes al mes de enero.
             </p>
-            
-            {/* CTA con texto actualizado */}
             <div className="pt-4">
               <a 
                 href="/reporte-ocupacion.pdf" 
@@ -246,6 +252,37 @@ export default function Web() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 6. NUEVA SECCIÓN: RED DE GREMIOS Y ALIANZAS */}
+      <section className="py-20 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          
+          {/* Cabecera de la sección */}
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Ecosistema Institucional</span>
+            <h2 className="text-3xl font-bold tracking-tight text-[#10172A] uppercase">Red de Gremios y Alianzas</h2>
+            <p className="text-slate-500 mt-2 font-light text-sm">Trabajamos de la mano con las principales organizaciones turísticas y comerciales del país.</p>
+          </div>
+
+          {/* Grilla de Logotipos */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-center">
+            {partners.map((partner, index) => (
+              <div 
+                key={index} 
+                className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-center aspect-[4/3] group hover:shadow-md transition-all duration-300"
+              >
+                <img 
+                  src={partner.src} 
+                  alt={partner.alt} 
+                  title={partner.alt}
+                  className="max-h-12 max-w-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 select-none" 
+                />
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
