@@ -27,11 +27,32 @@ export default function Web() {
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* NAVBAR INSTITUCIONAL */}
-      <nav className="border-b border-slate-100 bg-white sticky top-0 z-50 px-6 py-4 md:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col gap-4 md:flex-row md:items-center relative">
+      {/* 1. TOP BAR (BARRA SUPERIOR INSPIRADA EN HOTREC) */}
+      <div className="bg-[#FFFFFF] border-b border-slate-100 py-2 px-6 md:px-12 text-slate-400 text-[11px] font-medium tracking-wide">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+          {/* Contacto Izquierda */}
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-2">
+              <span className="opacity-60">✉</span> contacto@fenahoven.org.ve
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="opacity-60">📞</span> +58 (212) 993-4444
+            </span>
+          </div>
+          {/* Redes Derecha (Marcadores de posición elegantes) */}
+          <div className="flex items-center gap-4 opacity-70">
+            <span className="cursor-pointer hover:text-[#0062B2]">𝕏</span>
+            <span className="cursor-pointer hover:text-[#0062B2] font-bold">in</span>
+            <span className="cursor-pointer hover:text-[#0062B2]">ƒ</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 2. NAVBAR PRINCIPAL ALTO PREMIUM */}
+      <nav className="bg-white sticky top-0 z-50 px-6 py-8 md:px-12 border-b border-slate-200/80 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-col gap-6 md:flex-row md:items-center relative">
           
-          {/* Logo Principal (Reducido al 50% y alineado a la izquierda) */}
+          {/* Logo Principal (Compacto a la izquierda) */}
           <div className="flex items-center justify-center md:justify-start md:absolute">
             <img 
               src="/logofenahoven_azul.png" 
@@ -40,8 +61,8 @@ export default function Web() {
             />
           </div>
 
-          {/* Menú de Enlaces Totalmente Centrado y con color #10172A */}
-          <div className="flex-1 flex flex-wrap gap-x-6 gap-y-2 items-center justify-center text-xs md:text-sm font-bold text-[#10172A]">
+          {/* Menú de Enlaces Totalmente Centrado, Bold, Color #10172A */}
+          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-3 items-center justify-center text-xs md:text-[13px] font-bold text-[#10172A] tracking-wide">
             <a 
               href="/quienes-somos" 
               target="_blank" 
