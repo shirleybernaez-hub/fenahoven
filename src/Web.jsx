@@ -24,14 +24,14 @@ function Counter({ value, duration = 1500 }) {
 }
 
 export default function Web() {
-  // Arreglo con clases de tamaño personalizadas para equilibrar visualmente cada logo
+  // Arreglo con clases de tamaño personalizadas para equilibrar visualmente cada logo de la red
   const partners = [
     { src: '/conseturismo.png', alt: 'Conseturismo', className: 'max-h-12 w-auto' },
     { src: '/avavit.jpg', alt: 'AVAVIT', className: 'max-h-12 w-auto' },
-    { src: '/avencintel.jpg', alt: 'AVENCINTEL', className: 'max-h-20 md:max-h-24 w-auto scale-110' }, // Más altura y escala para Avecintel
+    { src: '/avencintel.jpg', alt: 'AVENCINTEL', className: 'max-h-20 md:max-h-24 w-auto scale-110' },
     { src: '/asociaciondelienas.png', alt: 'ALAV', className: 'max-h-12 w-auto' },
     { src: '/camyticom.png', alt: 'Camyticom', className: 'max-h-12 w-auto' },
-    { src: '/cvtt.jpg', alt: 'CVTT', className: 'max-h-16 md:max-h-20 w-auto scale-110' }, // Más altura y escala para CVTT
+    { src: '/cvtt.jpg', alt: 'CVTT', className: 'max-h-16 md:max-h-20 w-auto scale-110' },
     { src: '/cavespa.png', alt: 'CAVESPA', className: 'max-h-14 w-auto' }
   ];
 
@@ -57,16 +57,16 @@ export default function Web() {
         </div>
       </div>
 
-      {/* 2. NAVBAR PRINCIPAL ALTO PREMIUM */}
-      <nav className="bg-white sticky top-0 z-50 px-6 py-8 md:px-12 border-b border-slate-200/80 shadow-sm">
+      {/* 2. NAVBAR PRINCIPAL CON ESCUDO OFICIAL CORREGIDO */}
+      <nav className="bg-white sticky top-0 z-50 px-6 py-6 md:px-12 border-b border-slate-200/80 shadow-sm">
         <div className="max-w-7xl mx-auto flex flex-col gap-6 md:flex-row md:items-center relative">
           
-          {/* Logo Principal */}
+          {/* Escudo Institucional Oficial con la ruta exacta logowebfenahoven.jpg */}
           <div className="flex items-center justify-center md:justify-start md:absolute">
             <img 
-              src="/logofenahoven_azul.png" 
-              alt="Logo FENAHOVEN" 
-              className="h-5 w-auto object-contain select-none" 
+              src="/logowebfenahoven.jpg" 
+              alt="Escudo Oficial FENAHOVEN" 
+              className="h-16 md:h-20 w-auto object-contain select-none" 
             />
           </div>
 
@@ -255,7 +255,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 6. RED DE GREMIOS Y ALIANZAS CON LOGOS EQUILIBRADOS ÓPTICAMENTE */}
+      {/* 6. RED DE GREMIOS Y ALIANZAS */}
       <section className="py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
@@ -265,7 +265,6 @@ export default function Web() {
             <p className="text-slate-500 mt-2 font-light text-sm">Trabajamos de la mano con las principales organizaciones turísticas y comerciales del país.</p>
           </div>
 
-          {/* Grilla balanceada aplicando clases dinámicas */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-12 md:gap-8 items-center justify-center">
             {partners.map((partner, index) => (
               <div 
