@@ -472,13 +472,13 @@ export default function Web() {
         {/* Contenedor Maestro */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 pb-12">
           
-          {/* Bloque Izquierdo: Logo PNG */}
+          {/* Bloque Izquierdo: Logo PNG incrementado un 50% de tamaño adicional */}
           <div className="md:col-span-4 space-y-6">
             <div className="flex items-center justify-start">
               <img 
                 src="/logowebfenahoven.png" 
                 alt="FENAHOVEN" 
-                className="h-32 md:h-36 w-auto object-contain select-none"
+                className="h-48 md:h-54 w-auto object-contain select-none"
               />
             </div>
             <p className="text-xs text-slate-100 font-light leading-relaxed max-w-xs">
@@ -509,7 +509,7 @@ export default function Web() {
             </ul>
           </div>
 
-          {/* Bloque Derecho: Ubicación e Información de Registro + ENLACES DE LEGAL SUBIDOS AQUÍ */}
+          {/* Bloque Derecho: Ubicación e Información de Registro */}
           <div className="md:col-span-3 space-y-6 flex flex-col justify-between">
             <div className="space-y-4">
               <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-white">Sede Central</h4>
@@ -521,7 +521,7 @@ export default function Web() {
               </div>
             </div>
 
-            {/* Enlaces de Legal posicionados de forma segura sobre la línea */}
+            {/* Enlaces de Legal posicionados sobre la línea blanca */}
             <div className="flex gap-6 text-xs text-slate-100 pt-4 md:pt-0">
               <span className="hover:text-white cursor-pointer transition-colors font-medium">Términos de Uso</span>
               <span className="hover:text-white cursor-pointer transition-colors font-medium">Políticas de Privacidad</span>
@@ -535,16 +535,16 @@ export default function Web() {
           <div className="w-full h-[1px] bg-white/20" />
         </div>
 
-        {/* Cierre Inferior: Centrado Perfecto y Firma Renovada */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col items-center justify-center gap-4 text-[11px] text-slate-200 font-light">
+        {/* Cierre Inferior: Distribución a los Extremos (Copyright izquierda, Firma derecha) */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-200 font-light gap-4">
           
-          {/* Derechos Reservados estrictamente centrados */}
-          <div className="text-center select-none tracking-wide text-slate-100">
+          {/* Copyright alineado hacia el extremo izquierdo */}
+          <div className="text-center sm:text-left select-none tracking-wide text-slate-100">
             © 2026 FENAHOVEN. Todos los derechos reservados.
           </div>
           
-          {/* Firma Rediseñada por Onshift */}
-          <div className="text-center">
+          {/* Crédito "Diseñado por Onshift" alineado hacia el extremo derecho */}
+          <div className="text-center sm:text-right">
             <a 
               href="https://onshift.com.ve" 
               target="_blank" 
