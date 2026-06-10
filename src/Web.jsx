@@ -1,13 +1,44 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export default function Web() {
+  const navLinks = [
+    "Quiénes Somos",
+    "Federación",
+    "Dashboard Nacional",
+    "Radar Hotelero",
+    "Capacitación",
+    "Eventos",
+    "Inversión Hotelera",
+    "Sala de Prensa",
+    "Afíliate",
+    "Contacto"
+  ];
+
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900">
       
-      {/* NAVBAR */}
-      <nav className="border-b border-slate-100 py-6 px-8 flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold tracking-tighter text-[#0062B2]">← VOLVER A REBRANDING</Link>
+      {/* NAVBAR INSTITUCIONAL */}
+      <nav className="border-b border-slate-100 bg-white sticky top-0 z-50 px-6 py-4 md:px-12">
+        <div className="max-w-7xl mx-auto flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          
+          {/* Logo Principal */}
+          <div className="text-xl font-bold tracking-tighter text-[#0062B2] uppercase select-none">
+            FENAHOVEN
+          </div>
+
+          {/* Menú de Enlaces */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2 items-center text-xs md:text-sm font-medium text-slate-600">
+            {navLinks.map((link, index) => (
+              <span 
+                key={index} 
+                className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1"
+              >
+                {link}
+              </span>
+            ))}
+          </div>
+
+        </div>
       </nav>
 
       {/* HERO INSTITUCIONAL */}
@@ -43,8 +74,6 @@ export default function Web() {
         </div>
       </section>
 
-      {/* AQUÍ AGREGAREMOS LA SIGUIENTE SECCIÓN DESPUÉS */}
-      
     </div>
   );
 }
