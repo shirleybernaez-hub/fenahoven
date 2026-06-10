@@ -170,6 +170,49 @@ export default function Web() {
         </div>
       </section>
 
+      {/* [NUEVA SECCIÓN] 3.5. INTRODUCCIÓN INSTITUCIONAL: ¿QUÉ ES FENAHOVEN? */}
+      <section className="py-28 bg-[#FAFBFD] border-b border-slate-100">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+            
+            {/* Título y concepto a la izquierda */}
+            <div className="md:col-span-5 space-y-4">
+              <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block">Identidad Institucional</span>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase leading-tight">
+                La Voz Oficial <br />
+                de la Hotelería <br />
+                en Venezuela
+              </h2>
+              <div className="w-12 h-1 bg-[#2F92B9] rounded-full mt-2" />
+            </div>
+
+            {/* Párrafo maestro y pilares descriptivos a la derecha */}
+            <div className="md:col-span-7 space-y-8">
+              <p className="text-slate-600 text-base md:text-lg font-light leading-relaxed">
+                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
+              </p>
+
+              {/* Mini rejilla interna con los 3 ejes de acción en alta legibilidad */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-slate-200/60">
+                <div className="space-y-1.5">
+                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900">Representación</h4>
+                  <p className="text-xs text-slate-500 font-light leading-relaxed">Defensa activa de los intereses de la red hotelera nacional ante entes reguladores.</p>
+                </div>
+                <div className="space-y-1.5">
+                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900">Desarrollo</h4>
+                  <p className="text-xs text-slate-500 font-light leading-relaxed">Capacitación técnica continua y optimización de datos reales de la industria.</p>
+                </div>
+                <div className="space-y-1.5">
+                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900">Proyección</h4>
+                  <p className="text-xs text-slate-500 font-light leading-relaxed">Impulso estratégico del destino Venezuela bajo estándares globales.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO CON FLUJO DE PARPADEO SECUENCIAL */}
       <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
@@ -201,10 +244,8 @@ export default function Web() {
                 const isLeftYear = index % 2 === 0;
                 const isItemActive = activeHito === index;
 
-                // Lógica de parpadeo secuencial sugerida:
+                // Lógica de parpadeo secuencial:
                 // El nodo debe parpadear SI es el siguiente hito inmediato a presionar (activeHito + 1).
-                // Si el hito actual está activo, ya se presionó por lo que no parpadea.
-                // Si llegamos al final del arreglo, se queda fijo el último.
                 const isNextHitoToClick = activeHito === null ? index === 0 : index === activeHito + 1;
 
                 return (
