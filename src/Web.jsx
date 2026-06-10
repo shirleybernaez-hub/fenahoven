@@ -48,12 +48,12 @@ export default function Web() {
       description: 'Evolución estructural hacia Federación Nacional de Hoteles de Venezuela, expandiendo su alcance para agrupar cámaras regionales y elevar la representatividad del sector.'
     },
     {
-      year: '2000-2020',
+      year: '2000 - 2020',
       title: 'Expansión Gremial',
       description: 'Dos décadas de consolidación institucional, tejiendo alianzas estratégicas e impulsando la profesionalización de la hotelería en cada rincón del territorio nacional.'
     },
     {
-      year: '2021-2026',
+      year: '2021 - 2026',
       title: 'Modernización y Recuperación',
       description: 'Enfoque total en la digitalización, optimización de datos de la industria turística y la reactivación estratégica de la red hotelera venezolana.'
     },
@@ -167,9 +167,9 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE PERFECCIONADO CON FECHAS ADYACENTES AL NODO */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE PREVIO CON FECHAS EXTERNAS Y CÍRCULOS FILLED */}
       <section className="py-28 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           
           {/* Cabecera de la sección */}
           <div className="text-center mb-24">
@@ -181,26 +181,25 @@ export default function Web() {
           {/* Contenedor principal con el eje central */}
           <div className="relative">
             
-            {/* Línea Eje Central */}
+            {/* Línea Central Perfecta */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-slate-200 z-0" />
 
-            <div className="space-y-16 md:space-y-24 relative z-10">
+            <div className="space-y-16 md:space-y-20 relative z-10">
               {timelineEvents.map((event, index) => {
-                // Alternancia de cajas: Índices pares van a la izquierda del eje, impares a la derecha
-                const isLeftBox = index % 2 === 0;
+                const isLeft = index % 2 === 0;
 
                 return (
                   <div 
                     key={index} 
                     className={`flex flex-col md:flex-row items-center w-full relative ${
-                      isLeftBox ? 'md:flex-row' : 'md:flex-row-reverse'
+                      isLeft ? 'md:flex-row-reverse' : ''
                     }`}
                   >
                     {/* LADO DE LA CAJA INFORMATIVA */}
-                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-14 z-10">
-                      <div className="w-full max-w-md bg-slate-50/60 hover:bg-white rounded-2xl p-6 md:p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-12 z-10">
+                      <div className="w-full max-w-lg bg-slate-50/60 hover:bg-white rounded-2xl p-6 md:p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
                         
-                        {/* Año visible solo en móviles justo arriba del título */}
+                        {/* Año visible en móvil justo arriba del título */}
                         <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-1">
                           {event.year}
                         </div>
@@ -214,29 +213,19 @@ export default function Web() {
                       </div>
                     </div>
 
-                    {/* CONJUNTO CENTRAL EXACTO: NODO CONCÉNTRICO + FECHA DETERMINADA POR SU LADO */}
+                    {/* NODO CENTRAL RELLENO (CIRCULO FILLED) */}
                     <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center z-20">
-                      
-                      {/* Nodo Concéntrico Fijo */}
-                      <div className="w-6 h-6 rounded-full bg-white border border-[#2F92B9] flex items-center justify-center shadow-sm">
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#2F92B9]" />
-                      </div>
-
-                      {/* FECHA ADYACENTE AL CÍRCULO EN COLOR OSCURO (Sin hover) 
-                          - Si la caja está a la izquierda (1958), la fecha se planta a la IZQUIERDA del círculo.
-                          - Si la caja está a la derecha (1993), la fecha se planta a la DERECHA del círculo. */}
-                      <div 
-                        className={`absolute text-xl lg:text-2xl font-black text-slate-800 tracking-tight whitespace-nowrap select-none ${
-                          isLeftBox ? 'right-9' : 'left-9'
-                        }`}
-                      >
-                        {event.year}
-                      </div>
-
+                      <div className="w-4 h-4 rounded-full bg-[#2F92B9] shadow-md ring-4 ring-white" />
                     </div>
 
-                    {/* LADO OPUESTO TOTALMENTE VACÍO PARA GUARDAR EL EQUILIBRIO DE LA GRILLA */}
-                    <div className="hidden md:block w-1/2" />
+                    {/* LADO EXTERIOR: EL AÑO FLOTANDO AL OTRO LADO DE LA LÍNEA (Escritorio) */}
+                    <div className={`hidden md:flex w-1/2 px-12 items-center ${
+                      isLeft ? 'justify-start' : 'justify-end'
+                    }`}>
+                      <div className="text-4xl lg:text-5xl font-black text-slate-300/80 hover:text-[#2F92B9] transition-colors duration-300 cursor-default select-none tracking-tight">
+                        {event.year}
+                      </div>
+                    </div>
 
                   </div>
                 );
