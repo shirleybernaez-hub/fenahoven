@@ -9,7 +9,6 @@ function Counter({ value, duration = 1500 }) {
     const end = parseInt(value);
     if (start === end) return;
 
-    // Calcular el tiempo por cada incremento
     const totalMilisecondsByStep = Math.max(Math.floor(duration / end), 1);
     
     const timer = setInterval(() => {
@@ -61,22 +60,28 @@ export default function Web() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 w-full max-w-5xl border-t border-slate-200/60 pt-12">
-          <div className="text-center">
-            <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">300+</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Hoteles Representados</span>
+        {/* Indicadores con fuente */}
+        <div className="w-full max-w-5xl border-t border-slate-200/60 pt-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 text-center">
+            <div>
+              <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">300+</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Hoteles Representados</span>
+            </div>
+            <div>
+              <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">24</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Estados Afiliados</span>
+            </div>
+            <div>
+              <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">67</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Años de Trayectoria</span>
+            </div>
+            <div>
+              <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">12+</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Eventos Anuales</span>
+            </div>
           </div>
-          <div className="text-center">
-            <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">24</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Estados Afiliados</span>
-          </div>
-          <div className="text-center">
-            <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">67</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Años de Trayectoria</span>
-          </div>
-          <div className="text-center">
-            <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">12+</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Eventos Anuales</span>
+          <div className="text-center mt-8">
+            <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase">Fuente: Registro Histórico FENAHOVEN</span>
           </div>
         </div>
       </section>
@@ -85,10 +90,9 @@ export default function Web() {
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
-          {/* COLUMNA IZQUIERDA: IMAGEN CON ESTILO PREMIUM */}
+          {/* COLUMNA IZQUIERDA: IMAGEN */}
           <div className="lg:col-span-5 w-full">
             <div className="relative aspect-[4/5] w-full bg-slate-100 rounded-3xl overflow-hidden shadow-lg border border-slate-100">
-              {/* Puedes cambiar este placeholder por una fotografía de arquitectura de hotel de lujo */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
               <img 
                 src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop" 
@@ -97,56 +101,68 @@ export default function Web() {
               />
               <div className="absolute bottom-8 left-8 z-20 text-white">
                 <span className="text-[10px] uppercase tracking-[0.3em] font-bold opacity-80">Reporte Nacional</span>
-                <p className="text-lg font-medium mt-1">Cifras Auditadas 2026</p>
+                <p className="text-lg font-medium mt-1">Cifras Auditadas</p>
               </div>
             </div>
           </div>
 
-          {/* COLUMNA DERECHA: CIFRAS CON CONTADORES INTERACTIVOS */}
+          {/* COLUMNA DERECHA: CIFRAS CON FUENTES INDIVIDUALES */}
           <div className="lg:col-span-7 space-y-12">
             <div>
               <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Estadísticas en Tiempo Real</span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industria</h2>
             </div>
 
-            {/* Grid de cifras de alto impacto */}
+            {/* Grid de cifras */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 border-t border-slate-100 pt-8">
               
-              <div>
-                <div className="text-5xl font-bold text-[#0062B2] tracking-tight mb-2">
-                  <Counter value="32" />%
+              <div className="flex flex-col justify-between">
+                <div>
+                  <div className="text-5xl font-bold text-[#0062B2] tracking-tight mb-2">
+                    <Counter value="32" />%
+                  </div>
+                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Ocupación Hotelera</h4>
+                  <p className="text-xs text-slate-400 font-light mb-3">Promedio base consolidado a nivel nacional.</p>
                 </div>
-                <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Ocupación Hotelera</h4>
-                <p className="text-xs text-slate-400 font-light">Promedio base consolidado a nivel nacional.</p>
+                <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase block">Fuente: FENAHOVEN / CONSETURISMO</span>
               </div>
 
-              <div>
-                <div className="text-5xl font-bold text-[#1E293B] tracking-tight mb-2">
-                  $<Counter value="80" />
+              <div className="flex flex-col justify-between">
+                <div>
+                  <div className="text-5xl font-bold text-[#1E293B] tracking-tight mb-2">
+                    $<Counter value="80" />
+                  </div>
+                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Tarifa Promedio Premium</h4>
+                  <p className="text-xs text-slate-400 font-light mb-3">Eje de comercialización del segmento de alta gama.</p>
                 </div>
-                <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Tarifa Promedio Premium</h4>
-                <p className="text-xs text-slate-400 font-light">Eje de comercialización del segmento de alta gama.</p>
+                <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase block">Fuente: Monitoreo de Mercado Estimado</span>
               </div>
 
-              <div>
-                <div className="text-5xl font-bold text-amber-600 tracking-tight mb-2">
-                  <Counter value="24" />
+              <div className="flex flex-col justify-between">
+                <div>
+                  <div className="text-5xl font-bold text-amber-600 tracking-tight mb-2">
+                    <Counter value="24" />
+                  </div>
+                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Estados Monitoreados</h4>
+                  <p className="text-xs text-slate-400 font-light mb-3">Inteligencia turística de cobertura absoluta.</p>
                 </div>
-                <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Estados Monitoreados</h4>
-                <p className="text-xs text-slate-400 font-light">Inteligencia turística de cobertura absoluta.</p>
+                <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase block">Fuente: División de Estadística FENAHOVEN</span>
               </div>
 
-              <div>
-                <div className="text-5xl font-bold text-emerald-600 tracking-tight mb-2">
-                  +<Counter value="15" />%
+              <div className="flex flex-col justify-between">
+                <div>
+                  <div className="text-5xl font-bold text-emerald-600 tracking-tight mb-2">
+                    +<Counter value="15" />%
+                  </div>
+                  <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Crecimiento en Eventos</h4>
+                  <p className="text-xs text-slate-400 font-light mb-3">Dinamización por turismo de espectáculos.</p>
                 </div>
-                <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Crecimiento en Eventos</h4>
-                <p className="text-xs text-slate-400 font-light">Dinamización por turismo de espectáculos.</p>
+                <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase block">Fuente: Reporte de Afiliados Trimestral</span>
               </div>
 
             </div>
 
-            {/* EL CTA REQUERIDO DEBAJO DE LAS CIFRAS */}
+            {/* CTA */}
             <div className="pt-6">
               <button className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#1E293B] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden hover:bg-[#0062B2] transition-colors duration-300 shadow-sm">
                 <span>Datos y Cifras</span>
