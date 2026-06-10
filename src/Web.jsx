@@ -1,4 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+// Componente interno para animar los números de forma interactiva
+function Counter({ value, duration = 1500 }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = parseInt(value);
+    if (start === end) return;
+
+    // Calcular el tiempo por cada incremento
+    const totalMilisecondsByStep = Math.max(Math.floor(duration / end), 1);
+    
+    const timer = setInterval(() => {
+      start += 1;
+      setCount(start);
+      if (start === end) clearInterval(timer);
+    }, totalMilisecondsByStep);
+
+    return () => clearInterval(timer);
+  }, [value, duration]);
+
+  return <span>{count}</span>;
+}
 
 export default function Web() {
   const navLinks = [
@@ -57,79 +81,81 @@ export default function Web() {
         </div>
       </section>
 
-      {/* SECCIÓN: DATOS DE LA INDUSTRIA */}
+      {/* SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="mb-16">
-          <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Inteligencia Sectorial</span>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industria</h2>
-          <p className="text-slate-500 mt-2 font-light">Monitoreo y estadísticas clave del comportamiento hotelero en Venezuela.</p>
-        </div>
-
-        {/* Grid Principal de Datos */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
-          {/* Card 1: Ocupación Hotelera */}
-          <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold block mb-4">Ocupación Hotelera</span>
-            <div className="flex items-baseline gap-2">
-              <span className="text-5xl font-bold text-[#0062B2]">32%</span>
-              <span className="text-xs text-emerald-600 font-medium">Promedio Nacional</span>
+          {/* COLUMNA IZQUIERDA: IMAGEN CON ESTILO PREMIUM */}
+          <div className="lg:col-span-5 w-full">
+            <div className="relative aspect-[4/5] w-full bg-slate-100 rounded-3xl overflow-hidden shadow-lg border border-slate-100">
+              {/* Puedes cambiar este placeholder por una fotografía de arquitectura de hotel de lujo */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
+              <img 
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop" 
+                alt="Industria Hotelera Venezuela" 
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute bottom-8 left-8 z-20 text-white">
+                <span className="text-[10px] uppercase tracking-[0.3em] font-bold opacity-80">Reporte Nacional</span>
+                <p className="text-lg font-medium mt-1">Cifras Auditadas 2026</p>
+              </div>
             </div>
-            <p className="text-xs text-slate-500 mt-6 leading-relaxed">
-              La ocupación base ronda el 30%, concentrándose la mayor demanda en la Región Capital (Caracas, Miranda, La Guaira) con picos estables de entre 50% y 60% impulsados por eventos corporativos y entretenimiento.
-            </p>
           </div>
 
-          {/* Card 2: Tarifas Promedio */}
-          <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold block mb-4">Tarifas Promedio</span>
-            <div className="flex items-baseline gap-2">
-              <span className="text-5xl font-bold text-[#1E293B]">$20 - $100</span>
-              <span className="text-xs text-slate-400">USD / Noche</span>
+          {/* COLUMNA DERECHA: CIFRAS CON CONTADORES INTERACTIVOS */}
+          <div className="lg:col-span-7 space-y-12">
+            <div>
+              <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Estadísticas en Tiempo Real</span>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industria</h2>
             </div>
-            <p className="text-xs text-slate-500 mt-6 leading-relaxed">
-              Mercado con tarifas estables pero polarizadas según escalafón. Las opciones base e intermedias se ubican desde los $20, mientras que el segmento Premium de gran estructura oscila sólidamente entre $80 y $100 por noche.
-            </p>
-          </div>
 
-          {/* Card 3: Inversión y Costos */}
-          <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold block mb-4">Inversión Operativa</span>
-            <div className="flex items-baseline gap-2">
-              <span className="text-4xl font-bold text-amber-600">Optimización</span>
+            {/* Grid de cifras de alto impacto */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 border-t border-slate-100 pt-8">
+              
+              <div>
+                <div className="text-5xl font-bold text-[#0062B2] tracking-tight mb-2">
+                  <Counter value="32" />%
+                </div>
+                <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Ocupación Hotelera</h4>
+                <p className="text-xs text-slate-400 font-light">Promedio base consolidado a nivel nacional.</p>
+              </div>
+
+              <div>
+                <div className="text-5xl font-bold text-[#1E293B] tracking-tight mb-2">
+                  $<Counter value="80" />
+                </div>
+                <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Tarifa Promedio Premium</h4>
+                <p className="text-xs text-slate-400 font-light">Eje de comercialización del segmento de alta gama.</p>
+              </div>
+
+              <div>
+                <div className="text-5xl font-bold text-amber-600 tracking-tight mb-2">
+                  <Counter value="24" />
+                </div>
+                <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Estados Monitoreados</h4>
+                <p className="text-xs text-slate-400 font-light">Inteligencia turística de cobertura absoluta.</p>
+              </div>
+
+              <div>
+                <div className="text-5xl font-bold text-emerald-600 tracking-tight mb-2">
+                  +<Counter value="15" />%
+                </div>
+                <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Crecimiento en Eventos</h4>
+                <p className="text-xs text-slate-400 font-light">Dinamización por turismo de espectáculos.</p>
+              </div>
+
             </div>
-            <p className="text-xs text-slate-500 mt-8 leading-relaxed">
-              El capital actual se destina principalmente a sopesar altos costos operativos de servicios públicos y actualizaciones de infraestructura para cumplir con las recategorizaciones de estrellas exigidas por el marco regulatorio nacional.
-            </p>
-          </div>
 
-        </div>
-
-        {/* Fila Inferior: Tendencias, Empleo y Temporadas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          
-          {/* Card 4: Empleo y Talento Humano */}
-          <div className="bg-slate-50/60 border border-slate-100/80 p-8 rounded-3xl">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Empleo y Sustentabilidad</span>
-              <span className="px-2 py-1 bg-blue-50 text-[#0062B2] rounded text-[9px] font-bold uppercase tracking-wider">Fuerza Laboral</span>
+            {/* EL CTA REQUERIDO DEBAJO DE LAS CIFRAS */}
+            <div className="pt-6">
+              <button className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#1E293B] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden hover:bg-[#0062B2] transition-colors duration-300 shadow-sm">
+                <span>Datos y Cifras</span>
+                <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
             </div>
-            <h4 className="text-lg font-bold text-[#1E293B] mb-2">Retención y Capacitación Continua</h4>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              El sector enfoca esfuerzos en robustecer el empleo formal. Las demandas principales se centran en mandos técnicos y operativos especializados (Recepcionistas, Camareras, Lenceros y Gerencia de Alimentos y Bebidas), impulsando planes de formación interna frente a la competitividad del mercado.
-            </p>
-          </div>
 
-          {/* Card 5: Tendencias y Temporadas */}
-          <div className="bg-slate-50/60 border border-slate-100/80 p-8 rounded-3xl">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Dinámicas de Consumo</span>
-              <span className="px-2 py-1 bg-purple-50 text-purple-700 rounded text-[9px] font-bold uppercase tracking-wider">Estacionalidad</span>
-            </div>
-            <h4 className="text-lg font-bold text-[#1E293B] mb-2">Turismo Temático y Espectáculos</h4>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Cambio radical en las temporadas: el turismo religioso y de eventos masivos/conciertos se consolidan como los mayores dinamizadores del flujo de huéspedes. Destacan picos de ocupación total regionales por eventos de fe y una constante movilización interna hacia la Región Capital durante fines de semana festivos.
-            </p>
           </div>
 
         </div>
