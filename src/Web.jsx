@@ -170,14 +170,18 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO REORDENADO DE ACUERDO AL FLUJO DE LECTURA */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO CON CABECERA RESTAURADA COMPLETAMENTE */}
       <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           
-          {/* Cabecera de la sección */}
-          <div className="text-center mb-24">
+          {/* Cabecera de la sección con los textos informativos restaurados */}
+          <div className="text-center max-w-2xl mx-auto mb-24">
+            <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-3">Trayectoria Histórica</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">Nuestra Línea del Tiempo</h2>
-            <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-4 rounded-full" />
+            <p className="text-slate-500 mt-3 font-light text-sm leading-relaxed">
+              Trabajamos de la mano con las principales organizaciones turísticas y comerciales del país, construyendo un legado de hospitalidad y desarrollo desde nuestros orígenes.
+            </p>
+            <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-5 rounded-full" />
           </div>
 
           {/* Estructura del Timeline */}
@@ -194,9 +198,6 @@ export default function Web() {
 
             <div className="space-y-16 md:space-y-24 py-8 relative z-10">
               {timelineEvents.map((event, index) => {
-                // FLUJO NATURAL REORDENADO: 
-                // Index 0 (1958): Año a la IZQUIERDA, Caja a la DERECHA (Lectura perfecta de corrido).
-                // Index 1 (1993): Año a la DERECHA, Caja a la IZQUIERDA.
                 const isLeftYear = index % 2 === 0;
                 const isItemActive = activeHito === index;
 
