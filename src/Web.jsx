@@ -70,7 +70,7 @@ export default function Web() {
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* 1. TOP BAR (ESTILO HOTREC) */}
+      {/* 1. TOP BAR */}
       <div className="bg-[#2F92B9] py-2 px-6 md:px-12 text-white text-[11px] font-medium tracking-wide relative z-30">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-6">
@@ -326,6 +326,138 @@ export default function Web() {
         </div>
       </section>
 
+      {/* 4.5. NUEVA SECCIÓN ESTRATÉGICA: FUNCIONES Y SITUACIÓN ACTUAL */}
+      <section className="py-28 bg-[#F8FAFC] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            
+            {/* LADO IZQUIERDO: FUNCIONES DE FENAHOVEN (8 COLUMNAS) */}
+            <div className="lg:col-span-8 space-y-12">
+              <div>
+                <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-2">Acción Institucional</span>
+                <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">
+                  Funciones de FENAHOVEN en Venezuela
+                </h2>
+                <div className="w-16 h-1 bg-[#2F92B9] rounded-full mt-4" />
+              </div>
+
+              {/* Grid de Funciones */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                
+                {/* Función 1 */}
+                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+                  <div className="text-xs font-bold text-[#2F92B9] font-mono">01 / REPRESENTACIÓN GREMIAL</div>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed">
+                    Defiende los intereses de hoteles y posadas ante organismos públicos y privados.
+                  </p>
+                </div>
+
+                {/* Función 2 */}
+                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+                  <div className="text-xs font-bold text-[#2F92B9] font-mono">02 / ESTADÍSTICAS SECTORIALES</div>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed">
+                    Produce y divulga indicadores de ocupación hotelera, comportamiento de temporadas turísticas y tendencias del mercado.
+                  </p>
+                </div>
+
+                {/* Función 3 */}
+                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+                  <div className="text-xs font-bold text-[#2F92B9] font-mono">03 / PROMOCIÓN DEL TURISMO</div>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed">
+                    Participa en iniciativas para fortalecer destinos turísticos y atraer visitantes nacionales e internacionales.
+                  </p>
+                </div>
+
+                {/* Función 5 (Reposicionada para balance) */}
+                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+                  <div className="text-xs font-bold text-[#2F92B9] font-mono">04 / FORMACIÓN Y REFUERZO</div>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed">
+                    Promueve encuentros gremiales, intercambio de experiencias y actualización del sector hotelero.
+                  </p>
+                </div>
+
+                {/* Función 6 */}
+                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+                  <div className="text-xs font-bold text-[#2F92B9] font-mono">05 / ATENCIÓN DE EMERGENCIAS</div>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed">
+                    Coordina apoyo a establecimientos afiliados afectados por desastres naturales o situaciones extraordinarias.
+                  </p>
+                </div>
+
+                {/* Función 7 */}
+                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+                  <div className="text-xs font-bold text-[#2F92B9] font-mono">06 / ATRACCIÓN DE INVERSIONES</div>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed">
+                    Promueve oportunidades para marcas hoteleras, franquicias, reconversión de activos y nuevos proyectos turísticos.
+                  </p>
+                </div>
+
+                {/* Función 4 (Destacada a doble columna por su nivel de detalle) */}
+                <div className="sm:col-span-2 bg-white p-6 md:p-8 rounded-2xl border border-slate-200/60 shadow-sm space-y-4">
+                  <div className="text-xs font-bold text-[#2F92B9] font-mono">07 / DEFENSA DE CONDICIONES PARA LA ACTIVIDAD HOTELERA</div>
+                  <p className="text-slate-700 text-sm font-light leading-relaxed">
+                    Plantea activamente propuestas y soluciones estratégicas sobre los siguientes ejes críticos del sector:
+                  </p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 pt-2">
+                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Conectividad aérea</div>
+                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Infraestructura</div>
+                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Servicios públicos</div>
+                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Regulación turística</div>
+                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100 col-span-2 sm:col-span-1">Alojamientos informales</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* LADO DERECHO: SITUACIÓN ACTUAL SECTOR (4 COLUMNAS - MINIMALISMO SENSORIAL) */}
+            <div className="lg:col-span-4 bg-[#10172A] rounded-3xl p-8 text-white shadow-xl space-y-8 sticky top-6">
+              <div className="space-y-2">
+                <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#2F92B9] block">Radiografía del Mercado</span>
+                <h3 className="text-xl font-bold tracking-tight uppercase">Situación Actual del Sector</h3>
+                <p className="text-[11px] text-slate-400 font-light">Según las declaraciones institucionales de Alberto Vieira.</p>
+              </div>
+
+              <div className="w-full h-[1px] bg-slate-800" />
+
+              <div className="space-y-6">
+                
+                {/* Cifra 30% */}
+                <div className="space-y-1">
+                  <div className="text-4xl font-black text-[#2F92B9] tracking-tight">~30%</div>
+                  <h4 className="text-xs uppercase font-bold tracking-wider text-slate-200">Ocupación Nacional</h4>
+                  <p className="text-xs text-slate-400 font-light leading-relaxed">
+                    La tasa base promedio ronda esta cifra en el territorio nacional, concentrando sus <strong className="text-white font-medium">niveles más altos en Caracas</strong>.
+                  </p>
+                </div>
+
+                {/* Retos principales */}
+                <div className="space-y-2 bg-white/5 p-4 rounded-xl border border-white/10">
+                  <h4 className="text-xs uppercase font-bold tracking-wider text-slate-200 flex items-center gap-2">
+                    <span className="text-amber-500">⚠</span> Retos Prioritarios
+                  </h4>
+                  <p className="text-xs text-slate-400 font-light leading-relaxed">
+                    Los principales frenos estructurales identificados son la optimización de la <strong className="text-slate-200 font-medium">conectividad aérea</strong> y el crecimiento exponencial de los <strong className="text-slate-200 font-medium">alojamientos informales</strong>.
+                  </p>
+                </div>
+
+                {/* Apertura Internacional */}
+                <div className="space-y-2 bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/20">
+                  <h4 className="text-xs uppercase font-bold tracking-wider text-emerald-400 flex items-center gap-2">
+                    <span className="animate-pulse">●</span> Proyección de Apertura
+                  </h4>
+                  <p className="text-xs text-slate-300 font-light leading-relaxed">
+                    Existe un sólido interés de inversionistas privados y grandes cadenas hoteleras internacionales por volver a operar en el mercado venezolano.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* 5. BANNER OCUPACIÓN HOTELERA */}
       <section className="pt-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div 
@@ -472,7 +604,7 @@ export default function Web() {
         {/* Contenedor Maestro */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 pb-12">
           
-          {/* Bloque Izquierdo: Logo PNG incrementado un 50% de tamaño adicional */}
+          {/* Bloque Izquierdo: Logo PNG */}
           <div className="md:col-span-4 space-y-6">
             <div className="flex items-center justify-start">
               <img 
@@ -521,7 +653,7 @@ export default function Web() {
               </div>
             </div>
 
-            {/* Enlaces de Legal posicionados sobre la línea blanca */}
+            {/* Enlaces de Legal */}
             <div className="flex gap-6 text-xs text-slate-100 pt-4 md:pt-0">
               <span className="hover:text-white cursor-pointer transition-colors font-medium">Términos de Uso</span>
               <span className="hover:text-white cursor-pointer transition-colors font-medium">Políticas de Privacidad</span>
@@ -530,20 +662,18 @@ export default function Web() {
 
         </div>
 
-        {/* Línea Divisoria Blanca con Opacidad Conectada */}
+        {/* Línea Divisoria Blanca */}
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="w-full h-[1px] bg-white/20" />
         </div>
 
-        {/* Cierre Inferior: Distribución a los Extremos (Copyright izquierda, Firma derecha) */}
+        {/* Cierre Inferior */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-200 font-light gap-4">
           
-          {/* Copyright alineado hacia el extremo izquierdo */}
           <div className="text-center sm:text-left select-none tracking-wide text-slate-100">
             © 2026 FENAHOVEN. Todos los derechos reservados.
           </div>
           
-          {/* Crédito "Diseñado por Onshift" alineado hacia el extremo derecho */}
           <div className="text-center sm:text-right">
             <a 
               href="https://onshift.com.ve" 
