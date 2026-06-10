@@ -89,13 +89,13 @@ export default function Web() {
         </div>
       </div>
 
-      {/* 2. NAVBAR PRINCIPAL CON ESCUDO AL RAS DEL TOP BAR */}
+      {/* 2. NAVBAR PRINCIPAL CON REEMPLAZO DE LOGO A .PNG TRANSPARENTE */}
       <nav className="bg-white border-b border-gray-200 relative px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[85px] relative py-4 md:py-0">
           
           <div className="flex items-center justify-center md:justify-start relative md:absolute top-0 left-0 z-20 mb-4 md:mb-0">
             <img 
-              src="/logowebfenahoven.jpg" 
+              src="/logowebfenahoven.png" 
               alt="Escudo Oficial FENAHOVEN" 
               className="h-28 md:h-32 w-auto object-contain select-none" 
             />
@@ -116,9 +116,9 @@ export default function Web() {
         </div>
       </nav>
 
-      {/* 3. HERO INSTITUTIONAL */}
+      {/* 3. HERO INSTITUTIONAL CON MÁSCARA PARALLAX ROUNDED DE 35PX */}
       <section 
-        className="relative min-h-[95vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed py-20"
+        className="relative min-h-[95vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed py-20 rounded-b-[35px] overflow-hidden shadow-md"
         style={{ 
           backgroundImage: `linear-gradient(to bottom, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.50)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop')` 
         }}
@@ -170,12 +170,11 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 3.5. INTRODUCCIÓN INSTITUCIONAL: FONDO GRIS CONTROLADO E ÍCONOS GLASSMORPHISM */}
+      {/* 3.5. INTRODUCCIÓN INSTITUCIONAL */}
       <section className="py-28 bg-[#F1F5F9] border-b border-slate-200">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             
-            {/* Título y concepto a la izquierda */}
             <div className="md:col-span-5 space-y-4">
               <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block">Identidad Institucional</span>
               <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase leading-tight">
@@ -186,18 +185,14 @@ export default function Web() {
               <div className="w-12 h-1 bg-[#2F92B9] rounded-full mt-2" />
             </div>
 
-            {/* Párrafo maestro y pilares descriptivos con Glassmorphism */}
             <div className="md:col-span-7 space-y-10">
               <p className="text-slate-700 text-base md:text-lg font-light leading-relaxed">
                 La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
               </p>
 
-              {/* Bloques de Acción Estilo Glassmorphism */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
                 
-                {/* Pilar 1: Representación */}
                 <div className="space-y-3">
-                  {/* Ícono Glassmorphism */}
                   <div className="w-12 h-12 rounded-xl bg-white/40 backdrop-blur-md border border-white/60 shadow-inner flex items-center justify-center text-[#2F92B9]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -209,9 +204,7 @@ export default function Web() {
                   </div>
                 </div>
 
-                {/* Pilar 2: Desarrollo */}
                 <div className="space-y-3">
-                  {/* Ícono Glassmorphism */}
                   <div className="w-12 h-12 rounded-xl bg-white/40 backdrop-blur-md border border-white/60 shadow-inner flex items-center justify-center text-[#2F92B9]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2zm12 0v-11a2 2 0 00-2-2h-2a2 2 0 00-2 2v11a2 2 0 002 2h2a2 2 0 002-2z" />
@@ -223,9 +216,7 @@ export default function Web() {
                   </div>
                 </div>
 
-                {/* Pilar 3: Proyección */}
                 <div className="space-y-3">
-                  {/* Ícono Glassmorphism */}
                   <div className="w-12 h-12 rounded-xl bg-white/40 backdrop-blur-md border border-white/60 shadow-inner flex items-center justify-center text-[#2F92B9]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -244,11 +235,10 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO CON FLUJO DE PARPADEO SECUENCIAL */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO */}
       <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           
-          {/* Cabecera */}
           <div className="text-center max-w-2xl mx-auto mb-24">
             <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-3">Trayectoria Histórica</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">Nuestra Línea del Tiempo</h2>
@@ -258,44 +248,32 @@ export default function Web() {
             <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-5 rounded-full" />
           </div>
 
-          {/* Timeline */}
           <div className="relative">
-            
-            {/* Círculo base superior */}
             <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
-            
-            {/* Línea Eje Central */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[#D1D5DB] z-0" />
-            
-            {/* Círculo base inferior */}
             <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
 
             <div className="space-y-16 md:space-y-24 py-8 relative z-10">
               {timelineEvents.map((event, index) => {
                 const isLeftYear = index % 2 === 0;
                 const isItemActive = activeHito === index;
-
-                // Lógica de parpadeo secuencial
                 const isNextHitoToClick = activeHito === null ? index === 0 : index === activeHito + 1;
 
                 return (
                   <div 
                     key={index} 
-                    className={`flex flex-col md:grid md:grid-cols-11 items-center w-full relative cursor-pointer transition-all duration-300 ${
-                      isItemActive ? 'opacity-100 scale-100' : 'opacity-50 hover:opacity-80 scale-[0.99]'
-                    }`}
+                    className="flex flex-col md:grid md:grid-cols-11 items-center w-full relative cursor-pointer"
                     onClick={() => setActiveHito(index)}
                   >
                     
-                    {/* COLUMNA IZQUIERDA (Año en Azul Sólido o Card Informativo) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-end md:px-8 z-10">
                       {isLeftYear ? (
                         <div className="text-4xl lg:text-5xl font-black tracking-tight select-none pr-4 text-[#2F92B9]">
                           {event.year}
                         </div>
                       ) : (
-                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
-                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm transition-all duration-500 transform ${
+                          isItemActive ? 'scale-105 border-[#2F92B9]/30 shadow-xl bg-slate-50/10' : 'scale-100 hover:scale-[1.01]'
                         }`}>
                           <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
                           <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
@@ -304,33 +282,25 @@ export default function Web() {
                       )}
                     </div>
 
-                    {/* COLUMNA CENTRAL: NODOS CON ENFOQUE DE PARPADEO SECUENCIAL COMPARTIDO */}
                     <div className="hidden md:flex md:col-span-1 justify-center items-center z-20">
                       <div className="relative flex items-center justify-center">
-                        
-                        {/* El aro parpadea de forma dinámica indicándole al usuario exactamente cuál presionar a continuación */}
                         {isNextHitoToClick && (
                           <div className="absolute w-8 h-8 rounded-full bg-[#2F92B9]/30 animate-ping z-0 pointer-events-none" />
                         )}
-
-                        {/* Aro lineal externo permanente */}
                         <div className={`rounded-full bg-white flex items-center justify-center shadow-sm border border-[#2F92B9] transition-all duration-300 ${
                           isItemActive ? 'w-7 h-7 scale-110' : 'w-6 h-6'
                         }`}>
-                          {/* Círculo interno filled pequeño */}
                           <div className={`rounded-full bg-[#2F92B9] transition-all duration-300 ${
                             isItemActive ? 'w-3 h-3' : 'w-2.5 h-2.5'
                           }`} />
                         </div>
-
                       </div>
                     </div>
 
-                    {/* COLUMNA DERECHA (Card Informativo o Año en Azul Sólido) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-start md:px-8 z-10 mt-4 md:mt-0">
                       {isLeftYear ? (
-                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
-                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm transition-all duration-500 transform ${
+                          isItemActive ? 'scale-105 border-[#2F92B9]/30 shadow-xl bg-slate-50/10' : 'scale-100 hover:scale-[1.01]'
                         }`}>
                           <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
                           <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
@@ -347,7 +317,6 @@ export default function Web() {
                 );
               })}
             </div>
-
           </div>
 
         </div>
