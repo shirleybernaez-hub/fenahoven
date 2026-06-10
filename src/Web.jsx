@@ -167,7 +167,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE PREMIUM (FECHAS EXTERNAS Y CIRCULOS FILLED) */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE PERFECCIONADO CON FECHAS EN EL CENTRO Y NODOS CONCÉNTRICOS */}
       <section className="py-28 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           
@@ -181,10 +181,10 @@ export default function Web() {
           {/* Contenedor principal con el eje central */}
           <div className="relative">
             
-            {/* Línea Central Perfecta */}
+            {/* Línea Eje Central */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-slate-200 z-0" />
 
-            <div className="space-y-16 md:space-y-20 relative z-10">
+            <div className="space-y-16 md:space-y-24 relative z-10">
               {timelineEvents.map((event, index) => {
                 const isLeft = index % 2 === 0;
 
@@ -196,10 +196,10 @@ export default function Web() {
                     }`}
                   >
                     {/* LADO DE LA CAJA INFORMATIVA */}
-                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-12 z-10">
+                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-16 z-10">
                       <div className="w-full max-w-lg bg-slate-50/60 hover:bg-white rounded-2xl p-6 md:p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
                         
-                        {/* Año visible en móvil justo arriba del título */}
+                        {/* Año visible solo en móviles justo arriba del título */}
                         <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-1">
                           {event.year}
                         </div>
@@ -213,19 +213,27 @@ export default function Web() {
                       </div>
                     </div>
 
-                    {/* NODO CENTRAL RELLENO (CIRCULO FILLED) */}
+                    {/* CONJUNTO CENTRAL: NODO CONCÉNTRICO + FECHA FIJA AL LADO (Escritorio) */}
                     <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center z-20">
-                      <div className="w-4 h-4 rounded-full bg-[#2F92B9] shadow-md ring-4 ring-white" />
-                    </div>
+                      
+                      {/* Nodo Concéntrico (Círculo filled pequeño + Anillo exterior lineal fino) */}
+                      <div className="w-6 h-6 rounded-full bg-white border border-[#2F92B9] flex items-center justify-center shadow-sm">
+                        <div className="w-2.5 h-2.5 rounded-full bg-[#2F92B9]" />
+                      </div>
 
-                    {/* LADO EXTERIOR: EL AÑO FLOTANDO AL OTRO LADO DE LA LÍNEA (Escritorio) */}
-                    <div className={`hidden md:flex w-1/2 px-12 items-center ${
-                      isLeft ? 'justify-start' : 'justify-end'
-                    }`}>
-                      <div className="text-4xl lg:text-5xl font-black text-slate-300/80 hover:text-[#2F92B9] transition-colors duration-300 cursor-default select-none tracking-tight">
+                      {/* Fecha fija al lado del círculo (Sin efectos hover, texto plano sobrio) */}
+                      <div 
+                        className={`absolute text-2xl lg:text-3xl font-black text-slate-400 tracking-tight whitespace-nowrap select-none ${
+                          isLeft ? 'left-9' : 'right-9'
+                        }`}
+                      >
                         {event.year}
                       </div>
+
                     </div>
+
+                    {/* LADO OPUESTO TOTALMENTE VACÍO PARA GUARDAR EL EQUILIBRIO DE LA GRILLA */}
+                    <div className="hidden md:block w-1/2" />
 
                   </div>
                 );
@@ -321,7 +329,7 @@ export default function Web() {
                   <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Estados Monitoreados</h4>
                   <p className="text-xs text-slate-400 font-light mb-3">Inteligencia turística de cobertura absoluta.</p>
                 </div>
-                <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase block">Fuente: Division de Estadística FENAHOVEN</span>
+                <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase block">Fuente: División de Estadística FENAHOVEN</span>
               </div>
 
               <div className="flex flex-col justify-between">
