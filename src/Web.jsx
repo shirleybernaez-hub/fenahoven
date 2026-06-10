@@ -167,9 +167,9 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE COMPLETAMENTE CLONADO DE LA REFERENCIA */}
-      <section className="py-28 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE MEJORADO CON CÍRCULOS DE ENTRADA/SALIDA Y AROS AZULES */}
+      <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6">
           
           {/* Cabecera de la sección */}
           <div className="text-center mb-24">
@@ -177,60 +177,67 @@ export default function Web() {
             <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-4 rounded-full" />
           </div>
 
-          {/* Eje del Timeline */}
+          {/* Estructura del Timeline */}
           <div className="relative">
             
-            {/* Línea Central Fina de la referencia */}
+            {/* Círculo Pequeño al INICIO de la línea (Arriba en el centro) */}
+            <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
+            
+            {/* Línea Eje Central */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[#D1D5DB] z-0" />
+            
+            {/* Círculo Pequeño al FINAL de la línea (Abajo en el centro) */}
+            <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
 
-            <div className="space-y-16 md:space-y-24 relative z-10">
+            <div className="space-y-16 md:space-y-28 py-8 relative z-10">
               {timelineEvents.map((event, index) => {
-                // Alternancia estricta basada en el clon de la imagen:
-                // Índice 0 (1958): Caja a la DERECHA, Año a la IZQUIERDA del punto.
-                // Índice 1 (1993): Caja a la IZQUIERDA, Año a la DERECHA del punto.
-                const isRightBox = index % 2 === 0;
+                // Alternamos lados: 
+                // Index par (1958): Caja Izquierda, Año Derecho.
+                // Index impar (1993): Caja Derecha, Año Izquierdo.
+                const isLeftBox = index % 2 === 0;
 
                 return (
                   <div 
                     key={index} 
-                    className={`flex flex-col md:flex-row items-center w-full relative ${
-                      isRightBox ? 'md:flex-row-reverse' : 'md:flex-row'
-                    }`}
+                    className="flex flex-col md:grid md:grid-cols-11 items-center w-full relative"
                   >
-                    {/* LADO DE LA TARJETA INFORMATIVA */}
-                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-16 z-10">
-                      <div className="w-full max-w-md bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
-                        
-                        {/* Año visible solo en móviles */}
-                        <div className="block md:hidden text-2xl font-black text-[#2F92B9]/80 mb-2">
+                    
+                    {/* COLUMNA IZQUIERDA (Caja Informativa o Año de forma alternada) */}
+                    <div className="w-full md:col-span-5 flex justify-center md:justify-end md:px-8 z-10">
+                      {isLeftBox ? (
+                        <div className="w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
+                          <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
+                          <h3 className="text-lg font-bold text-slate-950 mb-3">{event.title}</h3>
+                          <p className="text-sm text-slate-500 font-light leading-relaxed">{event.description}</p>
+                        </div>
+                      ) : (
+                        <div className="hidden md:block text-4xl lg:text-5xl font-black text-[#CBD5E1] tracking-tight select-none pr-4">
                           {event.year}
                         </div>
+                      )}
+                    </div>
 
-                        <h3 className="text-lg font-bold text-slate-950 mb-3">
-                          {event.title}
-                        </h3>
-                        <p className="text-sm text-slate-500 font-light leading-relaxed">
-                          {event.description}
-                        </p>
+                    {/* COLUMNA CENTRAL: PUNTO INTERMEDIO CON UN ARO AZUL ALREDEDOR */}
+                    <div className="hidden md:flex md:col-span-1 justify-center items-center z-20">
+                      {/* Aro lineal azul exterior (w-6 h-6) + Círculo filled más pequeño azul en el centro */}
+                      <div className="w-6 h-6 rounded-full bg-white border border-[#2F92B9] flex items-center justify-center shadow-sm">
+                        <div className="w-2.5 h-2.5 rounded-full bg-[#2F92B9]" />
                       </div>
                     </div>
 
-                    {/* NODO CENTRAL EXACTO (PUNTO AZUL) */}
-                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center z-20">
-                      <div className="w-4 h-4 rounded-full bg-[#2F92B9] shadow-sm" />
-                    </div>
-
-                    {/* LADO DEL AÑO GIGANTE (Pegado a la línea central en tono suave, sin hover) */}
-                    <div className={`hidden md:flex w-1/2 px-10 items-center relative ${
-                      isRightBox ? 'justify-end' : 'justify-start'
-                    }`}>
-                      <div 
-                        className={`text-4xl lg:text-5xl font-black text-[#CBD5E1] select-none tracking-tight absolute ${
-                          isRightBox ? 'right-6' : 'left-6'
-                        }`}
-                      >
-                        {event.year}
-                      </div>
+                    {/* COLUMNA DERECHA (Año o Caja Informativa de forma alternada) */}
+                    <div className="w-full md:col-span-5 flex justify-center md:justify-start md:px-8 z-10 mt-4 md:mt-0">
+                      {!isLeftBox ? (
+                        <div className="w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
+                          <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
+                          <h3 className="text-lg font-bold text-slate-950 mb-3">{event.title}</h3>
+                          <p className="text-sm text-slate-500 font-light leading-relaxed">{event.description}</p>
+                        </div>
+                      ) : (
+                        <div className="hidden md:block text-4xl lg:text-5xl font-black text-[#CBD5E1] tracking-tight select-none pl-4">
+                          {event.year}
+                        </div>
+                      )}
                     </div>
 
                   </div>
@@ -293,7 +300,7 @@ export default function Web() {
           <div className="lg:col-span-7 space-y-12">
             <div>
               <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Estadísticas en Tiempo Real</span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industria</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industry</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 border-t border-slate-100 pt-8">
