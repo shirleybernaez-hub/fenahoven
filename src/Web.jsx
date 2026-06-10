@@ -35,13 +35,41 @@ export default function Web() {
     { src: '/cavespa.png', alt: 'CAVESPA', className: 'max-h-14 w-auto' }
   ];
 
+  // Hitos Cronológicos de la Historia de FENAHOVEN
+  const timelineEvents = [
+    {
+      year: '1958',
+      title: 'Fundación de ANAHOVEN',
+      description: 'Nace la Asociación Nacional de Hoteles de Venezuela, sentando las bases de la unión gremial en una época de pleno desarrollo de infraestructuras icónicas en el país.'
+    },
+    {
+      year: '1993',
+      title: 'Transformación en FENAHOVEN',
+      description: 'Evolución estructural hacia Federación Nacional de Hoteles de Venezuela, expandiendo su alcance para agrupar cámaras regionales y elevar la representatividad del sector.'
+    },
+    {
+      year: '2000 - 2020',
+      title: 'Expansión Gremial',
+      description: 'Dos décadas de consolidación institucional, tejiendo alianzas estratégicas e impulsando la profesionalización de la hotelería en cada rincón del territorio nacional.'
+    },
+    {
+      year: '2021 - 2026',
+      title: 'Modernización y Recuperación',
+      description: 'Enfoque total en la digitalización, optimización de datos de la industria turística y la reactivación estratégica post-pandemia de la red hotelera venezolana.'
+    },
+    {
+      year: 'Futuro',
+      title: 'Turismo Sostenible e Inversión',
+      description: 'Hacia un modelo de hotelería verde, sustentable, con estándares internacionales de servicio y la apertura de nuevas ventanas para la inversión global.'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* 1. TOP BAR CON TEXTOS INFORMATIVOS EN FONDO AZUL #2F92B9 */}
+      {/* 1. TOP BAR (ESTILO HOTREC) */}
       <div className="bg-[#2F92B9] py-2 px-6 md:px-12 text-white text-[11px] font-medium tracking-wide relative z-30">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          {/* Contacto Izquierda */}
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
               <span className="opacity-80">✉</span> contacto@fenahoven.org.ve
@@ -50,7 +78,6 @@ export default function Web() {
               <span className="opacity-80">📞</span> +58 (212) 993-4444
             </span>
           </div>
-          {/* Redes Derecha */}
           <div className="flex items-center gap-4 opacity-90">
             <span className="cursor-pointer hover:text-slate-200">𝕏</span>
             <span className="cursor-pointer hover:text-slate-200 font-bold">in</span>
@@ -59,11 +86,10 @@ export default function Web() {
         </div>
       </div>
 
-      {/* 2. NAVBAR REFINADO (ESCUDO FLOTANTE DESDE EL BORDE DEL TOPBAR) */}
+      {/* 2. NAVBAR PRINCIPAL CON ESCUDO AL RAS DEL TOP BAR */}
       <nav className="bg-white border-b border-gray-200 relative px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[85px] relative py-4 md:py-0">
           
-          {/* Escudo Institucional: Alineado exactamente al ras inferior del Top Bar, sobresaliendo solo hacia abajo */}
           <div className="flex items-center justify-center md:justify-start relative md:absolute top-0 left-0 z-20 mb-4 md:mb-0">
             <img 
               src="/logowebfenahoven.jpg" 
@@ -72,14 +98,8 @@ export default function Web() {
             />
           </div>
 
-          {/* Menú de Enlaces Centrados e idénticos a la captura */}
           <div className="flex-1 flex flex-wrap gap-x-8 gap-y-3 items-center justify-center text-xs md:text-[15px] font-medium text-slate-900 tracking-wide md:min-h-[85px]">
-            <a 
-              href="/quienes-somos" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1"
-            >
+            <a href="/quienes-somos" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">
               Quiénes somos?
             </a>
             <span className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">Directorio</span>
@@ -89,9 +109,7 @@ export default function Web() {
             <span className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">Contacto</span>
           </div>
 
-          {/* Bloque equilibrador invisible en escritorio */}
           <div className="hidden md:block w-32 pointer-events-none" />
-
         </div>
       </nav>
 
@@ -149,7 +167,56 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. BANNER OCUPACIÓN HOTELERA */}
+      {/* 4. NUEVA SECCIÓN ESTILO INFOGRAFÍA: HISTORIA INTERACTIVA (TIMELINE) */}
+      <section className="py-28 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
+        <div className="max-w-4xl mx-auto px-6">
+          
+          {/* Cabecera de la sección infográfica */}
+          <div className="text-center mb-20">
+            <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-3">Trayectoria Histórica</span>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">Nuestra Línea del Tiempo</h2>
+            <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-4 rounded-full" />
+          </div>
+
+          {/* Contenedor del Eje Cronológico */}
+          <div className="relative flex flex-col items-center">
+            {timelineEvents.map((event, index) => (
+              <div key={index} className="w-full flex flex-col items-center relative">
+                
+                {/* Bloque del Hito / Contenedor Interactivo */}
+                <div className="w-full max-w-2xl bg-slate-50/60 hover:bg-white rounded-2xl p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-start gap-4 md:gap-8 group">
+                  
+                  {/* Año Destacado */}
+                  <div className="text-3xl md:text-4xl font-black text-[#2F92B9] tracking-tight shrink-0 md:w-32">
+                    {event.year}
+                  </div>
+                  
+                  {/* Textos Informativos */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#2F92B9] transition-colors">
+                      {event.title}
+                    </h3>
+                    <p className="text-sm text-slate-500 font-light leading-relaxed">
+                      {event.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Flecha Conectora de flujo (No se muestra en el último elemento) */}
+                {index !== timelineEvents.length - 1 && (
+                  <div className="my-6 text-slate-300 font-light text-2xl animate-pulse select-none">
+                    ↓
+                  </div>
+                )}
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. BANNER OCUPACIÓN HOTELERA */}
       <section className="pt-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div 
           className="relative rounded-3xl overflow-hidden bg-cover bg-center py-20 px-8 md:px-16 text-center shadow-xl border border-slate-100"
@@ -178,7 +245,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 5. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
+      {/* 6. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-5 w-full">
@@ -260,7 +327,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 6. RED DE GREMIOS Y ALIANZAS */}
+      {/* 7. RED DE GREMIOS Y ALIANZAS */}
       <section className="py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
