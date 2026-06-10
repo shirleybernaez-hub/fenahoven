@@ -34,7 +34,7 @@ export default function Web() {
           {/* Logo Institucional desde la carpeta pública */}
           <div className="flex items-center">
             <img 
-              src="/logofenahoven.jpg" 
+              src="/logofenahoven_azul.png" 
               alt="Logo FENAHOVEN" 
               className="h-12 w-auto object-contain select-none"
             />
