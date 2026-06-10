@@ -674,7 +674,7 @@ export default function Web() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-200 font-light gap-4">
           
           <div className="text-center sm:text-left select-none tracking-wide text-slate-100">
-            © 2026 FENAHOVEN. Todos los derechos reservados.
+            © 2026 FENAHOVEN. "Todos los derechos reservados".
           </div>
           
           <div className="text-center sm:text-right">
