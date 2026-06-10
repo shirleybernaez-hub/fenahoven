@@ -38,24 +38,42 @@ export default function Web() {
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* 1. TOP BAR CLONADO (AZUL SOLIDO #2F92B9 COINCIDIENDO CON LA REFERENCIA) */}
-      <div className="bg-[#2F92B9] h-12 w-full"></div>
+      {/* 1. TOP BAR CON TEXTOS INFORMATIVOS EN FONDO AZUL #2F92B9 */}
+      <div className="bg-[#2F92B9] py-2 px-6 md:px-12 text-white text-[11px] font-medium tracking-wide relative z-30">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+          {/* Contacto Izquierda */}
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-2">
+              <span className="opacity-80">✉</span> contacto@fenahoven.org.ve
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="opacity-80">📞</span> +58 (212) 993-4444
+            </span>
+          </div>
+          {/* Redes Derecha */}
+          <div className="flex items-center gap-4 opacity-90">
+            <span className="cursor-pointer hover:text-slate-200">𝕏</span>
+            <span className="cursor-pointer hover:text-slate-200 font-bold">in</span>
+            <span className="cursor-pointer hover:text-slate-200">ƒ</span>
+          </div>
+        </div>
+      </div>
 
-      {/* 2. NAVBAR PRINCIPAL CLONADO (CON ESCUDO FLOTANTE CALADO Y NUEVOS LINKS) */}
+      {/* 2. NAVBAR REFINADO (ESCUDO FLOTANTE DESDE EL BORDE DEL TOPBAR) */}
       <nav className="bg-white border-b border-gray-200 relative px-6 md:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[80px] relative py-4 md:py-0">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[85px] relative py-4 md:py-0">
           
-          {/* Escudo Flotante Calado (Se superpone hacia el topbar y rompe el borde inferior exactamente como la captura) */}
-          <div className="flex items-center justify-center md:justify-start relative md:absolute -top-6 left-0 z-20 mb-4 md:mb-0">
+          {/* Escudo Institucional: Alineado exactamente al ras inferior del Top Bar, sobresaliendo solo hacia abajo */}
+          <div className="flex items-center justify-center md:justify-start relative md:absolute top-0 left-0 z-20 mb-4 md:mb-0">
             <img 
               src="/logowebfenahoven.jpg" 
               alt="Escudo Oficial FENAHOVEN" 
-              className="h-32 md:h-36 w-auto object-contain select-none" 
+              className="h-28 md:h-32 w-auto object-contain select-none" 
             />
           </div>
 
-          {/* Menú de Enlaces Centrados con los nombres de la referencia */}
-          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-3 items-center justify-center text-xs md:text-[15px] font-medium text-slate-900 tracking-wide md:min-h-[80px]">
+          {/* Menú de Enlaces Centrados e idénticos a la captura */}
+          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-3 items-center justify-center text-xs md:text-[15px] font-medium text-slate-900 tracking-wide md:min-h-[85px]">
             <a 
               href="/quienes-somos" 
               target="_blank" 
@@ -77,7 +95,7 @@ export default function Web() {
         </div>
       </nav>
 
-      {/* 3. HERO INSTITUTIONAL CON TITULAR EN 3 LÍNEAS */}
+      {/* 3. HERO INSTITUTIONAL */}
       <section 
         className="relative min-h-[95vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed py-20"
         style={{ 
