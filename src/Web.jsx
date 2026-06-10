@@ -187,7 +187,7 @@ export default function Web() {
 
             <div className="md:col-span-7 space-y-10">
               <p className="text-slate-700 text-base md:text-lg font-light leading-relaxed">
-                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organization gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
+                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
@@ -326,7 +326,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4.5. NUEVA SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO */}
+      {/* 4.5. NUEVA SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO (Tipografía Unificada) */}
       <section className="py-28 bg-[#F8FAFC] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
           
@@ -342,57 +342,57 @@ export default function Web() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Función 1 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-              <div className="text-xs font-bold text-[#2F92B9] font-mono">01 / REPRESENTACIÓN GREMIAL</div>
-              <p className="text-slate-600 text-sm font-light leading-relaxed">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
+              <h3 className="text-lg font-bold mb-3 text-slate-950">Representación Gremial</h3>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">
                 Defiende los intereses de hoteles y posadas ante organismos públicos y privados.
               </p>
             </div>
 
             {/* Función 2 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-              <div className="text-xs font-bold text-[#2F92B9] font-mono">02 / ESTADÍSTICAS SECTORIALES</div>
-              <p className="text-slate-600 text-sm font-light leading-relaxed">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
+              <h3 className="text-lg font-bold mb-3 text-slate-950">Estadísticas Sectoriales</h3>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">
                 Produce y divulga indicadores de ocupación hotelera, comportamiento de temporadas turísticas y tendencias del mercado.
               </p>
             </div>
 
             {/* Función 3 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-              <div className="text-xs font-bold text-[#2F92B9] font-mono">03 / PROMOCIÓN DEL TURISMO</div>
-              <p className="text-slate-600 text-sm font-light leading-relaxed">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
+              <h3 className="text-lg font-bold mb-3 text-slate-950">Promoción del Turismo</h3>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">
                 Participa en iniciativas para fortalecer destinos turísticos y atraer visitantes nacionales e internacionales.
               </p>
             </div>
 
             {/* Función 4 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-              <div className="text-xs font-bold text-[#2F92B9] font-mono">04 / FORMACIÓN Y REFUERZO</div>
-              <p className="text-slate-600 text-sm font-light leading-relaxed">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
+              <h3 className="text-lg font-bold mb-3 text-slate-950">Formación y Refuerzo</h3>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">
                 Promueve encuentros gremiales, intercambio de experiencias y actualización del sector hotelero.
               </p>
             </div>
 
             {/* Función 5 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-              <div className="text-xs font-bold text-[#2F92B9] font-mono">05 / ATENCIÓN DE EMERGENCIAS</div>
-              <p className="text-slate-600 text-sm font-light leading-relaxed">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
+              <h3 className="text-lg font-bold mb-3 text-slate-950">Atención de Emergencias</h3>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">
                 Coordina apoyo a establecimientos afiliados afectados por desastres naturales o situaciones extraordinarias.
               </p>
             </div>
 
             {/* Función 6 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-              <div className="text-xs font-bold text-[#2F92B9] font-mono">06 / ATRACCIÓN DE INVERSIONES</div>
-              <p className="text-slate-600 text-sm font-light leading-relaxed">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
+              <h3 className="text-lg font-bold mb-3 text-slate-950">Atracción de Inversiones</h3>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">
                 Promueve oportunidades para marcas hoteleras, franquicias, reconversión de activos y nuevos proyectos turísticos.
               </p>
             </div>
 
-            {/* Función 7 - Expandida de forma proporcional al final del contenedor */}
-            <div className="md:col-span-2 lg:col-span-3 bg-white p-6 md:p-8 rounded-2xl border border-slate-200/60 shadow-sm space-y-4">
-              <div className="text-xs font-bold text-[#2F92B9] font-mono">07 / DEFENSA DE CONDICIONES PARA LA ACTIVIDAD HOTELERA</div>
-              <p className="text-slate-700 text-sm font-light leading-relaxed">
+            {/* Función 7 - Expandida proporcionalmente al final */}
+            <div className="md:col-span-2 lg:col-span-3 bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-4 hover:scale-[1.01] transition-all duration-300">
+              <h3 className="text-lg font-bold mb-3 text-slate-950">Defensa de Condiciones para la Actividad Hotelera</h3>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">
                 Plantea activamente propuestas y soluciones estratégicas sobre los siguientes ejes críticos del sector:
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 pt-2">
