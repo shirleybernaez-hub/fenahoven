@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// Componente interno para animar los números de forma interactiva
+// Componente interno para animar los números de forma interactiva (cuenta progresiva dinámica)
 function Counter({ value, duration = 1500 }) {
   const [count, setCount] = useState(0);
 
@@ -69,7 +69,7 @@ export default function Web() {
             >
               Quiénes Somos
             </a>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Datos de la Industry</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Datos de la Industria</span>
             <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Dashboard Nacional</span>
             <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Eventos</span>
             <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Capacitación</span>
@@ -79,45 +79,66 @@ export default function Web() {
         </div>
       </nav>
 
-      {/* 3. HERO INSTITUTIONAL CON EFECTO PARALLAX Y DEGRADADO */}
+      {/* 3. HERO INSTITUTIONAL CON PARALLAX, DEGRADADO Y CARDS BLANCAS DE ALTO IMPACTO */}
       <section 
-        className="relative min-h-[85vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed"
+        className="relative min-h-[90vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed py-20"
         style={{ 
-          backgroundImage: `linear-gradient(to bottom, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.45)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop')` 
+          backgroundImage: `linear-gradient(to bottom, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.50)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop')` 
         }}
       >
-        {/* Contenido del Hero (Textos en blanco para máximo contraste sobre el fondo oscuro) */}
-        <div className="text-center max-w-5xl mb-20 z-10">
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8 uppercase tracking-tight dropped-shadow-sm">
+        {/* Contenido de Textos */}
+        <div className="text-center max-w-5xl mb-16 z-10">
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 uppercase tracking-tight">
             67 AÑOS IMPULSANDO EL TURISMO EN VENEZUELA
           </h1>
-          <p className="text-xl text-slate-200 font-light tracking-wide max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-slate-200 font-light tracking-wide max-w-2xl mx-auto">
             La voz oficial de la hotelería venezolana desde 1958.
           </p>
         </div>
 
-        {/* Indicadores del sector integrados con fondo translúcido premium */}
-        <div className="w-full max-w-5xl bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20 z-10 shadow-2xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 text-center">
-            <div>
-              <span className="block text-3xl md:text-4xl font-bold text-white mb-2">300+</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-bold">Hoteles Representados</span>
+        {/* Bloque de Indicadores: Transformado en una grilla de Cards Blancas Independientes */}
+        <div className="w-full max-w-6xl z-10 space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            
+            {/* Card 1 */}
+            <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
+              <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
+                <Counter value="300" />+
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Hoteles Representados</span>
             </div>
-            <div>
-              <span className="block text-3xl md:text-4xl font-bold text-white mb-2">24</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-bold">Estados Afiliados</span>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
+              <span className="block text-4xl md:text-5xl font-black text-[#1E293B] tracking-tight mb-3">
+                <Counter value="24" />
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Estados Afiliados</span>
             </div>
-            <div>
-              <span className="block text-3xl md:text-4xl font-bold text-white mb-2">67</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-bold">Años de Trayectoria</span>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
+              <span className="block text-4xl md:text-5xl font-black text-[#1E293B] tracking-tight mb-3">
+                <Counter value="67" />
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Años de Trayectoria</span>
             </div>
-            <div>
-              <span className="block text-3xl md:text-4xl font-bold text-white mb-2">12+</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-bold">Eventos Anuales</span>
+
+            {/* Card 4 */}
+            <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
+              <span className="block text-4xl md:text-5xl font-black text-[#1E293B] tracking-tight mb-3">
+                <Counter value="12" />+
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Eventos Anuales</span>
             </div>
+
           </div>
-          <div className="text-center mt-8">
-            <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase">Fuente: Registro Histórico FENAHOVEN</span>
+
+          {/* Atribución de fuente */}
+          <div className="text-center pt-2">
+            <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase bg-slate-900/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
+              Fuente: Registro Histórico FENAHOVEN
+            </span>
           </div>
         </div>
       </section>
