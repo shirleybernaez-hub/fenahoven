@@ -57,43 +57,43 @@ export default function Web() {
         </div>
       </div>
 
-      {/* 2. NAVBAR SOLUCIONADO (ESTRUCTURA DE 3 COLUMNAS CON INTEGRACIÓN ÓPTICA DEL ESCUDO) */}
-      <nav className="bg-white sticky top-0 z-50 px-6 py-4 md:px-12 border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-4">
+      {/* 2. NAVBAR PRINCIPAL SÚPER ALTO (RETORNO A VERSIÓN ESTABLE) */}
+      <nav className="bg-white sticky top-0 z-50 px-6 py-10 md:py-12 border-b border-slate-200/80 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-col gap-8 md:flex-row md:items-center justify-between">
           
-          {/* Columna Izquierda: Escudo integrado rompiendo sutilmente el margen para simular un calado perfecto */}
-          <div className="flex items-center justify-center md:justify-start">
+          {/* Escudo Institucional Oficial */}
+          <div className="flex items-center justify-center md:justify-start shrink-0">
             <img 
               src="/logowebfenahoven.jpg" 
               alt="Escudo Oficial FENAHOVEN" 
-              className="h-20 md:h-24 w-auto object-contain select-none -my-6 md:-my-8 relative z-10" 
+              className="h-20 md:h-28 w-auto object-contain select-none" 
             />
           </div>
 
-          {/* Columna Central: Enlaces perfectamente centrados en el eje de la pantalla */}
-          <div className="flex flex-wrap gap-x-6 gap-y-2 items-center justify-center text-xs md:text-[13px] font-bold text-[#10172A] tracking-wide whitespace-nowrap">
+          {/* Menú de Enlaces Centrado, Bold, Color #10172A */}
+          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-4 items-center justify-center text-xs md:text-[13px] font-bold text-[#10172A] tracking-wide">
             <a 
               href="/quienes-somos" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="cursor-pointer hover:text-[#0062B2] transition-colors py-1"
+              className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1"
             >
               Quiénes Somos
             </a>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors py-1">Datos de la Industria</span>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors py-1">Dashboard Nacional</span>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors py-1">Eventos</span>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors py-1">Capacitación</span>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors py-1">Contacto</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Datos de la Industria</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Dashboard Nacional</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Eventos</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Capacitación</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Contacto</span>
           </div>
 
-          {/* Columna Derecha: Bloque vacío equilibrador (Mantiene el menú en el centro real del monitor) */}
-          <div className="hidden md:block" />
+          {/* Bloque vacío invisible para equilibrar el centrado real en escritorio */}
+          <div className="hidden md:block w-20 md:w-28 shrink-0 pointer-events-none" />
 
         </div>
       </nav>
 
-      {/* 3. HERO INSTITUTIONAL */}
+      {/* 3. HERO INSTITUTIONAL CON TITULAR EN 3 LÍNEAS */}
       <section 
         className="relative min-h-[95vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed py-20"
         style={{ 
