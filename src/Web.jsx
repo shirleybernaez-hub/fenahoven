@@ -24,6 +24,9 @@ function Counter({ value, duration = 1500 }) {
 }
 
 export default function Web() {
+  // Estado para controlar qué hito de la historia está seleccionado/activo (Inicia en el primero: 1958)
+  const [activeHito, setActiveHito] = useState(0);
+
   // Arreglo con clases de tamaño personalizadas para equilibrar visualmente cada logo de la red
   const partners = [
     { src: '/conseturismo.png', alt: 'Conseturismo', className: 'max-h-12 w-auto' },
@@ -167,7 +170,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE MEJORADO CON CÍRCULOS DE ENTRADA/SALIDA Y AROS AZULES */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO REORDENADO DE ACUERDO AL FLUJO DE LECTURA */}
       <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           
@@ -180,61 +183,76 @@ export default function Web() {
           {/* Estructura del Timeline */}
           <div className="relative">
             
-            {/* Círculo Pequeño al INICIO de la línea (Arriba en el centro) */}
+            {/* Círculo base superior de inicio */}
             <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
             
             {/* Línea Eje Central */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[#D1D5DB] z-0" />
             
-            {/* Círculo Pequeño al FINAL de la línea (Abajo en el centro) */}
+            {/* Círculo base inferior de cierre */}
             <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
 
-            <div className="space-y-16 md:space-y-28 py-8 relative z-10">
+            <div className="space-y-16 md:space-y-24 py-8 relative z-10">
               {timelineEvents.map((event, index) => {
-                // Alternamos lados: 
-                // Index par (1958): Caja Izquierda, Año Derecho.
-                // Index impar (1993): Caja Derecha, Año Izquierdo.
-                const isLeftBox = index % 2 === 0;
+                // FLUJO NATURAL REORDENADO: 
+                // Index 0 (1958): Año a la IZQUIERDA, Caja a la DERECHA (Lectura perfecta de corrido).
+                // Index 1 (1993): Año a la DERECHA, Caja a la IZQUIERDA.
+                const isLeftYear = index % 2 === 0;
+                const isItemActive = activeHito === index;
 
                 return (
                   <div 
                     key={index} 
-                    className="flex flex-col md:grid md:grid-cols-11 items-center w-full relative"
+                    className={`flex flex-col md:grid md:grid-cols-11 items-center w-full relative cursor-pointer transition-all duration-300 ${
+                      isItemActive ? 'opacity-100 scale-100' : 'opacity-50 hover:opacity-80 scale-[0.99]'
+                    }`}
+                    onClick={() => setActiveHito(index)}
                   >
                     
-                    {/* COLUMNA IZQUIERDA (Caja Informativa o Año de forma alternada) */}
+                    {/* COLUMNA IZQUIERDA (Año o Caja Informativa según la alternancia) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-end md:px-8 z-10">
-                      {isLeftBox ? (
-                        <div className="w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
-                          <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
-                          <h3 className="text-lg font-bold text-slate-950 mb-3">{event.title}</h3>
-                          <p className="text-sm text-slate-500 font-light leading-relaxed">{event.description}</p>
+                      {isLeftYear ? (
+                        <div className={`text-4xl lg:text-5xl font-black tracking-tight select-none pr-4 transition-colors duration-300 ${
+                          isItemActive ? 'text-slate-950 font-black' : 'text-[#CBD5E1]'
+                        }`}>
+                          {event.year}
                         </div>
                       ) : (
-                        <div className="hidden md:block text-4xl lg:text-5xl font-black text-[#CBD5E1] tracking-tight select-none pr-4">
-                          {event.year}
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
+                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
+                        }`}>
+                          <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
+                          <h3 className={`text-lg font-bold mb-3 transition-colors ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
+                          <p className="text-sm text-slate-500 font-light leading-relaxed">{event.description}</p>
                         </div>
                       )}
                     </div>
 
-                    {/* COLUMNA CENTRAL: PUNTO INTERMEDIO CON UN ARO AZUL ALREDEDOR */}
+                    {/* COLUMNA CENTRAL: PUNTO INTERMEDIO CON UN ARO AZUL DINÁMICO */}
                     <div className="hidden md:flex md:col-span-1 justify-center items-center z-20">
-                      {/* Aro lineal azul exterior (w-6 h-6) + Círculo filled más pequeño azul en el centro */}
-                      <div className="w-6 h-6 rounded-full bg-white border border-[#2F92B9] flex items-center justify-center shadow-sm">
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#2F92B9]" />
+                      <div className={`rounded-full bg-white flex items-center justify-center shadow-sm transition-all duration-300 ${
+                        isItemActive ? 'w-7 h-7 border-2 border-[#2F92B9] scale-110' : 'w-6 h-6 border border-[#2F92B9]/60'
+                      }`}>
+                        <div className={`rounded-full bg-[#2F92B9] transition-all duration-300 ${
+                          isItemActive ? 'w-3 h-3' : 'w-2.5 h-2.5'
+                        }`} />
                       </div>
                     </div>
 
-                    {/* COLUMNA DERECHA (Año o Caja Informativa de forma alternada) */}
+                    {/* COLUMNA DERECHA (Caja Informativa o Año según la alternancia) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-start md:px-8 z-10 mt-4 md:mt-0">
-                      {!isLeftBox ? (
-                        <div className="w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
+                      {isLeftYear ? (
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
+                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
+                        }`}>
                           <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
-                          <h3 className="text-lg font-bold text-slate-950 mb-3">{event.title}</h3>
+                          <h3 className={`text-lg font-bold mb-3 transition-colors ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
                           <p className="text-sm text-slate-500 font-light leading-relaxed">{event.description}</p>
                         </div>
                       ) : (
-                        <div className="hidden md:block text-4xl lg:text-5xl font-black text-[#CBD5E1] tracking-tight select-none pl-4">
+                        <div className={`text-4xl lg:text-5xl font-black tracking-tight select-none pl-4 transition-colors duration-300 ${
+                          isItemActive ? 'text-slate-950 font-black' : 'text-[#CBD5E1]'
+                        }`}>
                           {event.year}
                         </div>
                       )}
@@ -300,7 +318,7 @@ export default function Web() {
           <div className="lg:col-span-7 space-y-12">
             <div>
               <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Estadísticas en Tiempo Real</span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industry</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industria</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 border-t border-slate-100 pt-8">
