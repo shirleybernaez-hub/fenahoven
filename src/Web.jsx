@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// Componente interno para animar los números de forma interactiva
+// Componente interno para animar los números de forma interactiva (cuenta progresiva dinámica)
 function Counter({ value, duration = 1500 }) {
   const [count, setCount] = useState(0);
 
@@ -133,7 +133,41 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
+      {/* 4. SECCIÓN REUBICADA: BANNER OCUPACIÓN HOTELERA (JUSTO DEBAJO DEL HERO) */}
+      <section className="pt-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div 
+          className="relative rounded-3xl overflow-hidden bg-cover bg-center py-20 px-8 md:px-16 text-center shadow-xl border border-slate-100"
+          style={{ 
+            backgroundImage: `linear-gradient(to right, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1000&auto=format&fit=crop')` 
+          }}
+        >
+          <div className="max-w-3xl mx-auto space-y-6 relative z-10">
+            {/* Título Modificado */}
+            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+              Ocupación Hotelera Nacional
+            </h3>
+            
+            {/* Subtexto Modificado */}
+            <p className="text-sm md:text-base text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+              Resultados del Sistema Nacional de Estadísticas correspondientes al mes de enero.
+            </p>
+            
+            {/* CTA con texto actualizado */}
+            <div className="pt-4">
+              <a 
+                href="/reporte-ocupacion.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block border border-white text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-md hover:bg-white hover:text-[#10172A] transition-all duration-300"
+              >
+                descargar el reporte
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-5 w-full">
@@ -210,40 +244,6 @@ export default function Web() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. NUEVA SECCIÓN: BANNER BOLETÍN DE OCUPACIÓN (CLONADO DE HOTREC) */}
-      <section className="pb-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div 
-          className="relative rounded-3xl overflow-hidden bg-cover bg-center py-20 px-8 md:px-16 text-center shadow-xl border border-slate-100"
-          style={{ 
-            backgroundImage: `linear-gradient(to right, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1000&auto=format&fit=crop')` 
-          }}
-        >
-          <div className="max-w-3xl mx-auto space-y-6 relative z-10">
-            {/* Título Principal */}
-            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-              Ocupación Hotelera Nacional (Boletín Informativo)
-            </h3>
-            
-            {/* Subtexto descriptivo */}
-            <p className="text-sm md:text-base text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
-              El informe estadístico oficial de FENAHOVEN le ofrece un desglose detallado del comportamiento, pernoctaciones y evolución de la actividad turística en los 24 estados de Venezuela.
-            </p>
-            
-            {/* CTA Outline estilo Hotrec para abrir y descargar el PDF */}
-            <div className="pt-4">
-              <a 
-                href="/reporte-ocupacion.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block border border-white text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-md hover:bg-white hover:text-[#10172A] transition-all duration-300"
-              >
-                Lea el boletín informativo
-              </a>
             </div>
           </div>
         </div>
