@@ -24,15 +24,15 @@ function Counter({ value, duration = 1500 }) {
 }
 
 export default function Web() {
-  // Arreglo con las rutas e información de la Red de Gremios y Alianzas
+  // Arreglo con clases de tamaño personalizadas para equilibrar visualmente cada logo
   const partners = [
-    { src: '/conseturismo.png', alt: 'Conseturismo - Consejo Superior de Turismo' },
-    { src: '/avavit.jpg', alt: 'AVAVIT - Asociación Venezolana de Agencias de Viajes y Turismo' },
-    { src: '/avencintel.jpg', alt: 'AVENCINTEL - Asociación Venezolana de Hoteles Cinco Estrellas' },
-    { src: '/asociaciondelienas.png', alt: 'ALAV - Asociación de Líneas Aéreas en Venezuela' },
-    { src: '/camyticom.png', alt: 'Camyticom' },
-    { src: '/cvtt.jpg', alt: 'CVTT - Cámara Venezolana de Transporte Turístico Terrestre' },
-    { src: '/cavespa.png', alt: 'CAVESPA - Cámara Venezolano Española de Industria y Comercio' }
+    { src: '/conseturismo.png', alt: 'Conseturismo', className: 'max-h-12 w-auto' },
+    { src: '/avavit.jpg', alt: 'AVAVIT', className: 'max-h-12 w-auto' },
+    { src: '/avencintel.jpg', alt: 'AVENCINTEL', className: 'max-h-20 md:max-h-24 w-auto scale-110' }, // Más altura y escala para Avecintel
+    { src: '/asociaciondelienas.png', alt: 'ALAV', className: 'max-h-12 w-auto' },
+    { src: '/camyticom.png', alt: 'Camyticom', className: 'max-h-12 w-auto' },
+    { src: '/cvtt.jpg', alt: 'CVTT', className: 'max-h-16 md:max-h-20 w-auto scale-110' }, // Más altura y escala para CVTT
+    { src: '/cavespa.png', alt: 'CAVESPA', className: 'max-h-14 w-auto' }
   ];
 
   return (
@@ -255,18 +255,17 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 6. RED DE GREMIOS Y ALIANZAS (LOGOS A COLOR ORIGINAL DIRECTAMENTE) */}
+      {/* 6. RED DE GREMIOS Y ALIANZAS CON LOGOS EQUILIBRADOS ÓPTICAMENTE */}
       <section className="py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
-          {/* Cabecera */}
           <div className="text-center max-w-2xl mx-auto mb-20">
             <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Ecosistema Institutional</span>
             <h2 className="text-3xl font-bold tracking-tight text-[#10172A] uppercase">Red de Gremios y Alianzas</h2>
             <p className="text-slate-500 mt-2 font-light text-sm">Trabajamos de la mano con las principales organizaciones turísticas y comerciales del país.</p>
           </div>
 
-          {/* Grilla de Logotipos Directamente a Color */}
+          {/* Grilla balanceada aplicando clases dinámicas */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-12 md:gap-8 items-center justify-center">
             {partners.map((partner, index) => (
               <div 
@@ -277,7 +276,7 @@ export default function Web() {
                   src={partner.src} 
                   alt={partner.alt} 
                   title={partner.alt}
-                  className="max-h-12 max-w-full object-contain transform group-hover:scale-105 transition-all duration-300 select-none" 
+                  className={`${partner.className} object-contain transform group-hover:scale-105 transition-all duration-300 select-none`} 
                 />
               </div>
             ))}
