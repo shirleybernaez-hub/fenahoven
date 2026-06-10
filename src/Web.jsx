@@ -187,7 +187,7 @@ export default function Web() {
 
             <div className="md:col-span-7 space-y-10">
               <p className="text-slate-700 text-base md:text-lg font-light leading-relaxed">
-                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
+                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organization gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
@@ -326,131 +326,81 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4.5. NUEVA SECCIÓN ESTRATÉGICA: FUNCIONES Y SITUACIÓN ACTUAL */}
+      {/* 4.5. NUEVA SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO */}
       <section className="py-28 bg-[#F8FAFC] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
+          
+          <div>
+            <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-2">Acción Institucional</span>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">
+              Funciones de FENAHOVEN en Venezuela
+            </h2>
+            <div className="w-16 h-1 bg-[#2F92B9] rounded-full mt-4" />
+          </div>
+
+          {/* Grid de Funciones optimizado a 3 columnas */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            {/* LADO IZQUIERDO: FUNCIONES DE FENAHOVEN (8 COLUMNAS) */}
-            <div className="lg:col-span-8 space-y-12">
-              <div>
-                <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-2">Acción Institucional</span>
-                <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">
-                  Funciones de FENAHOVEN en Venezuela
-                </h2>
-                <div className="w-16 h-1 bg-[#2F92B9] rounded-full mt-4" />
-              </div>
-
-              {/* Grid de Funciones */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                
-                {/* Función 1 */}
-                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-                  <div className="text-xs font-bold text-[#2F92B9] font-mono">01 / REPRESENTACIÓN GREMIAL</div>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed">
-                    Defiende los intereses de hoteles y posadas ante organismos públicos y privados.
-                  </p>
-                </div>
-
-                {/* Función 2 */}
-                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-                  <div className="text-xs font-bold text-[#2F92B9] font-mono">02 / ESTADÍSTICAS SECTORIALES</div>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed">
-                    Produce y divulga indicadores de ocupación hotelera, comportamiento de temporadas turísticas y tendencias del mercado.
-                  </p>
-                </div>
-
-                {/* Función 3 */}
-                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-                  <div className="text-xs font-bold text-[#2F92B9] font-mono">03 / PROMOCIÓN DEL TURISMO</div>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed">
-                    Participa en iniciativas para fortalecer destinos turísticos y atraer visitantes nacionales e internacionales.
-                  </p>
-                </div>
-
-                {/* Función 5 (Reposicionada para balance) */}
-                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-                  <div className="text-xs font-bold text-[#2F92B9] font-mono">04 / FORMACIÓN Y REFUERZO</div>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed">
-                    Promueve encuentros gremiales, intercambio de experiencias y actualización del sector hotelero.
-                  </p>
-                </div>
-
-                {/* Función 6 */}
-                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-                  <div className="text-xs font-bold text-[#2F92B9] font-mono">05 / ATENCIÓN DE EMERGENCIAS</div>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed">
-                    Coordina apoyo a establecimientos afiliados afectados por desastres naturales o situaciones extraordinarias.
-                  </p>
-                </div>
-
-                {/* Función 7 */}
-                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
-                  <div className="text-xs font-bold text-[#2F92B9] font-mono">06 / ATRACCIÓN DE INVERSIONES</div>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed">
-                    Promueve oportunidades para marcas hoteleras, franquicias, reconversión de activos y nuevos proyectos turísticos.
-                  </p>
-                </div>
-
-                {/* Función 4 (Destacada a doble columna por su nivel de detalle) */}
-                <div className="sm:col-span-2 bg-white p-6 md:p-8 rounded-2xl border border-slate-200/60 shadow-sm space-y-4">
-                  <div className="text-xs font-bold text-[#2F92B9] font-mono">07 / DEFENSA DE CONDICIONES PARA LA ACTIVIDAD HOTELERA</div>
-                  <p className="text-slate-700 text-sm font-light leading-relaxed">
-                    Plantea activamente propuestas y soluciones estratégicas sobre los siguientes ejes críticos del sector:
-                  </p>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 pt-2">
-                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Conectividad aérea</div>
-                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Infraestructura</div>
-                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Servicios públicos</div>
-                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Regulación turística</div>
-                    <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100 col-span-2 sm:col-span-1">Alojamientos informales</div>
-                  </div>
-                </div>
-
-              </div>
+            {/* Función 1 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+              <div className="text-xs font-bold text-[#2F92B9] font-mono">01 / REPRESENTACIÓN GREMIAL</div>
+              <p className="text-slate-600 text-sm font-light leading-relaxed">
+                Defiende los intereses de hoteles y posadas ante organismos públicos y privados.
+              </p>
             </div>
 
-            {/* LADO DERECHO: SITUACIÓN ACTUAL SECTOR (4 COLUMNAS - MINIMALISMO SENSORIAL) */}
-            <div className="lg:col-span-4 bg-[#10172A] rounded-3xl p-8 text-white shadow-xl space-y-8 sticky top-6">
-              <div className="space-y-2">
-                <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#2F92B9] block">Radiografía del Mercado</span>
-                <h3 className="text-xl font-bold tracking-tight uppercase">Situación Actual del Sector</h3>
-                <p className="text-[11px] text-slate-400 font-light">Según las declaraciones institucionales de Alberto Vieira.</p>
-              </div>
+            {/* Función 2 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+              <div className="text-xs font-bold text-[#2F92B9] font-mono">02 / ESTADÍSTICAS SECTORIALES</div>
+              <p className="text-slate-600 text-sm font-light leading-relaxed">
+                Produce y divulga indicadores de ocupación hotelera, comportamiento de temporadas turísticas y tendencias del mercado.
+              </p>
+            </div>
 
-              <div className="w-full h-[1px] bg-slate-800" />
+            {/* Función 3 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+              <div className="text-xs font-bold text-[#2F92B9] font-mono">03 / PROMOCIÓN DEL TURISMO</div>
+              <p className="text-slate-600 text-sm font-light leading-relaxed">
+                Participa en iniciativas para fortalecer destinos turísticos y atraer visitantes nacionales e internacionales.
+              </p>
+            </div>
 
-              <div className="space-y-6">
-                
-                {/* Cifra 30% */}
-                <div className="space-y-1">
-                  <div className="text-4xl font-black text-[#2F92B9] tracking-tight">~30%</div>
-                  <h4 className="text-xs uppercase font-bold tracking-wider text-slate-200">Ocupación Nacional</h4>
-                  <p className="text-xs text-slate-400 font-light leading-relaxed">
-                    La tasa base promedio ronda esta cifra en el territorio nacional, concentrando sus <strong className="text-white font-medium">niveles más altos en Caracas</strong>.
-                  </p>
-                </div>
+            {/* Función 4 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+              <div className="text-xs font-bold text-[#2F92B9] font-mono">04 / FORMACIÓN Y REFUERZO</div>
+              <p className="text-slate-600 text-sm font-light leading-relaxed">
+                Promueve encuentros gremiales, intercambio de experiencias y actualización del sector hotelero.
+              </p>
+            </div>
 
-                {/* Retos principales */}
-                <div className="space-y-2 bg-white/5 p-4 rounded-xl border border-white/10">
-                  <h4 className="text-xs uppercase font-bold tracking-wider text-slate-200 flex items-center gap-2">
-                    <span className="text-amber-500">⚠</span> Retos Prioritarios
-                  </h4>
-                  <p className="text-xs text-slate-400 font-light leading-relaxed">
-                    Los principales frenos estructurales identificados son la optimización de la <strong className="text-slate-200 font-medium">conectividad aérea</strong> y el crecimiento exponencial de los <strong className="text-slate-200 font-medium">alojamientos informales</strong>.
-                  </p>
-                </div>
+            {/* Función 5 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+              <div className="text-xs font-bold text-[#2F92B9] font-mono">05 / ATENCIÓN DE EMERGENCIAS</div>
+              <p className="text-slate-600 text-sm font-light leading-relaxed">
+                Coordina apoyo a establecimientos afiliados afectados por desastres naturales o situaciones extraordinarias.
+              </p>
+            </div>
 
-                {/* Apertura Internacional */}
-                <div className="space-y-2 bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/20">
-                  <h4 className="text-xs uppercase font-bold tracking-wider text-emerald-400 flex items-center gap-2">
-                    <span className="animate-pulse">●</span> Proyección de Apertura
-                  </h4>
-                  <p className="text-xs text-slate-300 font-light leading-relaxed">
-                    Existe un sólido interés de inversionistas privados y grandes cadenas hoteleras internacionales por volver a operar en el mercado venezolano.
-                  </p>
-                </div>
+            {/* Función 6 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm space-y-3">
+              <div className="text-xs font-bold text-[#2F92B9] font-mono">06 / ATRACCIÓN DE INVERSIONES</div>
+              <p className="text-slate-600 text-sm font-light leading-relaxed">
+                Promueve oportunidades para marcas hoteleras, franquicias, reconversión de activos y nuevos proyectos turísticos.
+              </p>
+            </div>
 
+            {/* Función 7 - Expandida de forma proporcional al final del contenedor */}
+            <div className="md:col-span-2 lg:col-span-3 bg-white p-6 md:p-8 rounded-2xl border border-slate-200/60 shadow-sm space-y-4">
+              <div className="text-xs font-bold text-[#2F92B9] font-mono">07 / DEFENSA DE CONDICIONES PARA LA ACTIVIDAD HOTELERA</div>
+              <p className="text-slate-700 text-sm font-light leading-relaxed">
+                Plantea activamente propuestas y soluciones estratégicas sobre los siguientes ejes críticos del sector:
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 pt-2">
+                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Conectividad aérea</div>
+                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Infraestructura</div>
+                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Servicios públicos</div>
+                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Regulación turística</div>
+                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100 col-span-2 sm:col-span-1">Alojamientos informales</div>
               </div>
             </div>
 
