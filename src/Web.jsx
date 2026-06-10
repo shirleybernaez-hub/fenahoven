@@ -27,10 +27,9 @@ export default function Web() {
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* 1. TOP BAR (BARRA SUPERIOR INSPIRADA EN HOTREC) */}
+      {/* 1. TOP BAR (ESTILO HOTREC) */}
       <div className="bg-[#FFFFFF] border-b border-slate-100 py-2 px-6 md:px-12 text-slate-400 text-[11px] font-medium tracking-wide">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          {/* Contacto Izquierda */}
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
               <span className="opacity-60">✉</span> contacto@fenahoven.org.ve
@@ -39,7 +38,6 @@ export default function Web() {
               <span className="opacity-60">📞</span> +58 (212) 993-4444
             </span>
           </div>
-          {/* Redes Derecha (Marcadores de posición elegantes) */}
           <div className="flex items-center gap-4 opacity-70">
             <span className="cursor-pointer hover:text-[#0062B2]">𝕏</span>
             <span className="cursor-pointer hover:text-[#0062B2] font-bold">in</span>
@@ -52,7 +50,7 @@ export default function Web() {
       <nav className="bg-white sticky top-0 z-50 px-6 py-8 md:px-12 border-b border-slate-200/80 shadow-sm">
         <div className="max-w-7xl mx-auto flex flex-col gap-6 md:flex-row md:items-center relative">
           
-          {/* Logo Principal (Compacto a la izquierda) */}
+          {/* Logo Principal */}
           <div className="flex items-center justify-center md:justify-start md:absolute">
             <img 
               src="/logofenahoven_azul.png" 
@@ -61,7 +59,7 @@ export default function Web() {
             />
           </div>
 
-          {/* Menú de Enlaces Totalmente Centrado, Bold, Color #10172A */}
+          {/* Menú de Enlaces Centrado, Bold, Color #10172A */}
           <div className="flex-1 flex flex-wrap gap-x-8 gap-y-3 items-center justify-center text-xs md:text-[13px] font-bold text-[#10172A] tracking-wide">
             <a 
               href="/quienes-somos" 
@@ -71,7 +69,7 @@ export default function Web() {
             >
               Quiénes Somos
             </a>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Datos de la Industria</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Datos de la Industry</span>
             <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Dashboard Nacional</span>
             <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Eventos</span>
             <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Capacitación</span>
@@ -81,35 +79,41 @@ export default function Web() {
         </div>
       </nav>
 
-      {/* HERO INSTITUCIONAL */}
-      <section className="min-h-[75vh] flex flex-col justify-center items-center px-8 bg-gradient-to-b from-white to-slate-50/50 border-b border-slate-100">
-        <div className="text-center max-w-4xl mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold text-[#0062B2] leading-tight mb-8 uppercase tracking-tight">
+      {/* 3. HERO INSTITUTIONAL CON EFECTO PARALLAX Y DEGRADADO */}
+      <section 
+        className="relative min-h-[85vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{ 
+          backgroundImage: `linear-gradient(to bottom, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.45)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop')` 
+        }}
+      >
+        {/* Contenido del Hero (Textos en blanco para máximo contraste sobre el fondo oscuro) */}
+        <div className="text-center max-w-5xl mb-20 z-10">
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8 uppercase tracking-tight dropped-shadow-sm">
             67 AÑOS IMPULSANDO EL TURISMO EN VENEZUELA
           </h1>
-          <p className="text-xl text-slate-500 font-light">
+          <p className="text-xl text-slate-200 font-light tracking-wide max-w-2xl mx-auto">
             La voz oficial de la hotelería venezolana desde 1958.
           </p>
         </div>
 
-        {/* Indicadores del sector */}
-        <div className="w-full max-w-5xl border-t border-slate-200/60 pt-12">
+        {/* Indicadores del sector integrados con fondo translúcido premium */}
+        <div className="w-full max-w-5xl bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20 z-10 shadow-2xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 text-center">
             <div>
-              <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">300+</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Hoteles Representados</span>
+              <span className="block text-3xl md:text-4xl font-bold text-white mb-2">300+</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-bold">Hoteles Representados</span>
             </div>
             <div>
-              <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">24</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Estados Afiliados</span>
+              <span className="block text-3xl md:text-4xl font-bold text-white mb-2">24</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-bold">Estados Afiliados</span>
             </div>
             <div>
-              <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">67</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Años de Trayectoria</span>
+              <span className="block text-3xl md:text-4xl font-bold text-white mb-2">67</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-bold">Años de Trayectoria</span>
             </div>
             <div>
-              <span className="block text-3xl md:text-4xl font-bold text-[#1E293B] mb-2">12+</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">Eventos Anuales</span>
+              <span className="block text-3xl md:text-4xl font-bold text-white mb-2">12+</span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-bold">Eventos Anuales</span>
             </div>
           </div>
           <div className="text-center mt-8">
@@ -118,7 +122,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
+      {/* 4. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
