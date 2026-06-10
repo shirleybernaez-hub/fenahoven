@@ -167,7 +167,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO CON LÍNEA CENTRAL ALTERNADA */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE PREMIUM (FECHAS EXTERNAS Y CIRCULOS FILLED) */}
       <section className="py-28 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           
@@ -178,54 +178,54 @@ export default function Web() {
             <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-4 rounded-full" />
           </div>
 
-          {/* Contenedor del Timeline con la línea en el centro real */}
+          {/* Contenedor principal con el eje central */}
           <div className="relative">
             
-            {/* La Línea Central (Solo se ve desde tablets en adelante, en móvil se esconde para mejor lectura) */}
+            {/* Línea Central Perfecta */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-slate-200 z-0" />
 
-            <div className="space-y-16 md:space-y-24 relative z-10">
+            <div className="space-y-16 md:space-y-20 relative z-10">
               {timelineEvents.map((event, index) => {
-                // Determinar si el elemento va a la izquierda (índices pares: 0, 2, 4) o derecha (impares)
                 const isLeft = index % 2 === 0;
 
                 return (
                   <div 
                     key={index} 
-                    className={`flex flex-col md:flex-row items-center w-full ${
+                    className={`flex flex-col md:flex-row items-center w-full relative ${
                       isLeft ? 'md:flex-row-reverse' : ''
                     }`}
                   >
-                    {/* 1. LADO DEL CONTENIDO (Se acomoda automáticamente a izquierda o derecha) */}
-                    <div className="w-full md:w-1/2 flex justify-center md:justify-start px-0 md:px-8">
-                      <div className={`w-full max-w-xl bg-slate-50/60 hover:bg-white rounded-2xl p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row items-start gap-4 sm:gap-6 group ${
-                        isLeft ? 'md:text-left' : ''
-                      }`}>
+                    {/* LADO DE LA CAJA INFORMATIVA */}
+                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-12 z-10">
+                      <div className="w-full max-w-lg bg-slate-50/60 hover:bg-white rounded-2xl p-6 md:p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
                         
-                        {/* Año de Gran Impacto */}
-                        <div className="text-3xl md:text-4xl font-black text-[#2F92B9] tracking-tight shrink-0">
+                        {/* Año visible en móvil justo arriba del título */}
+                        <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-1">
                           {event.year}
                         </div>
-                        
-                        {/* Detalle */}
-                        <div className="space-y-2">
-                          <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#2F92B9] transition-colors">
-                            {event.title}
-                          </h3>
-                          <p className="text-sm text-slate-500 font-light leading-relaxed">
-                            {event.description}
-                          </p>
-                        </div>
+
+                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#2F92B9] transition-colors mb-2">
+                          {event.title}
+                        </h3>
+                        <p className="text-sm text-slate-500 font-light leading-relaxed">
+                          {event.description}
+                        </p>
                       </div>
                     </div>
 
-                    {/* 2. EL NODO / BURBUJA CENTRAL (Punto de anclaje flotante sobre la línea del medio) */}
-                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
-                      <div className="w-4 h-4 rounded-full bg-white border-4 border-[#2F92B9] shadow-md z-20 group-hover:scale-120 transition-transform" />
+                    {/* NODO CENTRAL RELLENO (CIRCULO FILLED) */}
+                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center z-20">
+                      <div className="w-4 h-4 rounded-full bg-[#2F92B9] shadow-md ring-4 ring-white" />
                     </div>
 
-                    {/* 3. LADO VACÍO EQUILIBRADOR (Para mantener las proporciones simétricas del 50% de la pantalla) */}
-                    <div className="hidden md:block w-1/2" />
+                    {/* LADO EXTERIOR: EL AÑO FLOTANDO AL OTRO LADO DE LA LÍNEA (Escritorio) */}
+                    <div className={`hidden md:flex w-1/2 px-12 items-center ${
+                      isLeft ? 'justify-start' : 'justify-end'
+                    }`}>
+                      <div className="text-4xl lg:text-5xl font-black text-slate-300/80 hover:text-[#2F92B9] transition-colors duration-300 cursor-default select-none tracking-tight">
+                        {event.year}
+                      </div>
+                    </div>
 
                   </div>
                 );
@@ -321,7 +321,7 @@ export default function Web() {
                   <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Estados Monitoreados</h4>
                   <p className="text-xs text-slate-400 font-light mb-3">Inteligencia turística de cobertura absoluta.</p>
                 </div>
-                <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase block">Fuente: División de Estadística FENAHOVEN</span>
+                <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase block">Fuente: Division de Estadística FENAHOVEN</span>
               </div>
 
               <div className="flex flex-col justify-between">
