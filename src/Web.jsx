@@ -89,7 +89,7 @@ export default function Web() {
         </div>
       </div>
 
-      {/* 2. NAVBAR PRINCIPAL CON RUTA DE LOGO Y RESPALDO DINÁMICO */}
+      {/* 2. NAVBAR PRINCIPAL: APUNTANDO EXCLUSIVAMENTE AL LOGO PNG TRANSPARENTE */}
       <nav className="bg-white border-b border-gray-200 relative px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[85px] relative py-4 md:py-0">
           
@@ -98,10 +98,6 @@ export default function Web() {
               src="/logowebfenahoven.png" 
               alt="Escudo Oficial FENAHOVEN" 
               className="h-28 md:h-32 w-auto object-contain select-none" 
-              onError={(e) => {
-                // Si la extensión en la carpeta public sigue siendo .jpg, esto evita que se rompa la interfaz
-                e.target.src = "/logowebfenahoven.jpg";
-              }}
             />
           </div>
 
@@ -179,7 +175,6 @@ export default function Web() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             
-            {/* Título y concepto a la izquierda */}
             <div className="md:col-span-5 space-y-4">
               <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block">Identidad Institucional</span>
               <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase leading-tight">
@@ -190,18 +185,14 @@ export default function Web() {
               <div className="w-12 h-1 bg-[#2F92B9] rounded-full mt-2" />
             </div>
 
-            {/* Párrafo maestro y pilares descriptivos con Glassmorphism */}
             <div className="md:col-span-7 space-y-10">
               <p className="text-slate-700 text-base md:text-lg font-light leading-relaxed">
                 La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
               </p>
 
-              {/* Bloques de Acción Estilo Glassmorphism */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
                 
-                {/* Pilar 1: Representación */}
                 <div className="space-y-3">
-                  {/* Ícono Glassmorphism */}
                   <div className="w-12 h-12 rounded-xl bg-white/40 backdrop-blur-md border border-white/60 shadow-inner flex items-center justify-center text-[#2F92B9]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -213,9 +204,7 @@ export default function Web() {
                   </div>
                 </div>
 
-                {/* Pilar 2: Desarrollo */}
                 <div className="space-y-3">
-                  {/* Ícono Glassmorphism */}
                   <div className="w-12 h-12 rounded-xl bg-white/40 backdrop-blur-md border border-white/60 shadow-inner flex items-center justify-center text-[#2F92B9]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2zm12 0v-11a2 2 0 00-2-2h-2a2 2 0 00-2 2v11a2 2 0 002 2h2a2 2 0 002-2z" />
@@ -227,9 +216,7 @@ export default function Web() {
                   </div>
                 </div>
 
-                {/* Pilar 3: Proyección */}
                 <div className="space-y-3">
-                  {/* Ícono Glassmorphism */}
                   <div className="w-12 h-12 rounded-xl bg-white/40 backdrop-blur-md border border-white/60 shadow-inner flex items-center justify-center text-[#2F92B9]">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -252,7 +239,6 @@ export default function Web() {
       <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           
-          {/* Cabecera */}
           <div className="text-center max-w-2xl mx-auto mb-24">
             <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-3">Trayectoria Histórica</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">Nuestra Línea del Tiempo</h2>
@@ -398,7 +384,7 @@ export default function Web() {
           <div className="lg:col-span-7 space-y-12">
             <div>
               <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Estadísticas en Tiempo Real</span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industry</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industria</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 border-t border-slate-100 pt-8">
