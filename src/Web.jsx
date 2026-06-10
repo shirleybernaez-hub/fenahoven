@@ -27,21 +27,23 @@ export default function Web() {
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* 1. TOP BAR (ESTILO HOTREC) */}
-      <div className="bg-[#FFFFFF] border-b border-slate-100 py-2 px-6 md:px-12 text-slate-400 text-[11px] font-medium tracking-wide">
+      {/* 1. TOP BAR (AHORA EN AZUL CON TEXTOS EN BLANCO) */}
+      <div className="bg-[#0062B2] py-2 px-6 md:px-12 text-white text-[11px] font-medium tracking-wide">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+          {/* Contacto Izquierda */}
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <span className="opacity-60">✉</span> contacto@fenahoven.org.ve
+              <span className="opacity-80">✉</span> contacto@fenahoven.org.ve
             </span>
             <span className="flex items-center gap-2">
-              <span className="opacity-60">📞</span> +58 (212) 993-4444
+              <span className="opacity-80">📞</span> +58 (212) 993-4444
             </span>
           </div>
-          <div className="flex items-center gap-4 opacity-70">
-            <span className="cursor-pointer hover:text-[#0062B2]">𝕏</span>
-            <span className="cursor-pointer hover:text-[#0062B2] font-bold">in</span>
-            <span className="cursor-pointer hover:text-[#0062B2]">ƒ</span>
+          {/* Redes Derecha */}
+          <div className="flex items-center gap-4 opacity-90">
+            <span className="cursor-pointer hover:text-slate-200">𝕏</span>
+            <span className="cursor-pointer hover:text-slate-200 font-bold">in</span>
+            <span className="cursor-pointer hover:text-slate-200">ƒ</span>
           </div>
         </div>
       </div>
@@ -79,24 +81,26 @@ export default function Web() {
         </div>
       </nav>
 
-      {/* 3. HERO INSTITUTIONAL CON PARALLAX, DEGRADADO Y CARDS BLANCAS DE ALTO IMPACTO */}
+      {/* 3. HERO INSTITUTIONAL CON TITULAR EN 3 LÍNEAS Y CARDS CON NÚMEROS AZULES */}
       <section 
-        className="relative min-h-[90vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed py-20"
+        className="relative min-h-[95vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed py-20"
         style={{ 
           backgroundImage: `linear-gradient(to bottom, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.50)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop')` 
         }}
       >
-        {/* Contenido de Textos */}
+        {/* Contenido de Textos Dividido en 3 Líneas */}
         <div className="text-center max-w-5xl mb-16 z-10">
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 uppercase tracking-tight">
-            67 AÑOS IMPULSANDO EL TURISMO EN VENEZUELA
+          <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.15] mb-8 uppercase tracking-tight">
+            67 AÑOS <br />
+            IMPULSANDO EL TURISMO <br />
+            EN VENEZUELA
           </h1>
           <p className="text-lg md:text-xl text-slate-200 font-light tracking-wide max-w-2xl mx-auto">
             La voz oficial de la hotelería venezolana desde 1958.
           </p>
         </div>
 
-        {/* Bloque de Indicadores: Transformado en una grilla de Cards Blancas Independientes */}
+        {/* Bloque de Indicadores: Cards Blancas con Números Unificados en Azul */}
         <div className="w-full max-w-6xl z-10 space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             
@@ -110,7 +114,7 @@ export default function Web() {
 
             {/* Card 2 */}
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-[#1E293B] tracking-tight mb-3">
+              <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
                 <Counter value="24" />
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Estados Afiliados</span>
@@ -118,7 +122,7 @@ export default function Web() {
 
             {/* Card 3 */}
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-[#1E293B] tracking-tight mb-3">
+              <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
                 <Counter value="67" />
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Años de Trayectoria</span>
@@ -126,7 +130,7 @@ export default function Web() {
 
             {/* Card 4 */}
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-[#1E293B] tracking-tight mb-3">
+              <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
                 <Counter value="12" />+
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Eventos Anuales</span>
