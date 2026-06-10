@@ -57,21 +57,21 @@ export default function Web() {
         </div>
       </div>
 
-      {/* 2. NAVBAR PRINCIPAL CON ESCUDO OFICIAL CORREGIDO */}
-      <nav className="bg-white sticky top-0 z-50 px-6 py-6 md:px-12 border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-7xl mx-auto flex flex-col gap-6 md:flex-row md:items-center relative">
+      {/* 2. NAVBAR PRINCIPAL SÚPER ALTO Y RESPONSIVO */}
+      <nav className="bg-white sticky top-0 z-50 px-6 py-10 md:py-12 border-b border-slate-200/80 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-col gap-8 md:flex-row md:items-center justify-between">
           
-          {/* Escudo Institucional Oficial con la ruta exacta logowebfenahoven.jpg */}
-          <div className="flex items-center justify-center md:justify-start md:absolute">
+          {/* Escudo Institucional Oficial con espacio libre alrededor */}
+          <div className="flex items-center justify-center md:justify-start shrink-0">
             <img 
               src="/logowebfenahoven.jpg" 
               alt="Escudo Oficial FENAHOVEN" 
-              className="h-16 md:h-20 w-auto object-contain select-none" 
+              className="h-20 md:h-28 w-auto object-contain select-none" 
             />
           </div>
 
-          {/* Menú de Enlaces Centrado, Bold, Color #10172A */}
-          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-3 items-center justify-center text-xs md:text-[13px] font-bold text-[#10172A] tracking-wide">
+          {/* Menú de Enlaces Centrado en su zona, Bold, Color #10172A */}
+          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-4 items-center justify-center md:justify-center text-xs md:text-[13px] font-bold text-[#10172A] tracking-wide">
             <a 
               href="/quienes-somos" 
               target="_blank" 
@@ -86,6 +86,9 @@ export default function Web() {
             <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Capacitación</span>
             <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Contacto</span>
           </div>
+
+          {/* Bloque vacío invisible en escritorio para forzar un centrado perfecto del menú */}
+          <div className="hidden md:block w-20 md:w-28 shrink-0 pointer-events-none" />
 
         </div>
       </nav>
