@@ -187,7 +187,7 @@ export default function Web() {
 
             <div className="md:col-span-7 space-y-10">
               <p className="text-slate-700 text-base md:text-lg font-light leading-relaxed">
-                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
+                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territory nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
@@ -466,36 +466,19 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 8. FOOTER INSTITUCIONAL: AZUL CON TRAMA ARQUITECTÓNICA DE FACHADA HOTELERA Y CONEXIONES */}
-      <footer className="relative bg-[#10172A] text-white pt-20 pb-10 overflow-hidden">
+      {/* 8. FOOTER INSTITUCIONAL: SÓLIDO, LIMPIO Y REDIRECCIÓN A ONSHIFT */}
+      <footer className="bg-[#10172A] text-white pt-20 pb-10">
         
-        {/* Trama Creativa de Conexiones de Red y Fachadas de Hoteles */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="hotelPattern" width="60" height="60" patternUnits="userSpaceOnUse">
-                {/* Geometría que emula ventanas de hoteles modernos y ejes de carreteras turísticas */}
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1"/>
-                <rect x="10" y="10" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1"/>
-                <rect x="35" y="10" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1"/>
-                <rect x="10" y="35" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1"/>
-                <circle cx="42" cy="42" r="2" fill="currentColor"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#hotelPattern)" />
-          </svg>
-        </div>
-
         {/* Contenedor Maestro */}
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-slate-800">
           
-          {/* Bloque Izquierdo: Logo e Identidad */}
+          {/* Bloque Izquierdo: Logo PNG Limpio y Ampliado */}
           <div className="md:col-span-4 space-y-6">
-            <div className="flex items-center justify-start bg-white/5 p-4 rounded-2xl border border-white/10 backdrop-blur-sm max-w-[280px]">
+            <div className="flex items-center justify-start">
               <img 
                 src="/logowebfenahoven.png" 
                 alt="FENAHOVEN" 
-                className="h-24 w-auto object-contain select-none"
+                className="h-32 md:h-36 w-auto object-contain select-none"
               />
             </div>
             <p className="text-xs text-slate-400 font-light leading-relaxed max-w-xs">
@@ -526,7 +509,7 @@ export default function Web() {
             </ul>
           </div>
 
-          {/* Bloque Derecho: Ubicación e Información Sólida */}
+          {/* Bloque Derecho: Ubicación e Información de Registro */}
           <div className="md:col-span-3 space-y-4">
             <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2F92B9]">Sede Central</h4>
             <p className="text-xs text-slate-400 font-light leading-relaxed">
@@ -539,10 +522,19 @@ export default function Web() {
 
         </div>
 
-        {/* Cierre de Derechos y Redes */}
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 z-10 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 font-light gap-4">
-          <div>
-            © {new Date().getFullYear()} FENAHOVEN. Todos los derechos reservados.
+        {/* Cierre de Derechos y Firma Onshift Vinculada */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 font-light gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center sm:text-left">
+            <span>© {new Date().getFullYear()} FENAHOVEN. Todos los derechos reservados.</span>
+            <span className="hidden sm:inline text-slate-700">|</span>
+            <a 
+              href="https://onshift.com.ve" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="font-medium text-slate-400 hover:text-[#2F92B9] transition-colors flex items-center gap-1"
+            >
+              Hecho por <span className="font-bold tracking-tight text-slate-300 hover:text-[#2F92B9]">onshift</span>
+            </a>
           </div>
           <div className="flex gap-6 text-slate-400">
             <span className="hover:text-[#2F92B9] cursor-pointer transition-colors">Términos de Uso</span>
