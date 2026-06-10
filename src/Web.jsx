@@ -255,29 +255,29 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 6. NUEVA SECCIÓN: RED DE GREMIOS Y ALIANZAS */}
-      <section className="py-20 bg-slate-50 border-t border-slate-100">
+      {/* 6. SECCIÓN RENOVADA: RED DE GREMIOS Y ALIANZAS (SIN CARDS, LOGOS FLOTANTES SOBRE FONDO BLANCO PURO) */}
+      <section className="py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
-          {/* Cabecera de la sección */}
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Ecosistema Institucional</span>
+          {/* Cabecera */}
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Ecosistema Institutional</span>
             <h2 className="text-3xl font-bold tracking-tight text-[#10172A] uppercase">Red de Gremios y Alianzas</h2>
             <p className="text-slate-500 mt-2 font-light text-sm">Trabajamos de la mano con las principales organizaciones turísticas y comerciales del país.</p>
           </div>
 
-          {/* Grilla de Logotipos */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-center">
+          {/* Grilla de Logotipos Organizados Orgánicamente sin Tarjetas */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-12 md:gap-8 items-center justify-center">
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-                className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center justify-center aspect-[4/3] group hover:shadow-md transition-all duration-300"
+                className="flex items-center justify-center p-2 group transition-all duration-300"
               >
                 <img 
                   src={partner.src} 
                   alt={partner.alt} 
                   title={partner.alt}
-                  className="max-h-12 max-w-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 select-none" 
+                  className="max-h-12 max-w-full object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 select-none" 
                 />
               </div>
             ))}
