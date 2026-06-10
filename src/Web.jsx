@@ -38,57 +38,41 @@ export default function Web() {
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* 1. TOP BAR (ESTILO HOTREC) */}
-      <div className="bg-[#0062B2] py-2 px-6 md:px-12 text-white text-[11px] font-medium tracking-wide">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2">
-              <span className="opacity-80">✉</span> contacto@fenahoven.org.ve
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="opacity-80">📞</span> +58 (212) 993-4444
-            </span>
-          </div>
-          <div className="flex items-center gap-4 opacity-90">
-            <span className="cursor-pointer hover:text-slate-200">𝕏</span>
-            <span className="cursor-pointer hover:text-slate-200 font-bold">in</span>
-            <span className="cursor-pointer hover:text-slate-200">ƒ</span>
-          </div>
-        </div>
-      </div>
+      {/* 1. TOP BAR CLONADO (AZUL SOLIDO #2F92B9 COINCIDIENDO CON LA REFERENCIA) */}
+      <div className="bg-[#2F92B9] h-12 w-full"></div>
 
-      {/* 2. NAVBAR PRINCIPAL SÚPER ALTO (RETORNO A VERSIÓN ESTABLE) */}
-      <nav className="bg-white sticky top-0 z-50 px-6 py-10 md:py-12 border-b border-slate-200/80 shadow-sm">
-        <div className="max-w-7xl mx-auto flex flex-col gap-8 md:flex-row md:items-center justify-between">
+      {/* 2. NAVBAR PRINCIPAL CLONADO (CON ESCUDO FLOTANTE CALADO Y NUEVOS LINKS) */}
+      <nav className="bg-white border-b border-gray-200 relative px-6 md:px-12">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[80px] relative py-4 md:py-0">
           
-          {/* Escudo Institucional Oficial */}
-          <div className="flex items-center justify-center md:justify-start shrink-0">
+          {/* Escudo Flotante Calado (Se superpone hacia el topbar y rompe el borde inferior exactamente como la captura) */}
+          <div className="flex items-center justify-center md:justify-start relative md:absolute -top-6 left-0 z-20 mb-4 md:mb-0">
             <img 
               src="/logowebfenahoven.jpg" 
               alt="Escudo Oficial FENAHOVEN" 
-              className="h-20 md:h-28 w-auto object-contain select-none" 
+              className="h-32 md:h-36 w-auto object-contain select-none" 
             />
           </div>
 
-          {/* Menú de Enlaces Centrado, Bold, Color #10172A */}
-          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-4 items-center justify-center text-xs md:text-[13px] font-bold text-[#10172A] tracking-wide">
+          {/* Menú de Enlaces Centrados con los nombres de la referencia */}
+          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-3 items-center justify-center text-xs md:text-[15px] font-medium text-slate-900 tracking-wide md:min-h-[80px]">
             <a 
               href="/quienes-somos" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1"
+              className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1"
             >
-              Quiénes Somos
+              Quiénes somos?
             </a>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Datos de la Industria</span>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Dashboard Nacional</span>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Eventos</span>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Capacitación</span>
-            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Contacto</span>
+            <span className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">Directorio</span>
+            <span className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">Noticias</span>
+            <span className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">Eventos</span>
+            <span className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">Capacitación</span>
+            <span className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">Contacto</span>
           </div>
 
-          {/* Bloque vacío invisible para equilibrar el centrado real en escritorio */}
-          <div className="hidden md:block w-20 md:w-28 shrink-0 pointer-events-none" />
+          {/* Bloque equilibrador invisible en escritorio */}
+          <div className="hidden md:block w-32 pointer-events-none" />
 
         </div>
       </nav>
