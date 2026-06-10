@@ -24,8 +24,8 @@ function Counter({ value, duration = 1500 }) {
 }
 
 export default function Web() {
-  // Estado para controlar qué hito de la historia está seleccionado/activo (Inicia en el primero: 1958)
-  const [activeHito, setActiveHito] = useState(0);
+  // Estado para controlar cuál hito está expandido/seleccionado por clic
+  const [activeHito, setActiveHito] = useState(null);
 
   // Arreglo con clases de tamaño personalizadas para equilibrar visualmente cada logo de la red
   const partners = [
@@ -170,11 +170,11 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO CON CABECERA RESTAURADA COMPLETAMENTE */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO MEJORADO (TODAS A COLOR, PULSO EN 1958 Y SELECCIÓN DE ESCALA) */}
       <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           
-          {/* Cabecera de la sección con los textos informativos restaurados */}
+          {/* Cabecera */}
           <div className="text-center max-w-2xl mx-auto mb-24">
             <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-3">Trayectoria Histórica</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">Nuestra Línea del Tiempo</h2>
@@ -184,19 +184,19 @@ export default function Web() {
             <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-5 rounded-full" />
           </div>
 
-          {/* Estructura del Timeline */}
+          {/* Timeline */}
           <div className="relative">
             
-            {/* Círculo base superior de inicio */}
+            {/* Círculo base superior */}
             <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
             
             {/* Línea Eje Central */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[#D1D5DB] z-0" />
             
-            {/* Círculo base inferior de cierre */}
+            {/* Círculo base inferior */}
             <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
 
-            <div className="space-y-16 md:space-y-24 py-8 relative z-10">
+            <div className="space-y-16 md:space-y-20 py-8 relative z-10">
               {timelineEvents.map((event, index) => {
                 const isLeftYear = index % 2 === 0;
                 const isItemActive = activeHito === index;
@@ -204,56 +204,61 @@ export default function Web() {
                 return (
                   <div 
                     key={index} 
-                    className={`flex flex-col md:grid md:grid-cols-11 items-center w-full relative cursor-pointer transition-all duration-300 ${
-                      isItemActive ? 'opacity-100 scale-100' : 'opacity-50 hover:opacity-80 scale-[0.99]'
-                    }`}
+                    className="flex flex-col md:grid md:grid-cols-11 items-center w-full relative cursor-pointer"
                     onClick={() => setActiveHito(index)}
                   >
                     
-                    {/* COLUMNA IZQUIERDA (Año o Caja Informativa según la alternancia) */}
+                    {/* COLUMNA IZQUIERDA (Año o Card Informativo según correspondencia de lectura) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-end md:px-8 z-10">
                       {isLeftYear ? (
-                        <div className={`text-4xl lg:text-5xl font-black tracking-tight select-none pr-4 transition-colors duration-300 ${
-                          isItemActive ? 'text-slate-950 font-black' : 'text-[#CBD5E1]'
-                        }`}>
+                        <div className="text-4xl lg:text-5xl font-black tracking-tight select-none pr-4 text-slate-950">
                           {event.year}
                         </div>
                       ) : (
-                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
-                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm transition-all duration-500 transform ${
+                          isItemActive ? 'scale-105 border-[#2F92B9]/30 shadow-xl bg-slate-50/10' : 'scale-100 hover:scale-[1.01]'
                         }`}>
                           <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
-                          <h3 className={`text-lg font-bold mb-3 transition-colors ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
+                          <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
                           <p className="text-sm text-slate-500 font-light leading-relaxed">{event.description}</p>
                         </div>
                       )}
                     </div>
 
-                    {/* COLUMNA CENTRAL: PUNTO INTERMEDIO CON UN ARO AZUL DINÁMICO */}
+                    {/* COLUMNA CENTRAL: PUNTO INTERMEDIO CON EFECTO DE PARPADEO (PING) EXCLUSIVO PARA EL INICIO (1958) */}
                     <div className="hidden md:flex md:col-span-1 justify-center items-center z-20">
-                      <div className={`rounded-full bg-white flex items-center justify-center shadow-sm transition-all duration-300 ${
-                        isItemActive ? 'w-7 h-7 border-2 border-[#2F92B9] scale-110' : 'w-6 h-6 border border-[#2F92B9]/60'
-                      }`}>
-                        <div className={`rounded-full bg-[#2F92B9] transition-all duration-300 ${
-                          isItemActive ? 'w-3 h-3' : 'w-2.5 h-2.5'
-                        }`} />
+                      <div className="relative flex items-center justify-center">
+                        
+                        {/* Aro con efecto de parpadeo expansivo por ondas (Solo en 1958 si aún no se ha interactuado/clicado ese item) */}
+                        {index === 0 && !isItemActive && (
+                          <div className="absolute w-8 h-8 rounded-full bg-[#2F92B9]/20 animate-ping z-0 pointer-events-none" />
+                        )}
+
+                        {/* Aro lineal externo permanente */}
+                        <div className={`rounded-full bg-white flex items-center justify-center shadow-sm border border-[#2F92B9] transition-all duration-300 ${
+                          isItemActive ? 'w-7 h-7 scale-110' : 'w-6 h-6'
+                        }`}>
+                          {/* Círculo interno filled pequeño */}
+                          <div className={`rounded-full bg-[#2F92B9] transition-all duration-300 ${
+                            isItemActive ? 'w-3 h-3' : 'w-2.5 h-2.5'
+                          }`} />
+                        </div>
+
                       </div>
                     </div>
 
-                    {/* COLUMNA DERECHA (Caja Informativa o Año según la alternancia) */}
+                    {/* COLUMNA DERECHA (Card Informativo o Año según correspondencia de lectura) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-start md:px-8 z-10 mt-4 md:mt-0">
                       {isLeftYear ? (
-                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
-                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm transition-all duration-500 transform ${
+                          isItemActive ? 'scale-105 border-[#2F92B9]/30 shadow-xl bg-slate-50/10' : 'scale-100 hover:scale-[1.01]'
                         }`}>
                           <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
-                          <h3 className={`text-lg font-bold mb-3 transition-colors ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
+                          <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
                           <p className="text-sm text-slate-500 font-light leading-relaxed">{event.description}</p>
                         </div>
                       ) : (
-                        <div className={`text-4xl lg:text-5xl font-black tracking-tight select-none pl-4 transition-colors duration-300 ${
-                          isItemActive ? 'text-slate-950 font-black' : 'text-[#CBD5E1]'
-                        }`}>
+                        <div className="text-4xl lg:text-5xl font-black tracking-tight select-none pl-4 text-slate-950">
                           {event.year}
                         </div>
                       )}
