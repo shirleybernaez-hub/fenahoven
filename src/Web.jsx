@@ -187,7 +187,7 @@ export default function Web() {
 
             <div className="md:col-span-7 space-y-10">
               <p className="text-slate-700 text-base md:text-lg font-light leading-relaxed">
-                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territory nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
+                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
@@ -466,56 +466,56 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 8. FOOTER INSTITUCIONAL: SÓLIDO, LIMPIO Y REDIRECCIÓN A ONSHIFT */}
-      <footer className="bg-[#10172A] text-white pt-20 pb-10">
+      {/* 8. FOOTER INSTITUCIONAL: COLOR DEL BACKGROUND CAMBIADO A #2F92B9 */}
+      <footer className="bg-[#2F92B9] text-white pt-20 pb-10">
         
         {/* Contenedor Maestro */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/20">
           
-          {/* Bloque Izquierdo: Logo PNG Limpio y Ampliado */}
+          {/* Bloque Izquierdo: Logo PNG Limpio y Protagonista */}
           <div className="md:col-span-4 space-y-6">
             <div className="flex items-center justify-start">
               <img 
                 src="/logowebfenahoven.png" 
                 alt="FENAHOVEN" 
-                className="h-32 md:h-36 w-auto object-contain select-none"
+                className="h-32 md:h-36 w-auto object-contain select-none filter brightness-0 invert"
               />
             </div>
-            <p className="text-xs text-slate-400 font-light leading-relaxed max-w-xs">
+            <p className="text-xs text-slate-100 font-light leading-relaxed max-w-xs">
               Federación Nacional de Hoteles de Venezuela. Potenciando la hospitalidad, infraestructura e inversión turística estratégica desde 1958.
             </p>
           </div>
 
           {/* Bloque Centro-Izquierda: Navegación */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2F92B9]">Secciones</h4>
-            <ul className="space-y-2.5 text-xs text-slate-400 font-light">
-              <li className="hover:text-white cursor-pointer transition-colors">Quiénes somos?</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Directorio Nacional</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Noticias del Sector</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Eventos & Congresos</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Capacitación Técnica</li>
+            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-white">Secciones</h4>
+            <ul className="space-y-2.5 text-xs text-slate-100 font-light">
+              <li className="hover:text-slate-200 cursor-pointer transition-colors">Quiénes somos?</li>
+              <li className="hover:text-slate-200 cursor-pointer transition-colors">Directorio Nacional</li>
+              <li className="hover:text-slate-200 cursor-pointer transition-colors">Noticias del Sector</li>
+              <li className="hover:text-slate-200 cursor-pointer transition-colors">Eventos & Congresos</li>
+              <li className="hover:text-slate-200 cursor-pointer transition-colors">Capacitación Técnica</li>
             </ul>
           </div>
 
           {/* Bloque Centro-Derecha: Institucional */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2F92B9]">Afiliados</h4>
-            <ul className="space-y-2.5 text-xs text-slate-400 font-light">
-              <li className="hover:text-white cursor-pointer transition-colors">Cámaras Regionales</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Inscripción Gremial</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Estatutos Oficiales</li>
-              <li className="hover:text-white cursor-pointer transition-colors">Bolsa de Trabajo</li>
+            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-white">Afiliados</h4>
+            <ul className="space-y-2.5 text-xs text-slate-100 font-light">
+              <li className="hover:text-slate-200 cursor-pointer transition-colors">Cámaras Regionales</li>
+              <li className="hover:text-slate-200 cursor-pointer transition-colors">Inscripción Gremial</li>
+              <li className="hover:text-slate-200 cursor-pointer transition-colors">Estatutos Oficiales</li>
+              <li className="hover:text-slate-200 cursor-pointer transition-colors">Bolsa de Trabajo</li>
             </ul>
           </div>
 
           {/* Bloque Derecho: Ubicación e Información de Registro */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2F92B9]">Sede Central</h4>
-            <p className="text-xs text-slate-400 font-light leading-relaxed">
+            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-white">Sede Central</h4>
+            <p className="text-xs text-slate-100 font-light leading-relaxed">
               Av. Principal de Las Mercedes, Edificio Centro Las Mercedes, Piso 4, Oficina 41. Caracas, Distrito Capital, Venezuela.
             </p>
-            <div className="pt-2 text-xs text-slate-300 font-mono">
+            <div className="pt-2 text-xs text-slate-200 font-mono">
               <span className="block">Rif: J-00248834-0</span>
             </div>
           </div>
@@ -523,22 +523,22 @@ export default function Web() {
         </div>
 
         {/* Cierre de Derechos y Firma Onshift Vinculada */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 font-light gap-4">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-200 font-light gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center sm:text-left">
             <span>© {new Date().getFullYear()} FENAHOVEN. Todos los derechos reservados.</span>
-            <span className="hidden sm:inline text-slate-700">|</span>
+            <span className="hidden sm:inline text-white/30">|</span>
             <a 
               href="https://onshift.com.ve" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="font-medium text-slate-400 hover:text-[#2F92B9] transition-colors flex items-center gap-1"
+              className="font-medium text-slate-200 hover:text-white transition-colors flex items-center gap-1"
             >
-              Hecho por <span className="font-bold tracking-tight text-slate-300 hover:text-[#2F92B9]">onshift</span>
+              Hecho por <span className="font-bold tracking-tight text-white hover:underline">onshift</span>
             </a>
           </div>
-          <div className="flex gap-6 text-slate-400">
-            <span className="hover:text-[#2F92B9] cursor-pointer transition-colors">Términos de Uso</span>
-            <span className="hover:text-[#2F92B9] cursor-pointer transition-colors">Políticas de Privacidad</span>
+          <div className="flex gap-6 text-slate-200">
+            <span className="hover:text-white cursor-pointer transition-colors">Términos de Uso</span>
+            <span className="hover:text-white cursor-pointer transition-colors">Políticas de Privacidad</span>
           </div>
         </div>
 
