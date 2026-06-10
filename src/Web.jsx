@@ -53,7 +53,7 @@ export default function Web() {
     {
       year: '2000 - 2020',
       title: 'Expansión Gremial',
-      description: 'Dos décadas de consolidación institucional, tejiendo alianzas estratégicas e impulsando la profesionalización de la hotelería en cada rincón del territorio nacional.'
+      description: 'Dos décadas de consolidación institutional, tejiendo alianzas estratégicas e impulsando la profesionalización de la hotelería en cada rincón del territorio nacional.'
     },
     {
       year: '2021 - 2026',
@@ -89,13 +89,13 @@ export default function Web() {
         </div>
       </div>
 
-      {/* 2. NAVBAR PRINCIPAL: APUNTANDO EXCLUSIVAMENTE AL LOGO PNG TRANSPARENTE */}
+      {/* 2. NAVBAR PRINCIPAL: CON EL ESPACIO EN BLANCO %20 CONTROLADO */}
       <nav className="bg-white border-b border-gray-200 relative px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[85px] relative py-4 md:py-0">
           
           <div className="flex items-center justify-center md:justify-start relative md:absolute top-0 left-0 z-20 mb-4 md:mb-0">
             <img 
-              src="/logowebfenahoven.png" 
+              src="/logowebfenahoven%20.png" 
               alt="Escudo Oficial FENAHOVEN" 
               className="h-28 md:h-32 w-auto object-contain select-none" 
             />
