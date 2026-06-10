@@ -255,7 +255,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 6. SECCIÓN RENOVADA: RED DE GREMIOS Y ALIANZAS (SIN CARDS, LOGOS FLOTANTES SOBRE FONDO BLANCO PURO) */}
+      {/* 6. RED DE GREMIOS Y ALIANZAS (LOGOS A COLOR ORIGINAL DIRECTAMENTE) */}
       <section className="py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
@@ -266,7 +266,7 @@ export default function Web() {
             <p className="text-slate-500 mt-2 font-light text-sm">Trabajamos de la mano con las principales organizaciones turísticas y comerciales del país.</p>
           </div>
 
-          {/* Grilla de Logotipos Organizados Orgánicamente sin Tarjetas */}
+          {/* Grilla de Logotipos Directamente a Color */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-12 md:gap-8 items-center justify-center">
             {partners.map((partner, index) => (
               <div 
@@ -277,7 +277,7 @@ export default function Web() {
                   src={partner.src} 
                   alt={partner.alt} 
                   title={partner.alt}
-                  className="max-h-12 max-w-full object-contain grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 select-none" 
+                  className="max-h-12 max-w-full object-contain transform group-hover:scale-105 transition-all duration-300 select-none" 
                 />
               </div>
             ))}
