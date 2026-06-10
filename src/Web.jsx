@@ -89,19 +89,19 @@ export default function Web() {
         </div>
       </div>
 
-      {/* 2. NAVBAR PRINCIPAL: CON RUTA LIMPIA AL PNG */}
+      {/* 2. NAVBAR PRINCIPAL: LOGO INCREMENTADO UN 30% DE TAMAÑO */}
       <nav className="bg-white border-b border-gray-200 relative px-6 md:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[85px] relative py-4 md:py-0">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[100px] relative py-4 md:py-0">
           
           <div className="flex items-center justify-center md:justify-start relative md:absolute top-0 left-0 z-20 mb-4 md:mb-0">
             <img 
               src="/logowebfenahoven.png" 
               alt="Escudo Oficial FENAHOVEN" 
-              className="h-28 md:h-32 w-auto object-contain select-none" 
+              className="h-36 md:h-44 w-auto object-contain select-none" 
             />
           </div>
 
-          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-3 items-center justify-center text-xs md:text-[15px] font-medium text-slate-900 tracking-wide md:min-h-[85px]">
+          <div className="flex-1 flex flex-wrap gap-x-8 gap-y-3 items-center justify-center text-xs md:text-[15px] font-medium text-slate-900 tracking-wide md:min-h-[100px]">
             <a href="/quienes-somos" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">
               Quiénes somos?
             </a>
@@ -112,7 +112,7 @@ export default function Web() {
             <span className="cursor-pointer hover:text-[#2F92B9] transition-colors py-1">Contacto</span>
           </div>
 
-          <div className="hidden md:block w-32 pointer-events-none" />
+          <div className="hidden md:block w-40 pointer-events-none" />
         </div>
       </nav>
 
@@ -235,7 +235,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO (COLORES NÍTIDOS Y EFECTO ENFOQUE ESCALA) */}
       <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           
@@ -248,7 +248,9 @@ export default function Web() {
             <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-5 rounded-full" />
           </div>
 
+          {/* Timeline */}
           <div className="relative">
+            
             <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[#D1D5DB] z-0" />
             <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
@@ -262,20 +264,21 @@ export default function Web() {
                 return (
                   <div 
                     key={index} 
-                    className={`flex flex-col md:grid md:grid-cols-11 items-center w-full relative cursor-pointer transition-all duration-300 ${
-                      isItemActive ? 'opacity-100 scale-100' : 'opacity-50 hover:opacity-80 scale-[0.99]'
-                    }`}
+                    className="flex flex-col md:grid md:grid-cols-11 items-center w-full relative cursor-pointer"
                     onClick={() => setActiveHito(index)}
                   >
                     
+                    {/* COLUMNA IZQUIERDA: TARJETA O FECHA (NÍTIDAS SIN OPACIDAD BAJA) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-end md:px-8 z-10">
                       {isLeftYear ? (
                         <div className="text-4xl lg:text-5xl font-black tracking-tight select-none pr-4 text-[#2F92B9]">
                           {event.year}
                         </div>
                       ) : (
-                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
-                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-500 ease-out transform ${
+                          isItemActive 
+                            ? 'scale-105 border-[#2F92B9]/40 shadow-xl bg-slate-50/10' 
+                            : 'scale-100 border-slate-100 shadow-sm hover:scale-[1.02]'
                         }`}>
                           <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
                           <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
@@ -284,11 +287,15 @@ export default function Web() {
                       )}
                     </div>
 
+                    {/* COLUMNA CENTRAL */}
                     <div className="hidden md:flex md:col-span-1 justify-center items-center z-20">
                       <div className="relative flex items-center justify-center">
+                        
+                        {/* Parpadeo secuencial guía */}
                         {isNextHitoToClick && (
                           <div className="absolute w-8 h-8 rounded-full bg-[#2F92B9]/30 animate-ping z-0 pointer-events-none" />
                         )}
+
                         <div className={`rounded-full bg-white flex items-center justify-center shadow-sm border border-[#2F92B9] transition-all duration-300 ${
                           isItemActive ? 'w-7 h-7 scale-110' : 'w-6 h-6'
                         }`}>
@@ -296,13 +303,17 @@ export default function Web() {
                             isItemActive ? 'w-3 h-3' : 'w-2.5 h-2.5'
                           }`} />
                         </div>
+
                       </div>
                     </div>
 
+                    {/* COLUMNA DERECHA: TARJETA O FECHA (NÍTIDAS SIN OPACIDAD BAJA) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-start md:px-8 z-10 mt-4 md:mt-0">
                       {isLeftYear ? (
-                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-300 ${
-                          isItemActive ? 'border-[#2F92B9]/30 shadow-md bg-slate-50/20' : 'border-slate-100 shadow-sm'
+                        <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-500 ease-out transform ${
+                          isItemActive 
+                            ? 'scale-105 border-[#2F92B9]/40 shadow-xl bg-slate-50/10' 
+                            : 'scale-100 border-slate-100 shadow-sm hover:scale-[1.02]'
                         }`}>
                           <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-2">{event.year}</div>
                           <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${isItemActive ? 'text-[#2F92B9]' : 'text-slate-950'}`}>{event.title}</h3>
@@ -319,6 +330,7 @@ export default function Web() {
                 );
               })}
             </div>
+
           </div>
 
         </div>
