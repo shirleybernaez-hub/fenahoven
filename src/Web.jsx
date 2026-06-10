@@ -167,44 +167,46 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE PREVIO CON FECHAS EXTERNAS Y CÍRCULOS FILLED */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE COMPLETAMENTE CLONADO DE LA REFERENCIA */}
       <section className="py-28 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           
           {/* Cabecera de la sección */}
           <div className="text-center mb-24">
-            <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-3">Trayectoria Histórica</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">Nuestra Línea del Tiempo</h2>
             <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-4 rounded-full" />
           </div>
 
-          {/* Contenedor principal con el eje central */}
+          {/* Eje del Timeline */}
           <div className="relative">
             
-            {/* Línea Central Perfecta */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-slate-200 z-0" />
+            {/* Línea Central Fina de la referencia */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[#D1D5DB] z-0" />
 
-            <div className="space-y-16 md:space-y-20 relative z-10">
+            <div className="space-y-16 md:space-y-24 relative z-10">
               {timelineEvents.map((event, index) => {
-                const isLeft = index % 2 === 0;
+                // Alternancia estricta basada en el clon de la imagen:
+                // Índice 0 (1958): Caja a la DERECHA, Año a la IZQUIERDA del punto.
+                // Índice 1 (1993): Caja a la IZQUIERDA, Año a la DERECHA del punto.
+                const isRightBox = index % 2 === 0;
 
                 return (
                   <div 
                     key={index} 
                     className={`flex flex-col md:flex-row items-center w-full relative ${
-                      isLeft ? 'md:flex-row-reverse' : ''
+                      isRightBox ? 'md:flex-row-reverse' : 'md:flex-row'
                     }`}
                   >
-                    {/* LADO DE LA CAJA INFORMATIVA */}
-                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-12 z-10">
-                      <div className="w-full max-w-lg bg-slate-50/60 hover:bg-white rounded-2xl p-6 md:p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    {/* LADO DE LA TARJETA INFORMATIVA */}
+                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-16 z-10">
+                      <div className="w-full max-w-md bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
                         
-                        {/* Año visible en móvil justo arriba del título */}
-                        <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-1">
+                        {/* Año visible solo en móviles */}
+                        <div className="block md:hidden text-2xl font-black text-[#2F92B9]/80 mb-2">
                           {event.year}
                         </div>
 
-                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#2F92B9] transition-colors mb-2">
+                        <h3 className="text-lg font-bold text-slate-950 mb-3">
                           {event.title}
                         </h3>
                         <p className="text-sm text-slate-500 font-light leading-relaxed">
@@ -213,16 +215,20 @@ export default function Web() {
                       </div>
                     </div>
 
-                    {/* NODO CENTRAL RELLENO (CIRCULO FILLED) */}
+                    {/* NODO CENTRAL EXACTO (PUNTO AZUL) */}
                     <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center z-20">
-                      <div className="w-4 h-4 rounded-full bg-[#2F92B9] shadow-md ring-4 ring-white" />
+                      <div className="w-4 h-4 rounded-full bg-[#2F92B9] shadow-sm" />
                     </div>
 
-                    {/* LADO EXTERIOR: EL AÑO FLOTANDO AL OTRO LADO DE LA LÍNEA (Escritorio) */}
-                    <div className={`hidden md:flex w-1/2 px-12 items-center ${
-                      isLeft ? 'justify-start' : 'justify-end'
+                    {/* LADO DEL AÑO GIGANTE (Pegado a la línea central en tono suave, sin hover) */}
+                    <div className={`hidden md:flex w-1/2 px-10 items-center relative ${
+                      isRightBox ? 'justify-end' : 'justify-start'
                     }`}>
-                      <div className="text-4xl lg:text-5xl font-black text-slate-300/80 hover:text-[#2F92B9] transition-colors duration-300 cursor-default select-none tracking-tight">
+                      <div 
+                        className={`text-4xl lg:text-5xl font-black text-[#CBD5E1] select-none tracking-tight absolute ${
+                          isRightBox ? 'right-6' : 'left-6'
+                        }`}
+                      >
                         {event.year}
                       </div>
                     </div>
