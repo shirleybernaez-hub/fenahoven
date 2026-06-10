@@ -55,7 +55,7 @@ export default function Web() {
     {
       year: '2021 - 2026',
       title: 'Modernización y Recuperación',
-      description: 'Enfoque total en la digitalización, optimización de datos de la industria turística y la reactivación estratégica post-pandemia de la red hotelera venezolana.'
+      description: 'Enfoque total en la digitalización, optimización de datos de la industria turística y la reactivación estratégica de la red hotelera venezolana.'
     },
     {
       year: 'Futuro',
@@ -167,50 +167,71 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. NUEVA SECCIÓN ESTILO INFOGRAFÍA: HISTORIA INTERACTIVA (TIMELINE) */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO CON LÍNEA CENTRAL ALTERNADA */}
       <section className="py-28 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           
-          {/* Cabecera de la sección infográfica */}
-          <div className="text-center mb-20">
+          {/* Cabecera de la sección */}
+          <div className="text-center mb-24">
             <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-3">Trayectoria Histórica</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">Nuestra Línea del Tiempo</h2>
             <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-4 rounded-full" />
           </div>
 
-          {/* Contenedor del Eje Cronológico */}
-          <div className="relative flex flex-col items-center">
-            {timelineEvents.map((event, index) => (
-              <div key={index} className="w-full flex flex-col items-center relative">
-                
-                {/* Bloque del Hito / Contenedor Interactivo */}
-                <div className="w-full max-w-2xl bg-slate-50/60 hover:bg-white rounded-2xl p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-start gap-4 md:gap-8 group">
-                  
-                  {/* Año Destacado */}
-                  <div className="text-3xl md:text-4xl font-black text-[#2F92B9] tracking-tight shrink-0 md:w-32">
-                    {event.year}
-                  </div>
-                  
-                  {/* Textos Informativos */}
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#2F92B9] transition-colors">
-                      {event.title}
-                    </h3>
-                    <p className="text-sm text-slate-500 font-light leading-relaxed">
-                      {event.description}
-                    </p>
-                  </div>
-                </div>
+          {/* Contenedor del Timeline con la línea en el centro real */}
+          <div className="relative">
+            
+            {/* La Línea Central (Solo se ve desde tablets en adelante, en móvil se esconde para mejor lectura) */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-slate-200 z-0" />
 
-                {/* Flecha Conectora de flujo (No se muestra en el último elemento) */}
-                {index !== timelineEvents.length - 1 && (
-                  <div className="my-6 text-slate-300 font-light text-2xl animate-pulse select-none">
-                    ↓
-                  </div>
-                )}
+            <div className="space-y-16 md:space-y-24 relative z-10">
+              {timelineEvents.map((event, index) => {
+                // Determinar si el elemento va a la izquierda (índices pares: 0, 2, 4) o derecha (impares)
+                const isLeft = index % 2 === 0;
 
-              </div>
-            ))}
+                return (
+                  <div 
+                    key={index} 
+                    className={`flex flex-col md:flex-row items-center w-full ${
+                      isLeft ? 'md:flex-row-reverse' : ''
+                    }`}
+                  >
+                    {/* 1. LADO DEL CONTENIDO (Se acomoda automáticamente a izquierda o derecha) */}
+                    <div className="w-full md:w-1/2 flex justify-center md:justify-start px-0 md:px-8">
+                      <div className={`w-full max-w-xl bg-slate-50/60 hover:bg-white rounded-2xl p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row items-start gap-4 sm:gap-6 group ${
+                        isLeft ? 'md:text-left' : ''
+                      }`}>
+                        
+                        {/* Año de Gran Impacto */}
+                        <div className="text-3xl md:text-4xl font-black text-[#2F92B9] tracking-tight shrink-0">
+                          {event.year}
+                        </div>
+                        
+                        {/* Detalle */}
+                        <div className="space-y-2">
+                          <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#2F92B9] transition-colors">
+                            {event.title}
+                          </h3>
+                          <p className="text-sm text-slate-500 font-light leading-relaxed">
+                            {event.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 2. EL NODO / BURBUJA CENTRAL (Punto de anclaje flotante sobre la línea del medio) */}
+                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                      <div className="w-4 h-4 rounded-full bg-white border-4 border-[#2F92B9] shadow-md z-20 group-hover:scale-120 transition-transform" />
+                    </div>
+
+                    {/* 3. LADO VACÍO EQUILIBRADOR (Para mantener las proporciones simétricas del 50% de la pantalla) */}
+                    <div className="hidden md:block w-1/2" />
+
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
 
         </div>
