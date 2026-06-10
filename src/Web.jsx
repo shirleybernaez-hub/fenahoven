@@ -466,19 +466,19 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 8. FOOTER INSTITUCIONAL: COLOR DEL BACKGROUND CAMBIADO A #2F92B9 */}
+      {/* 8. FOOTER INSTITUCIONAL: BACKGROUND #2F92B9 Y LOGO EN PNG ORIGINAL */}
       <footer className="bg-[#2F92B9] text-white pt-20 pb-10">
         
         {/* Contenedor Maestro */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/20">
           
-          {/* Bloque Izquierdo: Logo PNG Limpio y Protagonista */}
+          {/* Bloque Izquierdo: Logo PNG Limpio, Maximizado y con sus Colores Originales */}
           <div className="md:col-span-4 space-y-6">
             <div className="flex items-center justify-start">
               <img 
                 src="/logowebfenahoven.png" 
                 alt="FENAHOVEN" 
-                className="h-32 md:h-36 w-auto object-contain select-none filter brightness-0 invert"
+                className="h-32 md:h-36 w-auto object-contain select-none"
               />
             </div>
             <p className="text-xs text-slate-100 font-light leading-relaxed max-w-xs">
