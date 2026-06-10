@@ -187,7 +187,7 @@ export default function Web() {
 
             <div className="md:col-span-7 space-y-10">
               <p className="text-slate-700 text-base md:text-lg font-light leading-relaxed">
-                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
+                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos and las corrientes turísticas globales.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
@@ -326,7 +326,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4.5. NUEVA SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO (Tipografía Unificada) */}
+      {/* 4.5. NUEVA SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO (Imágenes e Iconos Integrados) */}
       <section className="py-28 bg-[#F8FAFC] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
           
@@ -342,65 +342,138 @@ export default function Web() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Función 1 */}
-            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
-              <h3 className="text-lg font-bold mb-3 text-slate-950">Representación Gremial</h3>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">
-                Defiende los intereses de hoteles y posadas ante organismos públicos y privados.
-              </p>
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600&auto=format&fit=crop" 
+                  alt="Representación Gremial" 
+                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
+                />
+                <h3 className="text-lg font-bold mb-3 text-slate-950">Representación Gremial</h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">
+                  Defiende los intereses de hoteles y posadas ante organismos públicos y privados.
+                </p>
+              </div>
             </div>
 
             {/* Función 2 */}
-            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
-              <h3 className="text-lg font-bold mb-3 text-slate-950">Estadísticas Sectoriales</h3>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">
-                Produce y divulga indicadores de ocupación hotelera, comportamiento de temporadas turísticas y tendencias del mercado.
-              </p>
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop" 
+                  alt="Estadísticas Sectoriales" 
+                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
+                />
+                <h3 className="text-lg font-bold mb-3 text-slate-950">Estadísticas Sectoriales</h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">
+                  Produce y divulga indicadores de ocupación hotelera, comportamiento de temporadas turísticas y tendencias del mercado.
+                </p>
+              </div>
             </div>
 
             {/* Función 3 */}
-            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
-              <h3 className="text-lg font-bold mb-3 text-slate-950">Promoción del Turismo</h3>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">
-                Participa en iniciativas para fortalecer destinos turísticos y atraer visitantes nacionales e internacionales.
-              </p>
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop" 
+                  alt="Promoción del Turismo" 
+                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
+                />
+                <h3 className="text-lg font-bold mb-3 text-slate-950">Promoción del Turismo</h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">
+                  Participa en iniciativas para fortalecer destinos turísticos y atraer visitantes nacionales e internacionales.
+                </p>
+              </div>
             </div>
 
             {/* Función 4 */}
-            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
-              <h3 className="text-lg font-bold mb-3 text-slate-950">Formación y Refuerzo</h3>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">
-                Promueve encuentros gremiales, intercambio de experiencias y actualización del sector hotelero.
-              </p>
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=600&auto=format&fit=crop" 
+                  alt="Formación y Refuerzo" 
+                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
+                />
+                <h3 className="text-lg font-bold mb-3 text-slate-950">Formación y Refuerzo</h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">
+                  Promueve encuentros gremiales, intercambio de experiencias y actualización del sector hotelero.
+                </p>
+              </div>
             </div>
 
             {/* Función 5 */}
-            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
-              <h3 className="text-lg font-bold mb-3 text-slate-950">Atención de Emergencias</h3>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">
-                Coordina apoyo a establecimientos afiliados afectados por desastres naturales o situaciones extraordinarias.
-              </p>
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" 
+                  alt="Atención de Emergencias" 
+                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
+                />
+                <h3 className="text-lg font-bold mb-3 text-slate-950">Atención de Emergencias</h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">
+                  Coordina apoyo a establecimientos afiliados afectados por desastres naturales o situaciones extraordinarias.
+                </p>
+              </div>
             </div>
 
             {/* Función 6 */}
-            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-2 hover:scale-[1.02] transition-all duration-300">
-              <h3 className="text-lg font-bold mb-3 text-slate-950">Atracción de Inversiones</h3>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">
-                Promueve oportunidades para marcas hoteleras, franquicias, reconversión de activos y nuevos proyectos turísticos.
-              </p>
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+              <div>
+                <img 
+                  src="https://images.unsplash.com/photo-1560520653-9e0e4c89af11?q=80&w=600&auto=format&fit=crop" 
+                  alt="Atracción de Inversiones" 
+                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
+                />
+                <h3 className="text-lg font-bold mb-3 text-slate-950">Atracción de Inversiones</h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">
+                  Promueve oportunidades para marcas hoteleras, franquicias, reconversión de activos y nuevos proyectos turísticos.
+                </p>
+              </div>
             </div>
 
-            {/* Función 7 - Expandida proporcionalmente al final */}
+            {/* Función 7 - Expandida de forma proporcional al final con Iconos dinámicos */}
             <div className="md:col-span-2 lg:col-span-3 bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-4 hover:scale-[1.01] transition-all duration-300">
               <h3 className="text-lg font-bold mb-3 text-slate-950">Defensa de Condiciones para la Actividad Hotelera</h3>
               <p className="text-sm text-slate-500 font-light leading-relaxed">
                 Plantea activamente propuestas y soluciones estratégicas sobre los siguientes ejes críticos del sector:
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 pt-2">
-                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Conectividad aérea</div>
-                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Infraestructura</div>
-                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Servicios públicos</div>
-                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100">Regulación turística</div>
-                <div className="bg-slate-50 px-3 py-2 rounded-lg text-xs text-slate-600 font-medium text-center border border-slate-100 col-span-2 sm:col-span-1">Alojamientos informales</div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 pt-2">
+                
+                <div className="bg-slate-50 p-4 rounded-xl text-xs text-slate-700 font-medium flex flex-col items-center justify-center gap-2.5 border border-slate-100 text-center hover:bg-slate-100/50 transition-colors">
+                  <svg className="w-5 h-5 text-[#2F92B9]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                  <span>Conectividad aérea</span>
+                </div>
+
+                <div className="bg-slate-50 p-4 rounded-xl text-xs text-slate-700 font-medium flex flex-col items-center justify-center gap-2.5 border border-slate-100 text-center hover:bg-slate-100/50 transition-colors">
+                  <svg className="w-5 h-5 text-[#2F92B9]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0V11m0 0H9m3 0h3m-3-3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M15 14h.01M15 17h.01M12 20h.01" />
+                  </svg>
+                  <span>Infraestructura</span>
+                </div>
+
+                <div className="bg-slate-50 p-4 rounded-xl text-xs text-slate-700 font-medium flex flex-col items-center justify-center gap-2.5 border border-slate-100 text-center hover:bg-slate-100/50 transition-colors">
+                  <svg className="w-5 h-5 text-[#2F92B9]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span>Servicios públicos</span>
+                </div>
+
+                <div className="bg-slate-50 p-4 rounded-xl text-xs text-slate-700 font-medium flex flex-col items-center justify-center gap-2.5 border border-slate-100 text-center hover:bg-slate-100/50 transition-colors">
+                  <svg className="w-5 h-5 text-[#2F92B9]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span>Regulación turística</span>
+                </div>
+
+                <div className="bg-slate-50 p-4 rounded-xl text-xs text-slate-700 font-medium flex flex-col items-center justify-center gap-2.5 border border-slate-100 text-center hover:bg-slate-100/50 transition-colors col-span-2 sm:col-span-1">
+                  <svg className="w-5 h-5 text-[#2F92B9]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span>Alojamientos informales</span>
+                </div>
+
               </div>
             </div>
 
@@ -572,11 +645,11 @@ export default function Web() {
           <div className="md:col-span-3 space-y-4">
             <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-white">Secciones</h4>
             <ul className="space-y-2.5 text-xs text-slate-100 font-light">
-              <li className="hover:text-slate-200 cursor-pointer transition-colors">Quiénes somos?</li>
-              <li className="hover:text-slate-200 cursor-pointer transition-colors">Directorio Nacional</li>
-              <li className="hover:text-slate-200 cursor-pointer transition-colors">Noticias del Sector</li>
-              <li className="hover:text-slate-200 cursor-pointer transition-colors">Eventos & Congresos</li>
-              <li className="hover:text-slate-200 cursor-pointer transition-colors">Capacitación Técnica</li>
+              <li className="hover:text-slate-200 pointer-events-none transition-colors">Quiénes somos?</li>
+              <li className="hover:text-slate-200 pointer-events-none transition-colors">Directorio Nacional</li>
+              <li className="hover:text-slate-200 pointer-events-none transition-colors">Noticias del Sector</li>
+              <li className="hover:text-slate-200 pointer-events-none transition-colors">Eventos & Congresos</li>
+              <li className="hover:text-slate-200 pointer-events-none transition-colors">Capacitación Técnica</li>
             </ul>
           </div>
 
@@ -584,10 +657,10 @@ export default function Web() {
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-white">Afiliados</h4>
             <ul className="space-y-2.5 text-xs text-slate-100 font-light">
-              <li className="hover:text-slate-200 cursor-pointer transition-colors">Cámaras Regionales</li>
-              <li className="hover:text-slate-200 cursor-pointer transition-colors">Inscripción Gremial</li>
-              <li className="hover:text-slate-200 cursor-pointer transition-colors">Estatutos Oficiales</li>
-              <li className="hover:text-slate-200 cursor-pointer transition-colors">Bolsa de Trabajo</li>
+              <li className="hover:text-slate-200 pointer-events-none transition-colors">Cámaras Regionales</li>
+              <li className="hover:text-slate-200 pointer-events-none transition-colors">Inscripción Gremial</li>
+              <li className="hover:text-slate-200 pointer-events-none transition-colors">Estatutos Oficiales</li>
+              <li className="hover:text-slate-200 pointer-events-none transition-colors">Bolsa de Trabajo</li>
             </ul>
           </div>
 
