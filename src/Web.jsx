@@ -48,12 +48,12 @@ export default function Web() {
       description: 'Evolución estructural hacia Federación Nacional de Hoteles de Venezuela, expandiendo su alcance para agrupar cámaras regionales y elevar la representatividad del sector.'
     },
     {
-      year: '2000 - 2020',
+      year: '2000-2020',
       title: 'Expansión Gremial',
       description: 'Dos décadas de consolidación institucional, tejiendo alianzas estratégicas e impulsando la profesionalización de la hotelería en cada rincón del territorio nacional.'
     },
     {
-      year: '2021 - 2026',
+      year: '2021-2026',
       title: 'Modernización y Recuperación',
       description: 'Enfoque total en la digitalización, optimización de datos de la industria turística y la reactivación estratégica de la red hotelera venezolana.'
     },
@@ -167,9 +167,9 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE PERFECCIONADO CON FECHAS EN EL CENTRO Y NODOS CONCÉNTRICOS */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE PERFECCIONADO CON FECHAS ADYACENTES AL NODO */}
       <section className="py-28 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           
           {/* Cabecera de la sección */}
           <div className="text-center mb-24">
@@ -186,18 +186,19 @@ export default function Web() {
 
             <div className="space-y-16 md:space-y-24 relative z-10">
               {timelineEvents.map((event, index) => {
-                const isLeft = index % 2 === 0;
+                // Alternancia de cajas: Índices pares van a la izquierda del eje, impares a la derecha
+                const isLeftBox = index % 2 === 0;
 
                 return (
                   <div 
                     key={index} 
                     className={`flex flex-col md:flex-row items-center w-full relative ${
-                      isLeft ? 'md:flex-row-reverse' : ''
+                      isLeftBox ? 'md:flex-row' : 'md:flex-row-reverse'
                     }`}
                   >
                     {/* LADO DE LA CAJA INFORMATIVA */}
-                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-16 z-10">
-                      <div className="w-full max-w-lg bg-slate-50/60 hover:bg-white rounded-2xl p-6 md:p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div className="w-full md:w-1/2 flex justify-center px-0 md:px-14 z-10">
+                      <div className="w-full max-w-md bg-slate-50/60 hover:bg-white rounded-2xl p-6 md:p-8 border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
                         
                         {/* Año visible solo en móviles justo arriba del título */}
                         <div className="block md:hidden text-2xl font-black text-[#2F92B9] mb-1">
@@ -213,18 +214,20 @@ export default function Web() {
                       </div>
                     </div>
 
-                    {/* CONJUNTO CENTRAL: NODO CONCÉNTRICO + FECHA FIJA AL LADO (Escritorio) */}
+                    {/* CONJUNTO CENTRAL EXACTO: NODO CONCÉNTRICO + FECHA DETERMINADA POR SU LADO */}
                     <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center z-20">
                       
-                      {/* Nodo Concéntrico (Círculo filled pequeño + Anillo exterior lineal fino) */}
+                      {/* Nodo Concéntrico Fijo */}
                       <div className="w-6 h-6 rounded-full bg-white border border-[#2F92B9] flex items-center justify-center shadow-sm">
                         <div className="w-2.5 h-2.5 rounded-full bg-[#2F92B9]" />
                       </div>
 
-                      {/* Fecha fija al lado del círculo (Sin efectos hover, texto plano sobrio) */}
+                      {/* FECHA ADYACENTE AL CÍRCULO EN COLOR OSCURO (Sin hover) 
+                          - Si la caja está a la izquierda (1958), la fecha se planta a la IZQUIERDA del círculo.
+                          - Si la caja está a la derecha (1993), la fecha se planta a la DERECHA del círculo. */}
                       <div 
-                        className={`absolute text-2xl lg:text-3xl font-black text-slate-400 tracking-tight whitespace-nowrap select-none ${
-                          isLeft ? 'left-9' : 'right-9'
+                        className={`absolute text-xl lg:text-2xl font-black text-slate-800 tracking-tight whitespace-nowrap select-none ${
+                          isLeftBox ? 'right-9' : 'left-9'
                         }`}
                       >
                         {event.year}
