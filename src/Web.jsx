@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// Componente interno para animar los números de forma interactiva (cuenta progresiva dinámica)
+// Componente interno para animar los números de forma interactiva
 function Counter({ value, duration = 1500 }) {
   const [count, setCount] = useState(0);
 
@@ -27,10 +27,9 @@ export default function Web() {
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* 1. TOP BAR (AHORA EN AZUL CON TEXTOS EN BLANCO) */}
+      {/* 1. TOP BAR (ESTILO HOTREC) */}
       <div className="bg-[#0062B2] py-2 px-6 md:px-12 text-white text-[11px] font-medium tracking-wide">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          {/* Contacto Izquierda */}
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
               <span className="opacity-80">✉</span> contacto@fenahoven.org.ve
@@ -39,7 +38,6 @@ export default function Web() {
               <span className="opacity-80">📞</span> +58 (212) 993-4444
             </span>
           </div>
-          {/* Redes Derecha */}
           <div className="flex items-center gap-4 opacity-90">
             <span className="cursor-pointer hover:text-slate-200">𝕏</span>
             <span className="cursor-pointer hover:text-slate-200 font-bold">in</span>
@@ -81,14 +79,13 @@ export default function Web() {
         </div>
       </nav>
 
-      {/* 3. HERO INSTITUTIONAL CON TITULAR EN 3 LÍNEAS Y CARDS CON NÚMEROS AZULES */}
+      {/* 3. HERO INSTITUTIONAL CON TITULAR EN 3 LÍNEAS */}
       <section 
         className="relative min-h-[95vh] flex flex-col justify-center items-center px-8 bg-cover bg-center bg-no-repeat bg-fixed py-20"
         style={{ 
           backgroundImage: `linear-gradient(to bottom, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.50)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop')` 
         }}
       >
-        {/* Contenido de Textos Dividido en 3 Líneas */}
         <div className="text-center max-w-5xl mb-16 z-10">
           <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.15] mb-8 uppercase tracking-tight">
             67 AÑOS <br />
@@ -100,45 +97,34 @@ export default function Web() {
           </p>
         </div>
 
-        {/* Bloque de Indicadores: Cards Blancas con Números Unificados en Azul */}
+        {/* Cards de Indicadores */}
         <div className="w-full max-w-6xl z-10 space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            
-            {/* Card 1 */}
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
               <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
                 <Counter value="300" />+
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Hoteles Representados</span>
             </div>
-
-            {/* Card 2 */}
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
               <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
                 <Counter value="24" />
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Estados Afiliados</span>
             </div>
-
-            {/* Card 3 */}
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
               <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
                 <Counter value="67" />
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Años de Trayectoria</span>
             </div>
-
-            {/* Card 4 */}
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
               <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
                 <Counter value="12" />+
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Eventos Anuales</span>
             </div>
-
           </div>
-
-          {/* Atribución de fuente */}
           <div className="text-center pt-2">
             <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase bg-slate-900/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
               Fuente: Registro Histórico FENAHOVEN
@@ -150,8 +136,6 @@ export default function Web() {
       {/* 4. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-          
-          {/* COLUMNA IZQUIERDA: IMAGEN */}
           <div className="lg:col-span-5 w-full">
             <div className="relative aspect-[4/5] w-full bg-slate-100 rounded-3xl overflow-hidden shadow-lg border border-slate-100">
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
@@ -167,16 +151,13 @@ export default function Web() {
             </div>
           </div>
 
-          {/* COLUMNA DERECHA: CIFRAS */}
           <div className="lg:col-span-7 space-y-12">
             <div>
               <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Estadísticas en Tiempo Real</span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industria</h2>
             </div>
 
-            {/* Grid de cifras */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 border-t border-slate-100 pt-8">
-              
               <div className="flex flex-col justify-between">
                 <div>
                   <div className="text-5xl font-bold text-[#0062B2] tracking-tight mb-2">
@@ -220,10 +201,8 @@ export default function Web() {
                 </div>
                 <span className="text-[9px] font-mono tracking-wider text-slate-300 uppercase block">Fuente: Reporte de Afiliados Trimestral</span>
               </div>
-
             </div>
 
-            {/* CTA */}
             <div className="pt-6">
               <button className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#1E293B] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden hover:bg-[#0062B2] transition-colors duration-300 shadow-sm">
                 <span>Datos y Cifras</span>
@@ -232,9 +211,41 @@ export default function Web() {
                 </svg>
               </button>
             </div>
-
           </div>
+        </div>
+      </section>
 
+      {/* 5. NUEVA SECCIÓN: BANNER BOLETÍN DE OCUPACIÓN (CLONADO DE HOTREC) */}
+      <section className="pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div 
+          className="relative rounded-3xl overflow-hidden bg-cover bg-center py-20 px-8 md:px-16 text-center shadow-xl border border-slate-100"
+          style={{ 
+            backgroundImage: `linear-gradient(to right, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1000&auto=format&fit=crop')` 
+          }}
+        >
+          <div className="max-w-3xl mx-auto space-y-6 relative z-10">
+            {/* Título Principal */}
+            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+              Ocupación Hotelera Nacional (Boletín Informativo)
+            </h3>
+            
+            {/* Subtexto descriptivo */}
+            <p className="text-sm md:text-base text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+              El informe estadístico oficial de FENAHOVEN le ofrece un desglose detallado del comportamiento, pernoctaciones y evolución de la actividad turística en los 24 estados de Venezuela.
+            </p>
+            
+            {/* CTA Outline estilo Hotrec para abrir y descargar el PDF */}
+            <div className="pt-4">
+              <a 
+                href="/reporte-ocupacion.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block border border-white text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-md hover:bg-white hover:text-[#10172A] transition-all duration-300"
+              >
+                Lea el boletín informativo
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
