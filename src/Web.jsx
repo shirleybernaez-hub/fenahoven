@@ -466,13 +466,13 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 8. FOOTER INSTITUCIONAL: BACKGROUND #2F92B9 Y LOGO EN PNG ORIGINAL */}
+      {/* 8. FOOTER INSTITUCIONAL COMPLETO */}
       <footer className="bg-[#2F92B9] text-white pt-20 pb-10">
         
         {/* Contenedor Maestro */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/20">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 pb-12">
           
-          {/* Bloque Izquierdo: Logo PNG Limpio, Maximizado y con sus Colores Originales */}
+          {/* Bloque Izquierdo: Logo PNG */}
           <div className="md:col-span-4 space-y-6">
             <div className="flex items-center justify-start">
               <img 
@@ -509,37 +509,53 @@ export default function Web() {
             </ul>
           </div>
 
-          {/* Bloque Derecho: Ubicación e Información de Registro */}
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-white">Sede Central</h4>
-            <p className="text-xs text-slate-100 font-light leading-relaxed">
-              Av. Principal de Las Mercedes, Edificio Centro Las Mercedes, Piso 4, Oficina 41. Caracas, Distrito Capital, Venezuela.
-            </p>
-            <div className="pt-2 text-xs text-slate-200 font-mono">
-              <span className="block">Rif: J-00248834-0</span>
+          {/* Bloque Derecho: Ubicación e Información de Registro + ENLACES DE LEGAL SUBIDOS AQUÍ */}
+          <div className="md:col-span-3 space-y-6 flex flex-col justify-between">
+            <div className="space-y-4">
+              <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-white">Sede Central</h4>
+              <p className="text-xs text-slate-100 font-light leading-relaxed">
+                Av. Principal de Las Mercedes, Edificio Centro Las Mercedes, Piso 4, Oficina 41. Caracas, Distrito Capital, Venezuela.
+              </p>
+              <div className="text-xs text-slate-200 font-mono">
+                <span className="block">Rif: J-00248834-0</span>
+              </div>
+            </div>
+
+            {/* Enlaces de Legal posicionados de forma segura sobre la línea */}
+            <div className="flex gap-6 text-xs text-slate-100 pt-4 md:pt-0">
+              <span className="hover:text-white cursor-pointer transition-colors font-medium">Términos de Uso</span>
+              <span className="hover:text-white cursor-pointer transition-colors font-medium">Políticas de Privacidad</span>
             </div>
           </div>
 
         </div>
 
-        {/* Cierre de Derechos y Firma Onshift Vinculada */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-200 font-light gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center sm:text-left">
-            <span>© {new Date().getFullYear()} FENAHOVEN. Todos los derechos reservados.</span>
-            <span className="hidden sm:inline text-white/30">|</span>
+        {/* Línea Divisoria Blanca con Opacidad Conectada */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="w-full h-[1px] bg-white/20" />
+        </div>
+
+        {/* Cierre Inferior: Centrado Perfecto y Firma Renovada */}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 flex flex-col items-center justify-center gap-4 text-[11px] text-slate-200 font-light">
+          
+          {/* Derechos Reservados estrictamente centrados */}
+          <div className="text-center select-none tracking-wide text-slate-100">
+            © 2026 FENAHOVEN. Todos los derechos reservados.
+          </div>
+          
+          {/* Firma Rediseñada por Onshift */}
+          <div className="text-center">
             <a 
               href="https://onshift.com.ve" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="font-medium text-slate-200 hover:text-white transition-colors flex items-center gap-1"
+              className="text-slate-200 hover:text-white transition-colors flex items-center gap-1.5"
             >
-              Hecho por <span className="font-bold tracking-tight text-white hover:underline">onshift</span>
+              <span>Diseñado por</span>
+              <span className="font-bold tracking-tight text-white hover:underline uppercase text-[10px]">onshift</span>
             </a>
           </div>
-          <div className="flex gap-6 text-slate-200">
-            <span className="hover:text-white cursor-pointer transition-colors">Términos de Uso</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Políticas de Privacidad</span>
-          </div>
+
         </div>
 
       </footer>
