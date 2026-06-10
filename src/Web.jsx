@@ -89,7 +89,7 @@ export default function Web() {
         </div>
       </div>
 
-      {/* 2. NAVBAR PRINCIPAL: LOGO INCREMENTADO UN 30% DE TAMAÑO */}
+      {/* 2. NAVBAR PRINCIPAL */}
       <nav className="bg-white border-b border-gray-200 relative px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between min-h-[100px] relative py-4 md:py-0">
           
@@ -235,7 +235,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO (COLORES NÍTIDOS Y EFECTO ENFOQUE ESCALA) */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO */}
       <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           
@@ -248,9 +248,7 @@ export default function Web() {
             <div className="w-16 h-1 bg-[#2F92B9] mx-auto mt-5 rounded-full" />
           </div>
 
-          {/* Timeline */}
           <div className="relative">
-            
             <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[#D1D5DB] z-0" />
             <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-slate-300 rounded-full z-20" />
@@ -268,7 +266,6 @@ export default function Web() {
                     onClick={() => setActiveHito(index)}
                   >
                     
-                    {/* COLUMNA IZQUIERDA: TARJETA O FECHA (NÍTIDAS SIN OPACIDAD BAJA) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-end md:px-8 z-10">
                       {isLeftYear ? (
                         <div className="text-4xl lg:text-5xl font-black tracking-tight select-none pr-4 text-[#2F92B9]">
@@ -287,15 +284,11 @@ export default function Web() {
                       )}
                     </div>
 
-                    {/* COLUMNA CENTRAL */}
                     <div className="hidden md:flex md:col-span-1 justify-center items-center z-20">
                       <div className="relative flex items-center justify-center">
-                        
-                        {/* Parpadeo secuencial guía */}
                         {isNextHitoToClick && (
                           <div className="absolute w-8 h-8 rounded-full bg-[#2F92B9]/30 animate-ping z-0 pointer-events-none" />
                         )}
-
                         <div className={`rounded-full bg-white flex items-center justify-center shadow-sm border border-[#2F92B9] transition-all duration-300 ${
                           isItemActive ? 'w-7 h-7 scale-110' : 'w-6 h-6'
                         }`}>
@@ -303,11 +296,9 @@ export default function Web() {
                             isItemActive ? 'w-3 h-3' : 'w-2.5 h-2.5'
                           }`} />
                         </div>
-
                       </div>
                     </div>
 
-                    {/* COLUMNA DERECHA: TARJETA O FECHA (NÍTIDAS SIN OPACIDAD BAJA) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-start md:px-8 z-10 mt-4 md:mt-0">
                       {isLeftYear ? (
                         <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border transition-all duration-500 ease-out transform ${
@@ -330,7 +321,6 @@ export default function Web() {
                 );
               })}
             </div>
-
           </div>
 
         </div>
@@ -475,6 +465,92 @@ export default function Web() {
 
         </div>
       </section>
+
+      {/* 8. FOOTER INSTITUCIONAL: AZUL CON TRAMA ARQUITECTÓNICA DE FACHADA HOTELERA Y CONEXIONES */}
+      <footer className="relative bg-[#10172A] text-white pt-20 pb-10 overflow-hidden">
+        
+        {/* Trama Creativa de Conexiones de Red y Fachadas de Hoteles */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="hotelPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                {/* Geometría que emula ventanas de hoteles modernos y ejes de carreteras turísticas */}
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1"/>
+                <rect x="10" y="10" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1"/>
+                <rect x="35" y="10" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1"/>
+                <rect x="10" y="35" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1"/>
+                <circle cx="42" cy="42" r="2" fill="currentColor"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#hotelPattern)" />
+          </svg>
+        </div>
+
+        {/* Contenedor Maestro */}
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12 z-10 grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-slate-800">
+          
+          {/* Bloque Izquierdo: Logo e Identidad */}
+          <div className="md:col-span-4 space-y-6">
+            <div className="flex items-center justify-start bg-white/5 p-4 rounded-2xl border border-white/10 backdrop-blur-sm max-w-[280px]">
+              <img 
+                src="/logowebfenahoven.png" 
+                alt="FENAHOVEN" 
+                className="h-24 w-auto object-contain select-none"
+              />
+            </div>
+            <p className="text-xs text-slate-400 font-light leading-relaxed max-w-xs">
+              Federación Nacional de Hoteles de Venezuela. Potenciando la hospitalidad, infraestructura e inversión turística estratégica desde 1958.
+            </p>
+          </div>
+
+          {/* Bloque Centro-Izquierda: Navegación */}
+          <div className="md:col-span-3 space-y-4">
+            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2F92B9]">Secciones</h4>
+            <ul className="space-y-2.5 text-xs text-slate-400 font-light">
+              <li className="hover:text-white cursor-pointer transition-colors">Quiénes somos?</li>
+              <li className="hover:text-white cursor-pointer transition-colors">Directorio Nacional</li>
+              <li className="hover:text-white cursor-pointer transition-colors">Noticias del Sector</li>
+              <li className="hover:text-white cursor-pointer transition-colors">Eventos & Congresos</li>
+              <li className="hover:text-white cursor-pointer transition-colors">Capacitación Técnica</li>
+            </ul>
+          </div>
+
+          {/* Bloque Centro-Derecha: Institucional */}
+          <div className="md:col-span-2 space-y-4">
+            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2F92B9]">Afiliados</h4>
+            <ul className="space-y-2.5 text-xs text-slate-400 font-light">
+              <li className="hover:text-white cursor-pointer transition-colors">Cámaras Regionales</li>
+              <li className="hover:text-white cursor-pointer transition-colors">Inscripción Gremial</li>
+              <li className="hover:text-white cursor-pointer transition-colors">Estatutos Oficiales</li>
+              <li className="hover:text-white cursor-pointer transition-colors">Bolsa de Trabajo</li>
+            </ul>
+          </div>
+
+          {/* Bloque Derecho: Ubicación e Información Sólida */}
+          <div className="md:col-span-3 space-y-4">
+            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-[#2F92B9]">Sede Central</h4>
+            <p className="text-xs text-slate-400 font-light leading-relaxed">
+              Av. Principal de Las Mercedes, Edificio Centro Las Mercedes, Piso 4, Oficina 41. Caracas, Distrito Capital, Venezuela.
+            </p>
+            <div className="pt-2 text-xs text-slate-300 font-mono">
+              <span className="block">Rif: J-00248834-0</span>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Cierre de Derechos y Redes */}
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12 z-10 pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 font-light gap-4">
+          <div>
+            © {new Date().getFullYear()} FENAHOVEN. Todos los derechos reservados.
+          </div>
+          <div className="flex gap-6 text-slate-400">
+            <span className="hover:text-[#2F92B9] cursor-pointer transition-colors">Términos de Uso</span>
+            <span className="hover:text-[#2F92B9] cursor-pointer transition-colors">Políticas de Privacidad</span>
+          </div>
+        </div>
+
+      </footer>
 
     </div>
   );
