@@ -24,28 +24,40 @@ function Counter({ value, duration = 1500 }) {
 }
 
 export default function Web() {
-  const navLinks = [
-    "Quiénes Somos", "Federación", "Dashboard Nacional", "Radar Hotelero", 
-    "Capacitación", "Eventos", "Inversión Hotelera", "Sala de Prensa", 
-    "Afíliate", "Contacto"
-  ];
-
   return (
     <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900 antialiased">
       
-      {/* NAVBAR INSTITUCIONAL */}
+      {/* NAVBAR INSTITUCIONAL MODIFICADO */}
       <nav className="border-b border-slate-100 bg-white sticky top-0 z-50 px-6 py-4 md:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="text-xl font-bold tracking-tighter text-[#0062B2] uppercase select-none">
-            FENAHOVEN
+        <div className="max-w-7xl mx-auto flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          
+          {/* Logo Institucional desde la carpeta pública */}
+          <div className="flex items-center">
+            <img 
+              src="/logofenahoven.jpg" 
+              alt="Logo FENAHOVEN" 
+              className="h-12 w-auto object-contain select-none"
+            />
           </div>
+
+          {/* Menú de Enlaces Seleccionados */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 items-center text-xs md:text-sm font-medium text-slate-600">
-            {navLinks.map((link, index) => (
-              <span key={index} className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">
-                {link}
-              </span>
-            ))}
+            {/* Abre en una página aparte */}
+            <a 
+              href="/quienes-somos" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1"
+            >
+              Quiénes Somos
+            </a>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Datos de la Industria</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Dashboard Nacional</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Eventos</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Capacitación</span>
+            <span className="cursor-pointer hover:text-[#0062B2] transition-colors whitespace-nowrap py-1">Contacto</span>
           </div>
+
         </div>
       </nav>
 
@@ -60,7 +72,7 @@ export default function Web() {
           </p>
         </div>
 
-        {/* Indicadores con fuente */}
+        {/* Indicadores del sector */}
         <div className="w-full max-w-5xl border-t border-slate-200/60 pt-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 text-center">
             <div>
@@ -106,7 +118,7 @@ export default function Web() {
             </div>
           </div>
 
-          {/* COLUMNA DERECHA: CIFRAS CON FUENTES INDIVIDUALES */}
+          {/* COLUMNA DERECHA: CIFRAS */}
           <div className="lg:col-span-7 space-y-12">
             <div>
               <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Estadísticas en Tiempo Real</span>
