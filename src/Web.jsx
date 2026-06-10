@@ -24,8 +24,8 @@ function Counter({ value, duration = 1500 }) {
 }
 
 export default function Web() {
-  // Estado para controlar cuál hito está expandido/seleccionado por clic
-  const [activeHito, setActiveHito] = useState(null);
+  // Estado para controlar cuál hito está seleccionado/activo. Inicia en 0 (1958) por defecto.
+  const [activeHito, setActiveHito] = useState(0);
 
   // Arreglo con clases de tamaño personalizadas para equilibrar visualmente cada logo de la red
   const partners = [
@@ -170,7 +170,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO MEJORADO (TODAS A COLOR, PULSO EN 1958 Y SELECCIÓN DE ESCALA) */}
+      {/* 4. SECCIÓN INFOGRAFÍA: TIMELINE INTERACTIVO CON FLUJO DE PARPADEO SECUENCIAL */}
       <section className="py-32 bg-[#FFFFFF] border-b border-slate-100 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           
@@ -201,6 +201,12 @@ export default function Web() {
                 const isLeftYear = index % 2 === 0;
                 const isItemActive = activeHito === index;
 
+                // Lógica de parpadeo secuencial sugerida:
+                // El nodo debe parpadear SI es el siguiente hito inmediato a presionar (activeHito + 1).
+                // Si el hito actual está activo, ya se presionó por lo que no parpadea.
+                // Si llegamos al final del arreglo, se queda fijo el último.
+                const isNextHitoToClick = activeHito === null ? index === 0 : index === activeHito + 1;
+
                 return (
                   <div 
                     key={index} 
@@ -208,10 +214,10 @@ export default function Web() {
                     onClick={() => setActiveHito(index)}
                   >
                     
-                    {/* COLUMNA IZQUIERDA (Año o Card Informativo según correspondencia de lectura) */}
+                    {/* COLUMNA IZQUIERDA (Año en Azul Sólido o Card Informativo) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-end md:px-8 z-10">
                       {isLeftYear ? (
-                        <div className="text-4xl lg:text-5xl font-black tracking-tight select-none pr-4 text-slate-950">
+                        <div className="text-4xl lg:text-5xl font-black tracking-tight select-none pr-4 text-[#2F92B9]">
                           {event.year}
                         </div>
                       ) : (
@@ -225,13 +231,13 @@ export default function Web() {
                       )}
                     </div>
 
-                    {/* COLUMNA CENTRAL: PUNTO INTERMEDIO CON EFECTO DE PARPADEO (PING) EXCLUSIVO PARA EL INICIO (1958) */}
+                    {/* COLUMNA CENTRAL: NODOS CON ENFOQUE DE PARPADEO SECUENCIAL COMPARTIDO */}
                     <div className="hidden md:flex md:col-span-1 justify-center items-center z-20">
                       <div className="relative flex items-center justify-center">
                         
-                        {/* Aro con efecto de parpadeo expansivo por ondas (Solo en 1958 si aún no se ha interactuado/clicado ese item) */}
-                        {index === 0 && !isItemActive && (
-                          <div className="absolute w-8 h-8 rounded-full bg-[#2F92B9]/20 animate-ping z-0 pointer-events-none" />
+                        {/* El aro parpadea de forma dinámica indicándole al usuario exactamente cuál presionar a continuación */}
+                        {isNextHitoToClick && (
+                          <div className="absolute w-8 h-8 rounded-full bg-[#2F92B9]/30 animate-ping z-0 pointer-events-none" />
                         )}
 
                         {/* Aro lineal externo permanente */}
@@ -247,7 +253,7 @@ export default function Web() {
                       </div>
                     </div>
 
-                    {/* COLUMNA DERECHA (Card Informativo o Año según correspondencia de lectura) */}
+                    {/* COLUMNA DERECHA (Card Informativo o Año en Azul Sólido) */}
                     <div className="w-full md:col-span-5 flex justify-center md:justify-start md:px-8 z-10 mt-4 md:mt-0">
                       {isLeftYear ? (
                         <div className={`w-full max-w-sm bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm transition-all duration-500 transform ${
@@ -258,7 +264,7 @@ export default function Web() {
                           <p className="text-sm text-slate-500 font-light leading-relaxed">{event.description}</p>
                         </div>
                       ) : (
-                        <div className="text-4xl lg:text-5xl font-black tracking-tight select-none pl-4 text-slate-950">
+                        <div className="text-4xl lg:text-5xl font-black tracking-tight select-none pl-4 text-[#2F92B9]">
                           {event.year}
                         </div>
                       )}
