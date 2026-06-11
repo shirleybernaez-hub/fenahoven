@@ -609,7 +609,7 @@ export default function Web() {
                   Análisis del <br />Reporte Trienal
                 </h3>
                 <p className="text-sm text-slate-500 font-light leading-relaxed">
-                  Observamos una caída estructural acumulada de <strong className="font-semibold text-slate-700">7.45 puntos</strong> desde 2024, evidenciando que el descenso se ha acelerado en el último periodo.
+                  El monitoreo actual evidencia un núcleo de ocupación estable en regiones piloto, facilitando la planificación técnica y la escalabilidad de la oferta sectorial.
                 </p>
               </div>
 
