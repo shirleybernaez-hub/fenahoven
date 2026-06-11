@@ -1,3 +1,6 @@
+import { BarChart3, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { CartesianGrid, ComposedChart, Bar, ReferenceLine, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+
 import React, { useState, useEffect } from 'react';
 
 // Componente interno para animar los números de forma interactiva (cuenta progresiva dinámica)
@@ -22,6 +25,42 @@ function Counter({ value, duration = 1500 }) {
 
   return <span>{count}</span>;
 }
+import React, { useState, useEffect } from 'react';
+// ... todos tus otros imports actuales ...
+import { BarChart3, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { CartesianGrid, ComposedChart, Bar, ReferenceLine, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+
+
+const reportData = [
+  { estado: 'La Guaira', ocupacion: 38.24 },
+  { estado: 'Carabobo', ocupacion: 32.10 },
+  { estado: 'Táchira', ocupacion: 28.50 },
+  { estado: 'Aragua', ocupacion: 13.75 },
+  { estado: 'Lara', ocupacion: 13.32 },
+];
+
+const CustomChartTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    const data = payload[0].payload;
+    const isAlert = data.ocupacion < 21.99;
+    return (
+      <div className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-xl p-3.5 shadow-xl min-w-[150px] text-xs">
+        <div className="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">{data.estado}</div>
+        <div className="flex items-center justify-between gap-4">
+          <div className="text-base font-black text-slate-900">{data.ocupacion}%</div>
+          <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${isAlert ? 'bg-rose-50 text-rose-600' : 'bg-emerald-50 text-emerald-600'}`}>
+            {isAlert ? 'Bajo el promedio' : 'Óptimo'}
+          </span>
+        </div>
+      </div>
+    );
+  }
+  return null;
+};
+// ========================================================
+
+
+
 
 export default function Web() {
   // Estado para controlar cuál hito está seleccionado/activo. Inicia en 0 (1958) por defecto.
@@ -562,6 +601,79 @@ export default function Web() {
           </div>
         </div>
       </section>
+      
+<section className="py-20 bg-slate-50 border-y border-slate-200/60">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+            
+            {/* Resumen Editorial Izquierdo */}
+            <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
+              <div className="space-y-4">
+                <span className="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200/60 rounded-full px-3 py-1 uppercase tracking-wider inline-flex items-center gap-1.5 font-mono">
+                  <AlertTriangle className="w-3.5 h-3.5" /> Alerta de Mercado
+                </span>
+                <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight uppercase leading-none">
+                  Análisis del <br />Reporte Trienal
+                </h3>
+                <p className="text-sm text-slate-500 font-light leading-relaxed">
+                  Observamos una caída estructural acumulada de <strong className="font-semibold text-slate-700">7.45 puntos</strong> desde 2024, evidenciando que el descenso se ha acelerado en el último periodo.
+                </p>
+              </div>
+
+              {/* Badges de Análisis Rápido */}
+              <div className="space-y-3 bg-white p-5 rounded-2xl border border-slate-200/50 shadow-xs">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                  <p className="text-xs text-slate-600"><strong className="text-slate-900 font-semibold">Liderazgo:</strong> La Guaira encabeza la matriz con 38.24%, seguido por Carabobo y Táchira.</p>
+                </div>
+                <div className="flex items-start gap-3 border-t border-slate-100 pt-3">
+                  <AlertTriangle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
+                  <p className="text-xs text-slate-600"><strong className="text-slate-900 font-semibold">En Observación:</strong> Lara (13.32%) y Aragua (13.75%) registran niveles críticos.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contenedor del Gráfico de Barras */}
+            <div className="lg:col-span-8 bg-white border border-slate-200/70 rounded-3xl p-6 shadow-md flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] opacity-40 pointer-events-none" />
+              
+              <div className="flex items-center justify-between mb-6 relative z-10 text-xs">
+                <div className="flex items-center gap-2">
+                  <BarChart3 className="w-4 h-4 text-[#2F92B9]" />
+                  <span className="text-xs font-bold font-mono text-slate-400 uppercase tracking-widest">Matriz por Entidad Federal (%)</span>
+                </div>
+                <span className="text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded-md">Enero 2026</span>
+              </div>
+
+              <div className="w-full h-80 relative z-10 text-xs">
+                <ResponsiveContainer width="100%" height="100%">
+                  <ComposedChart data={reportData} margin={{ top: 10, right: 5, left: -20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="4 4" stroke="#f1f5f9" vertical={false} />
+                    <XAxis dataKey="estado" axisLine={false} tickLine={false} tick={{ fontSize: 11, fontWeight: 500, fill: '#64748b' }} />
+                    <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fill: '#64748b' }} domain={[0, 45]} />
+                    <Tooltip content={<CustomChartTooltip />} cursor={{ fill: '#f8fafc' }} />
+                    
+                    {/* Línea de Referencia del Promedio Nacional */}
+                    <ReferenceLine 
+                      y={21.99} 
+                      stroke="#F43F5E" 
+                      strokeDasharray="5 5" 
+                      strokeWidth={1.5}
+                      label={{ value: 'Promedio Nacional: 21.99%', fill: '#F43F5E', position: 'top', fontSize: 10, fontWeight: 700, letterSpacing: '0.05em' }} 
+                    />
+                    
+                    <Bar dataKey="ocupacion" fill="#2F92B9" radius={[8, 8, 0, 0]} barSize={45} />
+                  </ComposedChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      {/* ======================================================================= */}
+
+
 
       {/* 6. BANNER OCUPACIÓN HOTELERA */}
       <section className="pt-12 px-6 md:px-12 max-w-7xl mx-auto">
