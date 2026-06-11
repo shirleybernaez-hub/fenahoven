@@ -1,10 +1,31 @@
-import React, { useState, useEffect } from 'react';
 import { BarChart3, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { CartesianGrid, ComposedChart, Bar, ReferenceLine, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
-// ========================================================
-// DATASET Y INFRAESTRUCTURA DEL CHART (PROMEDIO ENERO 2026)
-// ========================================================
+import React, { useState, useEffect } from 'react';
+
+// Componente interno para animar los números de forma interactiva (cuenta progresiva dinámica)
+function Counter({ value, duration = 1500 }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = parseInt(value);
+    if (start === end) return;
+
+    const totalMilisecondsByStep = Math.max(Math.floor(duration / end), 1);
+    
+    const timer = setInterval(() => {
+      start += 1;
+      setCount(start);
+      if (start === end) clearInterval(timer);
+    }, totalMilisecondsByStep);
+
+    return () => clearInterval(timer);
+  }, [value, duration]);
+
+  return <span>{count}</span>;
+}
+
 const reportData = [
   { estado: 'La Guaira', ocupacion: 38.24 },
   { estado: 'Carabobo', ocupacion: 32.10 },
@@ -32,32 +53,6 @@ const CustomChartTooltip = ({ active, payload }) => {
   return null;
 };
 
-// Componente interno para animar los números de forma interactiva
-function Counter({ value, duration = 1500 }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const end = parseInt(value);
-    if (start === end) return;
-
-    const totalMilisecondsByStep = Math.max(Math.floor(duration / end), 1);
-    
-    const timer = setInterval(() => {
-      start += 1;
-      setCount(start);
-      if (start === end) clearInterval(timer);
-    }, totalMilisecondsByStep);
-
-    return () => clearInterval(timer);
-  }, [value, duration]);
-
-  return <span>{count}</span>;
-}
-
-// ========================================================
-// COMPONENTE PRINCIPAL
-// ========================================================
 export default function Web() {
   // Estado para controlar cuál hito está seleccionado/activo. Inicia en 0 (1958) por defecto.
   const [activeHito, setActiveHito] = useState(0);
@@ -173,25 +168,25 @@ export default function Web() {
         <div className="w-full max-w-6xl z-10 space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
+              <span className="block text-4xl md:text-5xl font-black text-[#2F92B9] tracking-tight mb-3">
                 <Counter value="300" />+
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Hoteles Representados</span>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
+              <span className="block text-4xl md:text-5xl font-black text-[#2F92B9] tracking-tight mb-3">
                 <Counter value="24" />
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Estados Afiliados</span>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
+              <span className="block text-4xl md:text-5xl font-black text-[#2F92B9] tracking-tight mb-3">
                 <Counter value="67" />
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Años de Trayectoria</span>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-2xl border border-slate-100 flex flex-col justify-center items-center transform hover:scale-102 transition-transform duration-300">
-              <span className="block text-4xl md:text-5xl font-black text-[#0062B2] tracking-tight mb-3">
+              <span className="block text-4xl md:text-5xl font-black text-[#2F92B9] tracking-tight mb-3">
                 <Counter value="12" />+
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold text-center">Eventos Anuales</span>
@@ -361,7 +356,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4.5. SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO (Rediseño de Iconos Vectoriales) */}
+      {/* 4.5. SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO */}
       <section className="py-28 bg-[#F8FAFC] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
           
@@ -373,7 +368,6 @@ export default function Web() {
             <div className="w-16 h-1 bg-[#2F92B9] rounded-full mt-4" />
           </div>
 
-          {/* Grid de Funciones optimizado a 3 columnas con Iconos SVG */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Función 1 */}
@@ -466,7 +460,7 @@ export default function Web() {
               </div>
             </div>
 
-            {/* Función 7 - Expandida de forma proporcional al final con Iconos dinámicos */}
+            {/* Función 7 */}
             <div className="md:col-span-2 lg:col-span-3 bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-4 hover:scale-[1.01] transition-all duration-300">
               <h3 className="text-lg font-bold mb-3 text-slate-950">Defensa de Condiciones para la Actividad Hotelera</h3>
               <p className="text-sm text-slate-500 font-light leading-relaxed">
@@ -536,14 +530,15 @@ export default function Web() {
 
           <div className="lg:col-span-7 space-y-12">
             <div>
-              <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Estadísticas en Tiempo Real</span>
+              {/* AJUSTE 3: Modificado a Azul Institucional #2F92B9 */}
+              <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-3">Estadísticas en Tiempo Real</span>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1E293B] uppercase">Datos de la Industria</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10 border-t border-slate-100 pt-8">
               <div className="flex flex-col justify-between">
                 <div>
-                  <div className="text-5xl font-bold text-[#0062B2] tracking-tight mb-2">
+                  <div className="text-5xl font-bold text-[#2F92B9] tracking-tight mb-2">
                     <Counter value="32" />%
                   </div>
                   <h4 className="text-xs uppercase tracking-wider font-bold text-slate-800 mb-1">Ocupación Hotelera</h4>
@@ -587,10 +582,10 @@ export default function Web() {
             </div>
 
             <div className="pt-6">
-              <button className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#1E293B] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden hover:bg-[#0062B2] transition-colors duration-300 shadow-sm">
+              <button className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#1E293B] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden hover:bg-[#2F92B9] transition-colors duration-300 shadow-sm">
                 <span>Datos y Cifras</span>
                 <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
             </div>
@@ -598,7 +593,7 @@ export default function Web() {
         </div>
       </section>
       
-      {/* 5.5 PANEL DE RENDIMIENTO REGIONAL (EL CHART DE BARRAS) */}
+      {/* 5.5 PANEL DE RENDIMIENTO REGIONAL */}
       <section className="py-20 bg-slate-50 border-y border-slate-200/60">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
@@ -606,8 +601,9 @@ export default function Web() {
             {/* Resumen Editorial Izquierdo */}
             <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <span className="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200/60 rounded-full px-3 py-1 uppercase tracking-wider inline-flex items-center gap-1.5 font-mono">
-                  <AlertTriangle className="w-3.5 h-3.5" /> Alerta de Mercado
+                {/* AJUSTE 1: Aplicado Ocupación hotelera 2026 estilo ACTUALIDAD */}
+                <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-2">
+                  Ocupación hotelera 2026
                 </span>
                 <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight uppercase leading-none">
                   Análisis del <br />Reporte Trienal
@@ -637,7 +633,10 @@ export default function Web() {
               <div className="flex items-center justify-between mb-6 relative z-10 text-xs">
                 <div className="flex items-center gap-2">
                   <BarChart3 className="w-4 h-4 text-[#2F92B9]" />
-                  <span className="text-xs font-bold font-mono text-slate-400 uppercase tracking-widest">Matriz por Entidad Federal (%)</span>
+                  {/* AJUSTE 2: Tipografía unificada a tracking corporativo */}
+                  <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block">
+                    Matriz por Entidad Federal (%)
+                  </span>
                 </div>
                 <span className="text-[10px] font-mono text-slate-400 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded-md">Enero 2026</span>
               </div>
@@ -760,7 +759,7 @@ export default function Web() {
                   Cadenas internacionales evalúan nuevas aperturas en el eje norte-costero
                 </h3>
                 <p className="text-xs text-slate-500 font-light leading-relaxed line-clamp-3">
-                  Representantes del sector privado confirman el renovado interest de capital extranjero en proyectos de infraestructura turística de alta gama en el país.
+                  Representantes del sector privado confirman el renovado interés de capital extranjero en proyectos de infraestructura turística de alta gama en el país.
                 </p>
               </div>
             </div>
@@ -798,7 +797,8 @@ export default function Web() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-xs font-bold text-[#0062B2] uppercase tracking-[0.3em] block mb-3">Ecosistema Institutional</span>
+            {/* AJUSTE 4: Modificado Ecosistema Institutional a Azul Institucional #2F92B9 */}
+            <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-3">Ecosistema Institutional</span>
             <h2 className="text-3xl font-bold tracking-tight text-[#10172A] uppercase">Red de Gremios y Alianzas</h2>
             <p className="text-slate-500 mt-2 font-light text-sm">Trabajamos de la mano con las principales organizaciones turísticas y comerciales del país.</p>
           </div>
