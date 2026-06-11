@@ -326,30 +326,30 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4.5. SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO */}
+      {/* 4.5. SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO (Rediseño de Iconos Vectoriales) */}
       <section className="py-28 bg-[#F8FAFC] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
           
           <div>
             <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-2">Acción Institucional</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">
-              Funciones de FENAHOVEN in Venezuela
+              Funciones de FENAHOVEN en Venezuela
             </h2>
             <div className="w-16 h-1 bg-[#2F92B9] rounded-full mt-4" />
           </div>
 
-          {/* Grid de Funciones optimizado a 3 columnas */}
+          {/* Grid de Funciones optimizado a 3 columnas con Iconos SVG */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Función 1 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600&auto=format&fit=crop" 
-                  alt="Representación Gremial" 
-                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
-                />
-                <h3 className="text-lg font-bold mb-3 text-slate-950">Representación Gremial</h3>
+                <div className="w-10 h-10 rounded-xl bg-[#2F92B9]/10 flex items-center justify-center text-[#2F92B9] mb-5">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-slate-950">Representación Gremial</h3>
                 <p className="text-sm text-slate-500 font-light leading-relaxed">
                   Defiende los intereses de hoteles y posadas ante organismos públicos y privados.
                 </p>
@@ -357,14 +357,14 @@ export default function Web() {
             </div>
 
             {/* Función 2 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop" 
-                  alt="Estadísticas Sectoriales" 
-                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
-                />
-                <h3 className="text-lg font-bold mb-3 text-slate-950">Estadísticas Sectoriales</h3>
+                <div className="w-10 h-10 rounded-xl bg-[#2F92B9]/10 flex items-center justify-center text-[#2F92B9] mb-5">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2zm12 0v-11a2 2 0 00-2-2h-2a2 2 0 00-2 2v11a2 2 0 002 2h2a2 2 0 002-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-slate-950">Estadísticas Sectoriales</h3>
                 <p className="text-sm text-slate-500 font-light leading-relaxed">
                   Produce y divulga indicadores de ocupación hotelera, comportamiento de temporadas turísticas y tendencias del mercado.
                 </p>
@@ -372,14 +372,14 @@ export default function Web() {
             </div>
 
             {/* Función 3 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=crop" 
-                  alt="Promoción del Turismo" 
-                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
-                />
-                <h3 className="text-lg font-bold mb-3 text-slate-950">Promoción del Turismo</h3>
+                <div className="w-10 h-10 rounded-xl bg-[#2F92B9]/10 flex items-center justify-center text-[#2F92B9] mb-5">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2v0a2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2v4a2 2 0 002 2h2.364M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-slate-950">Promoción del Turismo</h3>
                 <p className="text-sm text-slate-500 font-light leading-relaxed">
                   Participa en iniciativas para fortalecer destinos turísticos y atraer visitantes nacionales e internacionales.
                 </p>
@@ -387,14 +387,14 @@ export default function Web() {
             </div>
 
             {/* Función 4 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=600&auto=format&fit=crop" 
-                  alt="Formación y Refuerzo" 
-                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
-                />
-                <h3 className="text-lg font-bold mb-3 text-slate-950">Formación y Refuerzo</h3>
+                <div className="w-10 h-10 rounded-xl bg-[#2F92B9]/10 flex items-center justify-center text-[#2F92B9] mb-5">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-slate-950">Formación y Refuerzo</h3>
                 <p className="text-sm text-slate-500 font-light leading-relaxed">
                   Promueve encuentros gremiales, intercambio de experiencias y actualización del sector hotelero.
                 </p>
@@ -402,14 +402,14 @@ export default function Web() {
             </div>
 
             {/* Función 5 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" 
-                  alt="Atención de Emergencias" 
-                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
-                />
-                <h3 className="text-lg font-bold mb-3 text-slate-950">Atención de Emergencias</h3>
+                <div className="w-10 h-10 rounded-xl bg-[#2F92B9]/10 flex items-center justify-center text-[#2F92B9] mb-5">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M5.636 5.636l3.536 3.536m0 5.656l-3.536 3.536M10.5 11.5a1 1 0 11-2 0 1 1 0 012 0zm5.656 5.656a1 1 0 11-2 0 1 1 0 012 0zm0-11.314a1 1 0 11-2 0 1 1 0 012 0zm-11.314 0a1 1 0 11-2 0 1 1 0 012 0zm0 11.314a1 1 0 11-2 0 1 1 0 012 0zM12 21a9 9 0 100-18 9 9 0 000 18z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-slate-950">Atención de Emergencias</h3>
                 <p className="text-sm text-slate-500 font-light leading-relaxed">
                   Coordina apoyo a establecimientos afiliados afectados por desastres naturales o situaciones extraordinarias.
                 </p>
@@ -417,14 +417,14 @@ export default function Web() {
             </div>
 
             {/* Función 6 */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between">
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1560520653-9e0e4c89af11?q=80&w=600&auto=format&fit=crop" 
-                  alt="Atracción de Inversiones" 
-                  className="w-full h-40 object-cover rounded-xl mb-4 select-none"
-                />
-                <h3 className="text-lg font-bold mb-3 text-slate-950">Atracción de Inversiones</h3>
+                <div className="w-10 h-10 rounded-xl bg-[#2F92B9]/10 flex items-center justify-center text-[#2F92B9] mb-5">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-slate-950">Atracción de Inversiones</h3>
                 <p className="text-sm text-slate-500 font-light leading-relaxed">
                   Promueve oportunidades para marcas hoteleras, franquicias, reconversión de activos y nuevos proyectos turísticos.
                 </p>
@@ -481,7 +481,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 5. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA (Movida antes del banner) */}
+      {/* 5. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-5 w-full">
@@ -563,7 +563,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 6. BANNER OCUPACIÓN HOTELERA (Posicionado después de los Datos de la Industria) */}
+      {/* 6. BANNER OCUPACIÓN HOTELERA */}
       <section className="pt-12 px-6 md:px-12 max-w-7xl mx-auto">
         <div 
           className="relative rounded-3xl overflow-hidden bg-cover bg-center py-20 px-8 md:px-16 text-center shadow-xl border border-slate-100"
@@ -592,7 +592,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 6.5. NUEVA SECCIÓN ESTRATÉGICA: NOTICIAS DEL SECTOR */}
+      {/* 6.5. SECCIÓN ESTRATÉGICA: NOTICIAS DEL SECTOR */}
       <section className="py-28 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
           
