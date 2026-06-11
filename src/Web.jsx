@@ -1,36 +1,10 @@
+import React, { useState, useEffect } from 'react';
 import { BarChart3, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { CartesianGrid, ComposedChart, Bar, ReferenceLine, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
-import React, { useState, useEffect } from 'react';
-
-// Componente interno para animar los números de forma interactiva (cuenta progresiva dinámica)
-function Counter({ value, duration = 1500 }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const end = parseInt(value);
-    if (start === end) return;
-
-    const totalMilisecondsByStep = Math.max(Math.floor(duration / end), 1);
-    
-    const timer = setInterval(() => {
-      start += 1;
-      setCount(start);
-      if (start === end) clearInterval(timer);
-    }, totalMilisecondsByStep);
-
-    return () => clearInterval(timer);
-  }, [value, duration]);
-
-  return <span>{count}</span>;
-}
-import React, { useState, useEffect } from 'react';
-// ... todos tus otros imports actuales ...
-import { BarChart3, AlertTriangle, CheckCircle2 } from 'lucide-react';
-import { CartesianGrid, ComposedChart, Bar, ReferenceLine, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-
-
+// ========================================================
+// DATASET Y INFRAESTRUCTURA DEL CHART (PROMEDIO ENERO 2026)
+// ========================================================
 const reportData = [
   { estado: 'La Guaira', ocupacion: 38.24 },
   { estado: 'Carabobo', ocupacion: 32.10 },
@@ -57,11 +31,33 @@ const CustomChartTooltip = ({ active, payload }) => {
   }
   return null;
 };
+
+// Componente interno para animar los números de forma interactiva
+function Counter({ value, duration = 1500 }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = parseInt(value);
+    if (start === end) return;
+
+    const totalMilisecondsByStep = Math.max(Math.floor(duration / end), 1);
+    
+    const timer = setInterval(() => {
+      start += 1;
+      setCount(start);
+      if (start === end) clearInterval(timer);
+    }, totalMilisecondsByStep);
+
+    return () => clearInterval(timer);
+  }, [value, duration]);
+
+  return <span>{count}</span>;
+}
+
 // ========================================================
-
-
-
-
+// COMPONENTE PRINCIPAL
+// ========================================================
 export default function Web() {
   // Estado para controlar cuál hito está seleccionado/activo. Inicia en 0 (1958) por defecto.
   const [activeHito, setActiveHito] = useState(0);
@@ -594,7 +590,7 @@ export default function Web() {
               <button className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#1E293B] text-white text-xs font-bold uppercase tracking-[0.2em] rounded-full overflow-hidden hover:bg-[#0062B2] transition-colors duration-300 shadow-sm">
                 <span>Datos y Cifras</span>
                 <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
             </div>
@@ -602,7 +598,8 @@ export default function Web() {
         </div>
       </section>
       
-<section className="py-20 bg-slate-50 border-y border-slate-200/60">
+      {/* 5.5 PANEL DE RENDIMIENTO REGIONAL (EL CHART DE BARRAS) */}
+      <section className="py-20 bg-slate-50 border-y border-slate-200/60">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
             
@@ -628,7 +625,7 @@ export default function Web() {
                 </div>
                 <div className="flex items-start gap-3 border-t border-slate-100 pt-3">
                   <AlertTriangle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
-                  <p className="text-xs text-slate-600"><strong className="text-slate-900 font-semibold">En Observación:</strong> Lara (13.32%) y Aragua (13.75%) registran niveles críticos.</p>
+                  <p className="text-xs text-slate-600"><strong className="text-slate-900 font-semibold">En Observación:</strong> Lara (13.32%) and Aragua (13.75%) registran niveles críticos.</p>
                 </div>
               </div>
             </div>
@@ -671,9 +668,6 @@ export default function Web() {
           </div>
         </div>
       </section>
-      {/* ======================================================================= */}
-
-
 
       {/* 6. BANNER OCUPACIÓN HOTELERA */}
       <section className="pt-12 px-6 md:px-12 max-w-7xl mx-auto">
@@ -766,7 +760,7 @@ export default function Web() {
                   Cadenas internacionales evalúan nuevas aperturas en el eje norte-costero
                 </h3>
                 <p className="text-xs text-slate-500 font-light leading-relaxed line-clamp-3">
-                  Representantes del sector privado confirman el renovado interés de capital extranjero en proyectos de infraestructura turística de alta gama en el país.
+                  Representantes del sector privado confirman el renovado interest de capital extranjero en proyectos de infraestructura turística de alta gama en el país.
                 </p>
               </div>
             </div>
