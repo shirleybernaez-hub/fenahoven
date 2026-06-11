@@ -187,7 +187,7 @@ export default function Web() {
 
             <div className="md:col-span-7 space-y-10">
               <p className="text-slate-700 text-base md:text-lg font-light leading-relaxed">
-                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos and las corrientes turísticas globales.
+                La <strong className="font-semibold text-slate-900">Federación Nacional de Hoteles de Venezuela (FENAHOVEN)</strong> es la organización gremial matriz que agrupa, representa y potencia a las cámaras y establecimientos de hospedaje en todo el territorio nacional. Actuamos como el puente estratégico fundamental entre el sector privado, los organismos públicos y las corrientes turísticas globales.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
@@ -326,14 +326,14 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 4.5. NUEVA SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO (Imágenes e Iconos Integrados) */}
+      {/* 4.5. SECCIÓN ESTRATÉGICA: FUNCIONES EN TODO EL ANCHO */}
       <section className="py-28 bg-[#F8FAFC] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
           
           <div>
             <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-2">Acción Institucional</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">
-              Funciones de FENAHOVEN en Venezuela
+              Funciones de FENAHOVEN in Venezuela
             </h2>
             <div className="w-16 h-1 bg-[#2F92B9] rounded-full mt-4" />
           </div>
@@ -481,36 +481,7 @@ export default function Web() {
         </div>
       </section>
 
-      {/* 5. BANNER OCUPACIÓN HOTELERA */}
-      <section className="pt-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div 
-          className="relative rounded-3xl overflow-hidden bg-cover bg-center py-20 px-8 md:px-16 text-center shadow-xl border border-slate-100"
-          style={{ 
-            backgroundImage: `linear-gradient(to right, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1000&auto=format&fit=crop')` 
-          }}
-        >
-          <div className="max-w-3xl mx-auto space-y-6 relative z-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-              Ocupación Hotelera Nacional
-            </h3>
-            <p className="text-sm md:text-base text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
-              Resultados del Sistema Nacional de Estadísticas correspondientes al mes de enero.
-            </p>
-            <div className="pt-4">
-              <a 
-                href="/reporte-ocupacion.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block border border-white text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-md hover:bg-white hover:text-[#10172A] transition-all duration-300"
-              >
-                descargar el reporte
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA */}
+      {/* 5. SECCIÓN INTERACTIVA: DATOS DE LA INDUSTRIA (Movida antes del banner) */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-5 w-full">
@@ -588,6 +559,130 @@ export default function Web() {
                 </svg>
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. BANNER OCUPACIÓN HOTELERA (Posicionado después de los Datos de la Industria) */}
+      <section className="pt-12 px-6 md:px-12 max-w-7xl mx-auto">
+        <div 
+          className="relative rounded-3xl overflow-hidden bg-cover bg-center py-20 px-8 md:px-16 text-center shadow-xl border border-slate-100"
+          style={{ 
+            backgroundImage: `linear-gradient(to right, rgba(16, 23, 42, 0.85), rgba(16, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1000&auto=format&fit=crop')` 
+          }}
+        >
+          <div className="max-w-3xl mx-auto space-y-6 relative z-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+              Ocupación Hotelera Nacional
+            </h3>
+            <p className="text-sm md:text-base text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+              Resultados del Sistema Nacional de Estadísticas correspondientes al mes de enero.
+            </p>
+            <div className="pt-4">
+              <a 
+                href="/reporte-ocupacion.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block border border-white text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 rounded-md hover:bg-white hover:text-[#10172A] transition-all duration-300"
+              >
+                descargar el reporte
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6.5. NUEVA SECCIÓN ESTRATÉGICA: NOTICIAS DEL SECTOR */}
+      <section className="py-28 bg-[#FFFFFF]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
+          
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-100 pb-6 gap-4">
+            <div>
+              <span className="text-xs font-bold text-[#2F92B9] uppercase tracking-[0.3em] block mb-2">Actualidad</span>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 uppercase">
+                Noticias del Sector
+              </h2>
+            </div>
+            <span className="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-[#2F92B9] cursor-pointer transition-colors">
+              Ver todas las noticias →
+            </span>
+          </div>
+
+          {/* Grid Editorial de Noticias */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Noticia 1 */}
+            <div className="group cursor-pointer space-y-4">
+              <div className="overflow-hidden rounded-2xl aspect-[16/10] bg-slate-100 border border-slate-100/50 shadow-sm">
+                <img 
+                  src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=600&auto=format&fit=crop" 
+                  alt="Mesa de trabajo gremial"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 select-none"
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center gap-3 text-[11px] font-mono tracking-wider text-slate-400">
+                  <span className="text-[#2F92B9] uppercase font-bold">Gremial</span>
+                  <span>•</span>
+                  <span>10 Jun 2026</span>
+                </div>
+                <h3 className="text-base font-bold text-slate-950 group-hover:text-[#2F92B9] transition-colors leading-snug">
+                  FENAHOVEN estrecha lazos con cámaras regionales para impulsar el turismo sostenible
+                </h3>
+                <p className="text-xs text-slate-500 font-light leading-relaxed line-clamp-3">
+                  Mesas de trabajo conjuntas definen la hoja de ruta estratégica para la implementación de certificaciones y estándares sustentables en la hotelería nacional.
+                </p>
+              </div>
+            </div>
+
+            {/* Noticia 2 */}
+            <div className="group cursor-pointer space-y-4">
+              <div className="overflow-hidden rounded-2xl aspect-[16/10] bg-slate-100 border border-slate-100/50 shadow-sm">
+                <img 
+                  src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop" 
+                  alt="Inversión hotelera"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 select-none"
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center gap-3 text-[11px] font-mono tracking-wider text-slate-400">
+                  <span className="text-[#2F92B9] uppercase font-bold">Inversión</span>
+                  <span>•</span>
+                  <span>05 Jun 2026</span>
+                </div>
+                <h3 className="text-base font-bold text-slate-950 group-hover:text-[#2F92B9] transition-colors leading-snug">
+                  Cadenas internacionales evalúan nuevas aperturas en el eje norte-costero
+                </h3>
+                <p className="text-xs text-slate-500 font-light leading-relaxed line-clamp-3">
+                  Representantes del sector privado confirman el renovado interés de capital extranjero en proyectos de infraestructura turística de alta gama en el país.
+                </p>
+              </div>
+            </div>
+
+            {/* Noticia 3 */}
+            <div className="group cursor-pointer space-y-4">
+              <div className="overflow-hidden rounded-2xl aspect-[16/10] bg-slate-100 border border-slate-100/50 shadow-sm">
+                <img 
+                  src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600&auto=format&fit=crop" 
+                  alt="Capacitación técnica"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 select-none"
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center gap-3 text-[11px] font-mono tracking-wider text-slate-400">
+                  <span className="text-[#2F92B9] uppercase font-bold">Capacitación</span>
+                  <span>•</span>
+                  <span>28 May 2026</span>
+                </div>
+                <h3 className="text-base font-bold text-slate-950 group-hover:text-[#2F92B9] transition-colors leading-snug">
+                  Culmina con éxito el primer ciclo formativo de actualización técnica del año
+                </h3>
+                <p className="text-xs text-slate-500 font-light leading-relaxed line-clamp-3">
+                  Más de 150 profesionales del alojamiento completaron la capacitación enfocada en optimización operativa, revenue management y atención al cliente.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
